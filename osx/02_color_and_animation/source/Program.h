@@ -42,7 +42,7 @@ namespace tdogl {
         
         
         /**
-         @result The program's object id, as returned from glCreateProgram
+         @result The program's object ID, as returned from glCreateProgram
          */
         GLuint object() const;
         

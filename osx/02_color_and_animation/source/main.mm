@@ -17,11 +17,13 @@
  limitations under the License.
  */
 
+
 // third-party libraries
 #import <Foundation/Foundation.h>
 #include <GL/glew.h>
 #include <GL/glfw.h>
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 // standard C++ libraries
 #include <cassert>
@@ -37,6 +39,7 @@ const glm::vec2 SCREEN_SIZE(800, 600);
 
 // globals
 tdogl::Program* gProgram = NULL;
+float gRotation = 0.0f;
 GLuint gVAO = 0;
 GLuint gVBO = 0;
 
@@ -68,18 +71,22 @@ static void LoadTriangle() {
     glGenBuffers(1, &gVBO);
     glBindBuffer(GL_ARRAY_BUFFER, gVBO);
     
-    // Put the three triangle verticies into the VBO
+    // Put the three triangle points into the VBO
     GLfloat vertexData[] = {
-        //  X     Y     Z
-         0.0f, 0.8f, 0.0f,
-        -0.8f,-0.8f, 0.0f,
-         0.8f,-0.8f, 0.0f,
+        //  X     Y     Z      R    G    B    A
+         0.0f, 0.8f, 0.0f,   1.0, 0.0, 0.0, 1.0,
+        -0.8f,-0.8f, 0.0f,   0.0, 1.0, 0.0, 1.0,
+         0.8f,-0.8f, 0.0f,   0.0, 0.0, 1.0, 1.0
     };
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*7*3, vertexData, GL_STATIC_DRAW);
     
     // connect the xyz to the "vert" attribute of the vertex shader
     glEnableVertexAttribArray(gProgram->attrib("vert"));
-    glVertexAttribPointer(gProgram->attrib("vert"), 3, GL_FLOAT, GL_FALSE, 0, NULL);
+    glVertexAttribPointer(gProgram->attrib("vert"), 3, GL_FLOAT, GL_FALSE, 7*sizeof(GLfloat), NULL);
+    
+    // connect the rgba to the "vertColor" attribute of the vertex shader
+    glEnableVertexAttribArray(gProgram->attrib("vertColor"));
+    glVertexAttribPointer(gProgram->attrib("vertColor"), 3, GL_FLOAT, GL_TRUE,  7*sizeof(GLfloat), (const GLvoid*)(3 * sizeof(GLfloat)));
     
     // unbind the VAO
     glBindVertexArray(0);
@@ -94,7 +101,11 @@ static void Render() {
     
     // bind the program (the shaders)
     glUseProgram(gProgram->object());
-        
+    
+    // set the "combinedTransformationMatrix" uniform in the vertex shader
+    glm::mat4 rotation = glm::rotate(glm::mat4(), gRotation, glm::vec3(0.1,1,0.1));
+    glUniformMatrix4fv(gProgram->uniform("combinedTransformationMatrix"), 1, GL_FALSE, &rotation[0][0]);
+    
     // bind the VAO (the triangle)
     glBindVertexArray(gVAO);
     
@@ -109,6 +120,13 @@ static void Render() {
     
     // swap the display buffers (displays what was just drawn)
     glfwSwapBuffers();
+}
+
+
+// update the scene based on the time elapsed since last update
+void Update(double secondsElapsed) {
+    // spin at 90 degrees per second
+    gRotation = fmodf(gRotation + secondsElapsed*90.0f, 360.0f);
 }
 
 
@@ -138,7 +156,13 @@ int main(int argc, char *argv[]) {
     LoadTriangle();
     
     // run while the window is open
+    double lastTime = glfwGetTime();
     while(glfwGetWindowParam(GLFW_OPENED)){
+        // update the scene based on the time elapsed since last update
+        double thisTime = glfwGetTime();
+        Update(thisTime - lastTime);
+        lastTime = thisTime;
+        
         // draw one frame
         Render();
     }
