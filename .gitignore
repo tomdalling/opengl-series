@@ -1,0 +1,8 @@
+# VC++ crap
+*.suo
+*.vcxproj.user
+*.sdf
+*.opensdfs
+windows/*/Debug/
+windows/*/Release/
+windows/*/ipch/
