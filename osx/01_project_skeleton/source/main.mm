@@ -1,5 +1,5 @@
 /*
- main.m
+ main.mm
  article-01-skeleton
 
  Copyright 2012 Thomas Dalling - http://tomdalling.com/
@@ -17,18 +17,9 @@
  limitations under the License.
  */
 
-/*
- This project expects GLM and GLEW to be installed via MacPorts. To do this:
- 
-  - install MacPorts from: http://www.macports.org/
-  - Open Terminal.app and run the following commands:
-        sudo port install glm
-        sudo port install glew
- 
- GLFW is not available from MacPorts, so a compiled version is provided with this project.
- */
 
 // third-party libraries
+#import <Foundation/Foundation.h>
 #include <GL/glew.h>
 #include <GL/glfw.h>
 #include <glm/glm.hpp>
@@ -53,11 +44,19 @@ GLuint gVAO = 0;
 GLuint gVBO = 0;
 
 
+// returns the full path to the file `fileName` in the resources directory of the app bundle
+static std::string ResourcePath(std::string fileName) {
+    NSString* fname = [NSString stringWithCString:fileName.c_str() encoding:NSUTF8StringEncoding];
+    NSString* path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fname];
+    return std::string([path cStringUsingEncoding:NSUTF8StringEncoding]);
+}
+
+
 // loads the vertex shader and fragment shader, and links them to make the global gProgram
 static void LoadShaders() {
     std::vector<tdogl::Shader> shaders;
-    shaders.push_back(tdogl::Shader::shaderFromFile("/Users/tom/proj/opengl-series/osx/01_project_skeleton/vertex-shader.txt", GL_VERTEX_SHADER));
-    shaders.push_back(tdogl::Shader::shaderFromFile("/Users/tom/proj/opengl-series/osx/01_project_skeleton/fragment-shader.txt", GL_FRAGMENT_SHADER));
+    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("vertex-shader.txt"), GL_VERTEX_SHADER));
+    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("fragment-shader.txt"), GL_FRAGMENT_SHADER));
     gProgram = new tdogl::Program(shaders);
 }
 
@@ -74,10 +73,10 @@ static void LoadTriangle() {
     
     // Put the three triangle points into the VBO
     GLfloat vertexData[] = {
-        //  X     Y     Z     R    G    B    A
-         0.0f, 0.8f, 0.0f,  1.0, 0.0, 0.0, 1.0,
-        -0.8f,-0.8f, 0.0f,  0.0, 1.0, 0.0, 1.0,
-         0.8f,-0.8f, 0.0f,  0.0, 0.0, 1.0, 1.0
+        //  X     Y     Z      R    G    B    A
+         0.0f, 0.8f, 0.0f,   1.0, 0.0, 0.0, 1.0,
+        -0.8f,-0.8f, 0.0f,   0.0, 1.0, 0.0, 1.0,
+         0.8f,-0.8f, 0.0f,   0.0, 0.0, 1.0, 1.0
     };
     glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*7*3, vertexData, GL_STATIC_DRAW);
     

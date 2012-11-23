@@ -7,30 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E236EB57165DD1600036543D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E236EB56165DD1600036543D /* main.cpp */; };
+		E21E3B9A165F718000D9ED06 /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E21E3B93165F718000D9ED06 /* fragment-shader.txt */; };
+		E21E3B9B165F718000D9ED06 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E21E3B94165F718000D9ED06 /* main.mm */; };
+		E21E3B9C165F718000D9ED06 /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21E3B95165F718000D9ED06 /* Program.cpp */; };
+		E21E3B9D165F718000D9ED06 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21E3B97165F718000D9ED06 /* Shader.cpp */; };
+		E21E3B9E165F718000D9ED06 /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E21E3B99165F718000D9ED06 /* vertex-shader.txt */; };
+		E21E3BA0165F718900D9ED06 /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E21E3B9F165F718900D9ED06 /* libglfw.a */; };
 		E236EB61165DDD890036543D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E236EB5C165DDD760036543D /* Cocoa.framework */; };
-		E236EB63165DDDC20036543D /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E236EB62165DDDC20036543D /* libglfw.a */; };
 		E236EB66165DE4AE0036543D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E236EB64165DE49D0036543D /* OpenGL.framework */; };
 		E236EB6B165DE4FB0036543D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E236EB69165DE4F60036543D /* IOKit.framework */; };
 		E236EB6E165DE5570036543D /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E236EB6C165DE5510036543D /* libGLEW.a */; };
-		E236EB83165DF4710036543D /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E236EB81165DF4710036543D /* Program.cpp */; };
-		E236EB87165DF8020036543D /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E236EB85165DF8020036543D /* Shader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E21E3B93165F718000D9ED06 /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
+		E21E3B94165F718000D9ED06 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E21E3B95165F718000D9ED06 /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		E21E3B96165F718000D9ED06 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		E21E3B97165F718000D9ED06 /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		E21E3B98165F718000D9ED06 /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E21E3B99165F718000D9ED06 /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
+		E21E3B9F165F718900D9ED06 /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = thirdparty/glfw/libglfw.a; sourceTree = "<group>"; };
 		E236EB35165DD1380036543D /* article-01-skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "article-01-skeleton.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E236EB56165DD1600036543D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E236EB5C165DDD760036543D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		E236EB62165DDDC20036543D /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = glfw/libglfw.a; sourceTree = "<group>"; };
 		E236EB64165DE49D0036543D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E236EB69165DE4F60036543D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		E236EB6C165DE5510036543D /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = /opt/local/lib/libGLEW.a; sourceTree = "<absolute>"; };
-		E236EB81165DF4710036543D /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
-		E236EB82165DF4710036543D /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
-		E236EB85165DF8020036543D /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
-		E236EB86165DF8020036543D /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
-		E236EB88165E1CAD0036543D /* fragment-shader.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
-		E236EB89165E1CAD0036543D /* vertex-shader.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,23 +44,31 @@
 				E236EB61165DDD890036543D /* Cocoa.framework in Frameworks */,
 				E236EB6B165DE4FB0036543D /* IOKit.framework in Frameworks */,
 				E236EB66165DE4AE0036543D /* OpenGL.framework in Frameworks */,
-				E236EB63165DDDC20036543D /* libglfw.a in Frameworks */,
+				E21E3BA0165F718900D9ED06 /* libglfw.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E21E3B92165F718000D9ED06 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E21E3B93165F718000D9ED06 /* fragment-shader.txt */,
+				E21E3B94165F718000D9ED06 /* main.mm */,
+				E21E3B95165F718000D9ED06 /* Program.cpp */,
+				E21E3B96165F718000D9ED06 /* Program.h */,
+				E21E3B97165F718000D9ED06 /* Shader.cpp */,
+				E21E3B98165F718000D9ED06 /* Shader.h */,
+				E21E3B99165F718000D9ED06 /* vertex-shader.txt */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
 		E236EB2A165DD1380036543D = {
 			isa = PBXGroup;
 			children = (
-				E236EB81165DF4710036543D /* Program.cpp */,
-				E236EB82165DF4710036543D /* Program.h */,
-				E236EB85165DF8020036543D /* Shader.cpp */,
-				E236EB86165DF8020036543D /* Shader.h */,
-				E236EB56165DD1600036543D /* main.cpp */,
-				E236EB88165E1CAD0036543D /* fragment-shader.txt */,
-				E236EB89165E1CAD0036543D /* vertex-shader.txt */,
+				E21E3B92165F718000D9ED06 /* source */,
 				E236EB38165DD1380036543D /* Frameworks */,
 				E236EB36165DD1380036543D /* Products */,
 			);
@@ -75,8 +85,8 @@
 		E236EB38165DD1380036543D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E21E3B9F165F718900D9ED06 /* libglfw.a */,
 				E236EB6C165DE5510036543D /* libGLEW.a */,
-				E236EB62165DDDC20036543D /* libglfw.a */,
 				E236EB69165DE4F60036543D /* IOKit.framework */,
 				E236EB64165DE49D0036543D /* OpenGL.framework */,
 				E236EB5C165DDD760036543D /* Cocoa.framework */,
@@ -136,6 +146,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E21E3B9A165F718000D9ED06 /* fragment-shader.txt in Resources */,
+				E21E3B9E165F718000D9ED06 /* vertex-shader.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +158,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E236EB57165DD1600036543D /* main.cpp in Sources */,
-				E236EB83165DF4710036543D /* Program.cpp in Sources */,
-				E236EB87165DF8020036543D /* Shader.cpp in Sources */,
+				E21E3B9B165F718000D9ED06 /* main.mm in Sources */,
+				E21E3B9C165F718000D9ED06 /* Program.cpp in Sources */,
+				E21E3B9D165F718000D9ED06 /* Shader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +186,7 @@
 				GCC_WARN_PEDANTIC = YES;
 				HEADER_SEARCH_PATHS = (
 					/opt/local/include,
-					"\"$SRCROOT/glfw/include\"",
+					"\"$SRCROOT/thirdparty/glfw/include\"",
 				);
 				LIBRARY_SEARCH_PATHS = /opt/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -197,7 +209,7 @@
 				GCC_WARN_PEDANTIC = YES;
 				HEADER_SEARCH_PATHS = (
 					/opt/local/include,
-					"\"$SRCROOT/glfw/include\"",
+					"\"$SRCROOT/thirdparty/glfw/include\"",
 				);
 				LIBRARY_SEARCH_PATHS = /opt/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -214,8 +226,7 @@
 				INFOPLIST_FILE = "article-01-skeleton-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/glfw\"",
+					"\"$(SRCROOT)/thirdparty/glfw\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -230,8 +241,7 @@
 				INFOPLIST_FILE = "article-01-skeleton-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/glfw\"",
+					"\"$(SRCROOT)/thirdparty/glfw\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
