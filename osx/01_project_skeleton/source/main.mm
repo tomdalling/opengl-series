@@ -81,7 +81,8 @@ static void LoadTriangle() {
     glEnableVertexAttribArray(gProgram->attrib("vert"));
     glVertexAttribPointer(gProgram->attrib("vert"), 3, GL_FLOAT, GL_FALSE, 0, NULL);
     
-    // unbind the VAO
+    // unbind the VBO and VAO
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 }
 
@@ -131,6 +132,10 @@ int main(int argc, char *argv[]) {
     if(glewInit() != GLEW_OK)
         throw std::runtime_error("glewInit failed");
     
+    // make sure OpenGL version 3.2 API is available
+    if(!GLEW_VERSION_3_2)
+        throw std::runtime_error("OpenGL 3.2 API is not available.");
+
     // load vertex and fragment shaders into opengl
     LoadShaders();
     
