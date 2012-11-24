@@ -67,6 +67,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>GLFW.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command> copy "$(ProjectDir)source\*shader.txt" "$(OutDir)\"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy shaders into same directory as executable</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -82,6 +88,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>GLFW.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command> copy "$(ProjectDir)source\*shader.txt" "$(OutDir)\"</Command>
+      <Message>Copy shaders into same directory as executable</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

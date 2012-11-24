@@ -1,16 +1,8 @@
 #version 150
 
-uniform mat4 combinedTransformationMatrix;
-
 in vec4 vert;
-in vec4 vertColor;
-
-out vec4 fragColor;
 
 void main() {
-    // Pass the color straight through to the fragment shader
-    fragColor = vertColor;
-    
-    // One matrix tranformation
-    gl_Position = combinedTransformationMatrix * vert;
+    // does not alter the verticies at all
+    gl_Position = vert;
 }
