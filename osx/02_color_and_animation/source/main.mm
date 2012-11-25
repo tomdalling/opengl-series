@@ -76,9 +76,25 @@ static void LoadTriangle() {
     // Put the three triangle points into the VBO
     GLfloat vertexData[] = {
         //  X     Y     Z      R    G    B    A       U     V
-         0.0f, 0.8f, 0.0f,   1.0, 0.0, 0.0, 1.0,   0.5f, 1.0f,
-        -0.8f,-0.8f, 0.0f,   0.0, 1.0, 0.0, 1.0,   0.0f, 0.0f,
-         0.8f,-0.8f, 0.0f,   0.0, 0.0, 1.0, 1.0,   1.0f, 0.0f
+        // bottom
+         0.0f, 0.0f,-0.4f,   1.0, 1.0, 1.0, 1.0,   0.5f, 1.0f,
+        -0.2f, 0.0f, 0.4f,   1.0, 1.0, 1.0, 1.0,   0.0f, 0.0f,
+         0.2f, 0.0f, 0.4f,   1.0, 1.0, 1.0, 1.0,   1.0f, 0.0f,
+
+        // back
+         0.0f, 0.4f, 0.4f,   0.4, 0.1, 0.1, 1.0,   0.5f, 1.0f,
+        -0.2f, 0.0f, 0.4f,   0.4, 0.1, 0.1, 1.0,   0.0f, 0.0f,
+         0.2f, 0.0f, 0.4f,   0.4, 0.1, 0.1, 1.0,   1.0f, 0.0f,
+
+        // left
+         0.0f, 0.0f,-0.4f,   1.0, 1.0, 1.0, 1.0,   0.5f, 1.0f,
+        -0.2f, 0.0f, 0.4f,   1.0, 1.0, 1.0, 1.0,   0.0f, 0.0f,
+         0.0f, 0.4f, 0.4f,   1.0, 1.0, 1.0, 1.0,   1.0f, 0.0f,
+
+        // right
+         0.0f, 0.0f,-0.4f,   1.0, 1.0, 1.0, 1.0,   0.5f, 1.0f,
+         0.0f, 0.4f, 0.4f,   1.0, 1.0, 1.0, 1.0,   1.0f, 0.0f,
+         0.2f, 0.0f, 0.4f,   1.0, 1.0, 1.0, 1.0,   0.0f, 0.0f
     };
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
     
@@ -117,8 +133,12 @@ static void Render() {
     glUseProgram(gProgram->object());
     
     // set the "combinedTransformationMatrix" uniform in the vertex shader
-    glm::mat4 rotation = glm::rotate(glm::mat4(), gRotation, glm::vec3(0.1,1,0.1));
-    glUniformMatrix4fv(gProgram->uniform("combinedTransformationMatrix"), 1, GL_FALSE, &rotation[0][0]);
+    glm::mat4 combined = glm::perspective<float>(45.0, SCREEN_SIZE.x/SCREEN_SIZE.y, 1.0, 10.0);
+    combined = glm::translate(combined, glm::vec3(0,0,-2));
+    combined = glm::rotate(combined, gRotation, glm::vec3(0,1,0));
+    combined = glm::rotate(combined, 25.0f, glm::vec3(1,0,0));
+
+    glUniformMatrix4fv(gProgram->uniform("combinedTransformationMatrix"), 1, GL_FALSE, &combined[0][0]);
     
     // set the "tex" uniform in the fragment shader
     glActiveTexture(GL_TEXTURE0);
@@ -129,7 +149,7 @@ static void Render() {
     glBindVertexArray(gVAO);
     
     // draw the VAO
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_TRIANGLES, 0, 12);
     
     // unbind the VAO, the program and the texture
     glBindVertexArray(0);
@@ -159,7 +179,7 @@ int main(int argc, char *argv[]) {
     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
     glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
-    if(!glfwOpenWindow(SCREEN_SIZE.x, SCREEN_SIZE.y, 8, 8, 8, 8, 0, 0, GLFW_WINDOW))
+    if(!glfwOpenWindow(SCREEN_SIZE.x, SCREEN_SIZE.y, 8, 8, 8, 8, 16, 0, GLFW_WINDOW))
         throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
     
     // initialise GLEW
@@ -169,6 +189,12 @@ int main(int argc, char *argv[]) {
     
     // GLEW throws some errors, so discard all the errors so far
     while(glGetError() != GL_NO_ERROR) {}
+
+    // OpenGL settings
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+    glCullFace(GL_BACK);
+    glFrontFace(GL_CCW);
 
     // load vertex and fragment shaders into opengl
     LoadShaders();
