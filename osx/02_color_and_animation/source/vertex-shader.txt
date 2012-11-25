@@ -4,12 +4,15 @@ uniform mat4 combinedTransformationMatrix;
 
 in vec4 vert;
 in vec4 vertColor;
+in vec2 vertTexCoord;
 
 out vec4 fragColor;
+out vec2 fragTexCoord;
 
 void main() {
-    // Pass the color straight through to the fragment shader
+    // Pass the color and tex coord straight through to the fragment shader
     fragColor = vertColor;
+    fragTexCoord = vertTexCoord;
     
     // One matrix tranformation
     gl_Position = combinedTransformationMatrix * vert;

@@ -32,12 +32,14 @@
 #include <cmath>
 
 // tdogl classes
-#include "Program.h"
+#include "tdogl/Program.h"
+#include "tdogl/Texture.h"
 
 // constants
 const glm::vec2 SCREEN_SIZE(800, 600);
 
 // globals
+tdogl::Texture* gTexture = NULL;
 tdogl::Program* gProgram = NULL;
 float gRotation = 0.0f;
 GLuint gVAO = 0;
@@ -73,23 +75,35 @@ static void LoadTriangle() {
     
     // Put the three triangle points into the VBO
     GLfloat vertexData[] = {
-        //  X     Y     Z      R    G    B    A
-         0.0f, 0.8f, 0.0f,   1.0, 0.0, 0.0, 1.0,
-        -0.8f,-0.8f, 0.0f,   0.0, 1.0, 0.0, 1.0,
-         0.8f,-0.8f, 0.0f,   0.0, 0.0, 1.0, 1.0
+        //  X     Y     Z      R    G    B    A       U     V
+         0.0f, 0.8f, 0.0f,   1.0, 0.0, 0.0, 1.0,   0.5f, 1.0f,
+        -0.8f,-0.8f, 0.0f,   0.0, 1.0, 0.0, 1.0,   0.0f, 0.0f,
+         0.8f,-0.8f, 0.0f,   0.0, 0.0, 1.0, 1.0,   1.0f, 0.0f
     };
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*7*3, vertexData, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
     
     // connect the xyz to the "vert" attribute of the vertex shader
     glEnableVertexAttribArray(gProgram->attrib("vert"));
-    glVertexAttribPointer(gProgram->attrib("vert"), 3, GL_FLOAT, GL_FALSE, 7*sizeof(GLfloat), NULL);
+    glVertexAttribPointer(gProgram->attrib("vert"), 3, GL_FLOAT, GL_FALSE, 9*sizeof(GLfloat), NULL);
     
     // connect the rgba to the "vertColor" attribute of the vertex shader
     glEnableVertexAttribArray(gProgram->attrib("vertColor"));
-    glVertexAttribPointer(gProgram->attrib("vertColor"), 3, GL_FLOAT, GL_TRUE,  7*sizeof(GLfloat), (const GLvoid*)(3 * sizeof(GLfloat)));
+    glVertexAttribPointer(gProgram->attrib("vertColor"), 3, GL_FLOAT, GL_TRUE,  9*sizeof(GLfloat), (const GLvoid*)(3 * sizeof(GLfloat)));
     
+    // connect the uv coords to the "vertTexCoord" attribute of the vertex shader
+    glEnableVertexAttribArray(gProgram->attrib("vertTexCoord"));
+    glVertexAttribPointer(gProgram->attrib("vertTexCoord"), 2, GL_FLOAT, GL_TRUE,  9*sizeof(GLfloat), (const GLvoid*)(7 * sizeof(GLfloat)));
+
     // unbind the VAO
     glBindVertexArray(0);
+}
+
+
+// loads the file "hazard.png" into gTexture
+static void LoadTexture() {
+    tdogl::Bitmap bmp = tdogl::Bitmap::bitmapFromFile(ResourcePath("hazard.png"));
+    bmp.flipVertically();
+    gTexture = new tdogl::Texture(bmp);
 }
 
 
@@ -106,16 +120,20 @@ static void Render() {
     glm::mat4 rotation = glm::rotate(glm::mat4(), gRotation, glm::vec3(0.1,1,0.1));
     glUniformMatrix4fv(gProgram->uniform("combinedTransformationMatrix"), 1, GL_FALSE, &rotation[0][0]);
     
+    // set the "tex" uniform in the fragment shader
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, gTexture->object());
+    glUniform1i(gProgram->uniform("tex"), 0);
+
     // bind the VAO (the triangle)
     glBindVertexArray(gVAO);
     
     // draw the VAO
     glDrawArrays(GL_TRIANGLES, 0, 3);
     
-    // unbind the VAO
+    // unbind the VAO, the program and the texture
     glBindVertexArray(0);
-    
-    // unbind the program
+    glBindTexture(GL_TEXTURE_2D, 0);
     glUseProgram(0);
     
     // swap the display buffers (displays what was just drawn)
@@ -149,9 +167,15 @@ int main(int argc, char *argv[]) {
     if(glewInit() != GLEW_OK)
         throw std::runtime_error("glewInit failed");
     
+    // GLEW throws some errors, so discard all the errors so far
+    while(glGetError() != GL_NO_ERROR) {}
+
     // load vertex and fragment shaders into opengl
     LoadShaders();
     
+    // load the texture
+    LoadTexture();
+
     // create buffer and fill it with the points of the triangle
     LoadTriangle();
     
@@ -165,6 +189,11 @@ int main(int argc, char *argv[]) {
         
         // draw one frame
         Render();
+
+        // check for errors
+        GLenum error = glGetError();
+        if(error != GL_NO_ERROR)
+            std::cerr << "OpenGL Error " << error << ": " << (const char*)gluErrorString(error) << std::endl;
     }
     
     // clean up and exit
