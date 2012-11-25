@@ -132,18 +132,19 @@ static void Render() {
     // bind the program (the shaders)
     glUseProgram(gProgram->object());
     
-    // set the "combinedTransformationMatrix" uniform in the vertex shader
+    // calculate perspective, camera pos, and rotation
     glm::mat4 combined = glm::perspective<float>(45.0, SCREEN_SIZE.x/SCREEN_SIZE.y, 1.0, 10.0);
-    combined = glm::translate(combined, glm::vec3(0,0,-2));
-    combined = glm::rotate(combined, gRotation, glm::vec3(0,1,0));
-    combined = glm::rotate(combined, 25.0f, glm::vec3(1,0,0));
-
-    glUniformMatrix4fv(gProgram->uniform("combinedTransformationMatrix"), 1, GL_FALSE, &combined[0][0]);
+    combined = glm::translate(combined, glm::vec3(0,0,-2)); //move the tetrahedron back a bit (camera pos)
+    combined = glm::rotate(combined, gRotation, glm::vec3(0,1,0)); //animated rotation
+    combined = glm::rotate(combined, 25.0f, glm::vec3(1,0,0)); //rotate upwards a bit to show bottom face
     
-    // set the "tex" uniform in the fragment shader
+    //set the "combinedTransformationMatrix" uniform in the vertex shader
+    gProgram->setUniform("combinedTransformationMatrix", combined);
+    
+    // bind the texture and set the "tex" uniform in the fragment shader
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, gTexture->object());
-    glUniform1i(gProgram->uniform("tex"), 0);
+    gProgram->setUniform("tex", 0); //set to 0 because the texture bound to GL_TEXTURE0
 
     // bind the VAO (the triangle)
     glBindVertexArray(gVAO);
