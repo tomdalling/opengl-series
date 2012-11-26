@@ -34,11 +34,13 @@
 // tdogl classes
 #include "tdogl/Program.h"
 #include "tdogl/Texture.h"
+#include "tdogl/Camera.h"
 
 // constants
 const glm::vec2 SCREEN_SIZE(800, 600);
 
 // globals
+tdogl::Camera gCamera;
 tdogl::Texture* gTexture = NULL;
 tdogl::Program* gProgram = NULL;
 float gRotation = 0.0f;
@@ -132,19 +134,14 @@ static void Render() {
     // bind the program (the shaders)
     glUseProgram(gProgram->object());
     
-    // calculate perspective, camera pos, and rotation
-    glm::mat4 combined = glm::perspective<float>(45.0, SCREEN_SIZE.x/SCREEN_SIZE.y, 1.0, 10.0);
-    combined = glm::translate(combined, glm::vec3(0,0,-2)); //move the tetrahedron back a bit (camera pos)
-    combined = glm::rotate(combined, gRotation, glm::vec3(0,1,0)); //animated rotation
-    combined = glm::rotate(combined, 25.0f, glm::vec3(1,0,0)); //rotate upwards a bit to show bottom face
-    
     //set the "combinedTransformationMatrix" uniform in the vertex shader
-    gProgram->setUniform("combinedTransformationMatrix", combined);
+    glm::mat4 perspective = glm::perspective<float>(45.0, SCREEN_SIZE.x/SCREEN_SIZE.y, 0.1, 10.0);
+    gProgram->setUniform("combinedTransformationMatrix", perspective * gCamera.matrix());
     
     // bind the texture and set the "tex" uniform in the fragment shader
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, gTexture->object());
-    gProgram->setUniform("tex", 0); //set to 0 because the texture bound to GL_TEXTURE0
+    gProgram->setUniform("tex", 0); //set to 0 because the texture is bound to GL_TEXTURE0
 
     // bind the VAO (the triangle)
     glBindVertexArray(gVAO);
@@ -163,9 +160,27 @@ static void Render() {
 
 
 // update the scene based on the time elapsed since last update
-void Update(double secondsElapsed) {
+void Update(float secondsElapsed) {
     // spin at 90 degrees per second
     gRotation = fmodf(gRotation + secondsElapsed*90.0f, 360.0f);
+
+    if(glfwGetKey('S')){
+        gCamera.setPosition(gCamera.position() - secondsElapsed*gCamera.forward());
+    } else if(glfwGetKey('W')){
+        gCamera.setPosition(gCamera.position() + secondsElapsed*gCamera.forward());
+    }
+    if(glfwGetKey('A')){
+        gCamera.setPosition(gCamera.position() - secondsElapsed*gCamera.rightward());
+    } else if(glfwGetKey('D')){
+        gCamera.setPosition(gCamera.position() + secondsElapsed*gCamera.rightward());
+    }
+    if(glfwGetKey('Z')){
+        gCamera.setPosition(gCamera.position() + secondsElapsed*glm::vec3(0,1,0));
+    } else if(glfwGetKey('X')){
+        gCamera.setPosition(gCamera.position() - secondsElapsed*glm::vec3(0,1,0));
+    }
+
+    gCamera.lookAt(glm::vec3());
 }
 
 
@@ -196,6 +211,7 @@ int main(int argc, char *argv[]) {
     glDepthFunc(GL_LESS);
     glCullFace(GL_BACK);
     glFrontFace(GL_CCW);
+    gCamera.setPosition(glm::vec3(0.0f, 0.0f, 2.0f));
 
     // load vertex and fragment shaders into opengl
     LoadShaders();
