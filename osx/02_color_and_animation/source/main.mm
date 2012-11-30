@@ -80,8 +80,8 @@ static void LoadTriangle() {
         //  X     Y     Z      R    G    B    A       U     V
         // bottom
          0.0f, 0.0f,-0.4f,   1.0, 1.0, 1.0, 1.0,   0.5f, 1.0f,
-        -0.2f, 0.0f, 0.4f,   1.0, 1.0, 1.0, 1.0,   0.0f, 0.0f,
          0.2f, 0.0f, 0.4f,   1.0, 1.0, 1.0, 1.0,   1.0f, 0.0f,
+        -0.2f, 0.0f, 0.4f,   1.0, 1.0, 1.0, 1.0,   0.0f, 0.0f,
 
         // back
          0.0f, 0.4f, 0.4f,   0.4, 0.1, 0.1, 1.0,   0.5f, 1.0f,
@@ -170,9 +170,9 @@ void Update(float secondsElapsed) {
         gCamera.setPosition(gCamera.position() + secondsElapsed*gCamera.forward());
     }
     if(glfwGetKey('A')){
-        gCamera.setPosition(gCamera.position() - secondsElapsed*gCamera.rightward());
+        gCamera.setPosition(gCamera.position() - secondsElapsed*gCamera.right());
     } else if(glfwGetKey('D')){
-        gCamera.setPosition(gCamera.position() + secondsElapsed*gCamera.rightward());
+        gCamera.setPosition(gCamera.position() + secondsElapsed*gCamera.right());
     }
     if(glfwGetKey('Z')){
         gCamera.setPosition(gCamera.position() + secondsElapsed*glm::vec3(0,1,0));
@@ -180,9 +180,18 @@ void Update(float secondsElapsed) {
         gCamera.setPosition(gCamera.position() - secondsElapsed*glm::vec3(0,1,0));
     }
 
-    gCamera.lookAt(glm::vec3());
-}
+    if(glfwGetKey(GLFW_KEY_ESC)){
+        glfwCloseWindow();
+    }
 
+    //re-center the mouse, so it doesn't go out of the window
+    float centerX = SCREEN_SIZE.x/2;
+    float centerY = SCREEN_SIZE.y/2;
+    int mouseX, mouseY;
+    glfwGetMousePos(&mouseX, &mouseY);
+    gCamera.offsetOrientation(mouseY - centerY, mouseX - centerX, 0.1);
+    glfwSetMousePos(centerX, centerY);
+}
 
 // the program starts here
 int main(int argc, char *argv[]) {
@@ -209,6 +218,7 @@ int main(int argc, char *argv[]) {
     // OpenGL settings
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
+    glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
     glFrontFace(GL_CCW);
     gCamera.setPosition(glm::vec3(0.0f, 0.0f, 2.0f));
@@ -221,7 +231,11 @@ int main(int argc, char *argv[]) {
 
     // create buffer and fill it with the points of the triangle
     LoadTriangle();
-    
+
+    glfwDisable(GLFW_MOUSE_CURSOR);
+    glfwSetMousePos(SCREEN_SIZE.x/2, SCREEN_SIZE.y/2);
+
+
     // run while the window is open
     double lastTime = glfwGetTime();
     while(glfwGetWindowParam(GLFW_OPENED)){

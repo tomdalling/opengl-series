@@ -24,8 +24,8 @@ using namespace tdogl;
 
 Camera::Camera() :
     _position(0,0,1),
-    _forward(0,0,-1),
-    _upward(0,1,0)
+    _horizontalAngle(0),
+    _verticalAngle(0)
 {
 }
 
@@ -37,30 +37,35 @@ void Camera::setPosition(const glm::vec3& position) {
     _position = position;
 }
 
-const glm::vec3& Camera::forward() const {
-    return _forward;
+glm::quat Camera::orientation() const {
+    glm::quat q;
+    q = glm::rotate(q, _verticalAngle, glm::vec3(1,0,0));
+    q = glm::rotate(q, _horizontalAngle, glm::vec3(0,1,0));
+    return q;
 }
 
-void Camera::setForward(const glm::vec3& forwards) {
-    _forward = glm::normalize(forwards);
+glm::vec3 Camera::forward() const {
+    return glm::vec3(0,0,-1) * orientation();
 }
 
-void Camera::lookAt(const glm::vec3& lookAt) {
-    setForward(lookAt - _position);
+glm::vec3 Camera::right() const {
+    return glm::vec3(1,0,0) * orientation();
 }
 
-const glm::vec3& Camera::upward() const {
-    return _upward;
+glm::vec3 Camera::up() const {
+    return glm::vec3(0,-1,0) * orientation();
 }
 
-void Camera::setUpward(const glm::vec3& upward) {
-    _upward = glm::normalize(upward);
-}
+void Camera::offsetOrientation(float upOffset, float rightOffset, float sensitivity) {
+    _horizontalAngle += rightOffset * sensitivity;
+    while(_horizontalAngle > 360.0f) _horizontalAngle -= 360.0;
+    while(_horizontalAngle < 0.0f) _horizontalAngle += 360.0;
 
-glm::vec3 Camera::rightward() const {
-    return glm::normalize(glm::cross(_forward, _upward));
+    _verticalAngle += upOffset * sensitivity;
+    if(_verticalAngle > 80.0f) _verticalAngle = 80.0f;
+    if(_verticalAngle < -80.0f) _verticalAngle = -80.0f;
 }
 
 glm::mat4 Camera::matrix() const {
-    return glm::lookAt(_position, _position + _forward, _upward);
+    return glm::mat4_cast(orientation()) * glm::translate(glm::mat4(), -_position);
 }

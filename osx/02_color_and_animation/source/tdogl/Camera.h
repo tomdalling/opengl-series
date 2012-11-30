@@ -19,6 +19,7 @@
 #pragma once
 
 #include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
 
 namespace tdogl {
 
@@ -29,21 +30,19 @@ namespace tdogl {
         const glm::vec3& position() const;
         void setPosition(const glm::vec3& position);
 
-        const glm::vec3& forward() const;
-        void setForward(const glm::vec3& forward);
-        void lookAt(const glm::vec3& lookAt);
+        glm::quat orientation() const;
+        glm::vec3 forward() const;
+        glm::vec3 right() const;
+        glm::vec3 up() const;
 
-        const glm::vec3& upward() const;
-        void setUpward(const glm::vec3& upward);
-
-        glm::vec3 rightward() const;
+        void offsetOrientation(float upOffset, float rightOffset, float sensitivity);
 
         glm::mat4 matrix() const;
 
     private:
         glm::vec3 _position;
-        glm::vec3 _forward;
-        glm::vec3 _upward;
+        float _horizontalAngle;
+        float _verticalAngle;
     };
 
 }
