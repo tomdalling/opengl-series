@@ -37,6 +37,10 @@ void Camera::setPosition(const glm::vec3& position) {
     _position = position;
 }
 
+void Camera::offsetPosition(const glm::vec3& offset) {
+    _position += offset;
+}
+
 glm::quat Camera::orientation() const {
     glm::quat q;
     q = glm::rotate(q, _verticalAngle, glm::vec3(1,0,0));

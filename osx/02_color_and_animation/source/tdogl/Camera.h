@@ -29,13 +29,14 @@ namespace tdogl {
 
         const glm::vec3& position() const;
         void setPosition(const glm::vec3& position);
+        void offsetPosition(const glm::vec3& offset);
 
         glm::quat orientation() const;
+        void offsetOrientation(float upOffset, float rightOffset, float sensitivity);
+        
         glm::vec3 forward() const;
         glm::vec3 right() const;
         glm::vec3 up() const;
-
-        void offsetOrientation(float upOffset, float rightOffset, float sensitivity);
 
         glm::mat4 matrix() const;
 

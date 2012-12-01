@@ -1,6 +1,7 @@
 #version 150
 
-uniform mat4 combinedTransformationMatrix;
+uniform mat4 projection;
+uniform mat4 camera;
 
 in vec4 vert;
 in vec4 vertColor;
@@ -15,5 +16,5 @@ void main() {
     fragTexCoord = vertTexCoord;
     
     // One matrix tranformation
-    gl_Position = combinedTransformationMatrix * vert;
+    gl_Position = projection * camera * vert;
 }

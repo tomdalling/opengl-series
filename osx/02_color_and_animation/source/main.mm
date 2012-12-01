@@ -43,7 +43,6 @@ const glm::vec2 SCREEN_SIZE(800, 600);
 tdogl::Camera gCamera;
 tdogl::Texture* gTexture = NULL;
 tdogl::Program* gProgram = NULL;
-float gRotation = 0.0f;
 GLuint gVAO = 0;
 GLuint gVBO = 0;
 
@@ -62,6 +61,12 @@ static void LoadShaders() {
     shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("vertex-shader.txt"), GL_VERTEX_SHADER));
     shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("fragment-shader.txt"), GL_FRAGMENT_SHADER));
     gProgram = new tdogl::Program(shaders);
+
+    //set the "projection" uniform in the vertex shader
+    glm::mat4 perspective = glm::perspective<float>(50.0, SCREEN_SIZE.x/SCREEN_SIZE.y, 0.1, 10.0);
+    gProgram->use();
+    gProgram->setUniform("projection", perspective);
+    gProgram->stopUsing();
 }
 
 
@@ -132,12 +137,11 @@ static void Render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // bind the program (the shaders)
-    glUseProgram(gProgram->object());
-    
-    //set the "combinedTransformationMatrix" uniform in the vertex shader
-    glm::mat4 perspective = glm::perspective<float>(45.0, SCREEN_SIZE.x/SCREEN_SIZE.y, 0.1, 10.0);
-    gProgram->setUniform("combinedTransformationMatrix", perspective * gCamera.matrix());
-    
+    gProgram->use();
+
+    // set the uniform for the camera
+    gProgram->setUniform("camera", gCamera.matrix());
+        
     // bind the texture and set the "tex" uniform in the fragment shader
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, gTexture->object());
@@ -152,7 +156,7 @@ static void Render() {
     // unbind the VAO, the program and the texture
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
-    glUseProgram(0);
+    gProgram->stopUsing();
     
     // swap the display buffers (displays what was just drawn)
     glfwSwapBuffers();
@@ -161,36 +165,29 @@ static void Render() {
 
 // update the scene based on the time elapsed since last update
 void Update(float secondsElapsed) {
-    // spin at 90 degrees per second
-    gRotation = fmodf(gRotation + secondsElapsed*90.0f, 360.0f);
-
     if(glfwGetKey('S')){
-        gCamera.setPosition(gCamera.position() - secondsElapsed*gCamera.forward());
+        gCamera.offsetPosition(secondsElapsed * -gCamera.forward());
     } else if(glfwGetKey('W')){
-        gCamera.setPosition(gCamera.position() + secondsElapsed*gCamera.forward());
+        gCamera.offsetPosition(secondsElapsed * gCamera.forward());
     }
     if(glfwGetKey('A')){
-        gCamera.setPosition(gCamera.position() - secondsElapsed*gCamera.right());
+        gCamera.offsetPosition(secondsElapsed * -gCamera.right());
     } else if(glfwGetKey('D')){
-        gCamera.setPosition(gCamera.position() + secondsElapsed*gCamera.right());
+        gCamera.offsetPosition(secondsElapsed * gCamera.right());
     }
     if(glfwGetKey('Z')){
-        gCamera.setPosition(gCamera.position() + secondsElapsed*glm::vec3(0,1,0));
+        gCamera.offsetPosition(secondsElapsed * glm::vec3(0,1,0));
     } else if(glfwGetKey('X')){
-        gCamera.setPosition(gCamera.position() - secondsElapsed*glm::vec3(0,1,0));
+        gCamera.offsetPosition(secondsElapsed * -glm::vec3(0,1,0));
     }
 
-    if(glfwGetKey(GLFW_KEY_ESC)){
-        glfwCloseWindow();
-    }
-
-    //re-center the mouse, so it doesn't go out of the window
+    
     float centerX = SCREEN_SIZE.x/2;
     float centerY = SCREEN_SIZE.y/2;
     int mouseX, mouseY;
     glfwGetMousePos(&mouseX, &mouseY);
     gCamera.offsetOrientation(mouseY - centerY, mouseX - centerX, 0.1);
-    glfwSetMousePos(centerX, centerY);
+    glfwSetMousePos(centerX, centerY); //re-center the mouse, so it doesn't go out of the window
 }
 
 // the program starts here
@@ -251,6 +248,10 @@ int main(int argc, char *argv[]) {
         GLenum error = glGetError();
         if(error != GL_NO_ERROR)
             std::cerr << "OpenGL Error " << error << ": " << (const char*)gluErrorString(error) << std::endl;
+
+        if(glfwGetKey(GLFW_KEY_ESC)){
+            glfwCloseWindow();
+        }
     }
     
     // clean up and exit

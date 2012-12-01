@@ -46,7 +46,12 @@ namespace tdogl {
          @result The program's object ID, as returned from glCreateProgram
          */
         GLuint object() const;
-        
+
+        void use() const;
+
+        bool isInUse() const;
+
+        void stopUsing() const;
         
         /**
          @result The attribute index for the given name, as returned from glGetAttribLocation.
