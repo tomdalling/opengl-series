@@ -1,6 +1,5 @@
 /*
- main.mm
- article-01-skeleton
+ main
 
  Copyright 2012 Thomas Dalling - http://tomdalling.com/
 

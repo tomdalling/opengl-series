@@ -1,7 +1,6 @@
 /*
- main.cpp
- article-01-skeleton
-
+ main
+ 
  Copyright 2012 Thomas Dalling - http://tomdalling.com/
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@
  */
 
 // third-party libraries
-#include <Windows.h>
+#include <windows.h>
 #include <GL/glew.h>
 #include <GL/glfw.h>
 #include <glm/glm.hpp>
@@ -41,7 +40,7 @@ GLuint gVAO = 0;
 GLuint gVBO = 0;
 
 
-// returns the full path to the file `fileName` in the same folder as the executable
+// returns the full path to the file `fileName` in the resources directory of the app bundle
 static std::string ResourcePath(std::string fileName) {
     char executablePath[1024] = {'\0'};
     DWORD charsCopied = GetModuleFileName(NULL, executablePath, 1024);
@@ -61,7 +60,7 @@ static void LoadShaders() {
 }
 
 
-// loads a triangle into the VAO and VBO globals: gVAO and gVBO
+// loads a triangle into the VAO global
 static void LoadTriangle() {
     // make and bind the VAO
     glGenVertexArrays(1, &gVAO);
@@ -94,7 +93,7 @@ static void LoadTriangle() {
 static void Render() {
     // clear everything
     glClearColor(0, 0, 0, 1); // black
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
     
     // bind the program (the shaders)
     glUseProgram(gProgram->object());
@@ -127,31 +126,38 @@ int main(int argc, char *argv[]) {
     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
     glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
-    if(!glfwOpenWindow(SCREEN_SIZE.x, SCREEN_SIZE.y, 8, 8, 8, 8, 0, 0, GLFW_WINDOW))
+    if(!glfwOpenWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, 8, 8, 8, 8, 0, 0, GLFW_WINDOW))
         throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
     
     // initialise GLEW
     glewExperimental = GL_TRUE; //stops glew crashing on OSX :-/
     if(glewInit() != GLEW_OK)
         throw std::runtime_error("glewInit failed");
-    
+
+    // print out some info about the graphics drivers
+    std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
+    std::cout << "GLSL version: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
+    std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl;
+    std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
+
     // make sure OpenGL version 3.2 API is available
     if(!GLEW_VERSION_3_2)
         throw std::runtime_error("OpenGL 3.2 API is not available.");
 
     // load vertex and fragment shaders into opengl
     LoadShaders();
-    
+
     // create buffer and fill it with the points of the triangle
     LoadTriangle();
-    
+
     // run while the window is open
     while(glfwGetWindowParam(GLFW_OPENED)){
         // draw one frame
         Render();
     }
-    
+
     // clean up and exit
     glfwTerminate();
     return EXIT_SUCCESS;
 }
+
