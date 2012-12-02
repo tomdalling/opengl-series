@@ -1,6 +1,5 @@
 /*
- main.mm
- article-01-skeleton
+ main
 
  Copyright 2012 Thomas Dalling - http://tomdalling.com/
 
@@ -17,8 +16,9 @@
  limitations under the License.
  */
 
+#include "Helper.h"
+
 // third-party libraries
-#import <Foundation/Foundation.h>
 #include <GL/glew.h>
 #include <GL/glfw.h>
 #include <glm/glm.hpp>
@@ -40,13 +40,12 @@ const glm::vec2 SCREEN_SIZE(800, 600);
 tdogl::Texture* gTexture = NULL;
 tdogl::Program* gProgram = NULL;
 GLuint gVAO = 0;
+GLuint gVBO = 0;
 
 
 // returns the full path to the file `fileName` in the resources directory of the app bundle
 static std::string ResourcePath(std::string fileName) {
-    NSString* fname = [NSString stringWithCString:fileName.c_str() encoding:NSUTF8StringEncoding];
-    NSString* path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fname];
-    return std::string([path cStringUsingEncoding:NSUTF8StringEncoding]);
+    return GetProcessPath() + "/../resources/" + fileName;
 }
 
 
@@ -66,9 +65,8 @@ static void LoadTriangle() {
     glBindVertexArray(gVAO);
     
     // make and bind the VBO
-    GLuint vbo;
-    glGenBuffers(1, &vbo);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glGenBuffers(1, &gVBO);
+    glBindBuffer(GL_ARRAY_BUFFER, gVBO);
     
     // Put the three triangle vertices (XYZ) and texture coordinates (UV) into the VBO
     GLfloat vertexData[] = {
@@ -89,9 +87,6 @@ static void LoadTriangle() {
 
     // unbind the VAO
     glBindVertexArray(0);
-
-    // we can delete the VBO because it is held inside the VAO now
-    glDeleteBuffers(1, &vbo);
 }
 
 
