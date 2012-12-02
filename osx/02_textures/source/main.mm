@@ -22,6 +22,7 @@
 #include <GL/glew.h>
 #include <GL/glfw.h>
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 // standard C++ libraries
 #include <cassert>
@@ -30,12 +31,14 @@
 #include <cmath>
 
 // tdogl classes
-#include "Program.h"
+#include "tdogl/Program.h"
+#include "tdogl/Texture.h"
 
 // constants
 const glm::vec2 SCREEN_SIZE(800, 600);
 
 // globals
+tdogl::Texture* gTexture = NULL;
 tdogl::Program* gProgram = NULL;
 GLuint gVAO = 0;
 
@@ -68,25 +71,36 @@ static void LoadTriangle() {
     glGenBuffers(1, &vbo);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     
-    // Put the three triangle verticies into the VBO
+    // Put the three triangle vertices (XYZ) and texture coordinates (UV) into the VBO
     GLfloat vertexData[] = {
-        //  X     Y     Z
-         0.0f, 0.8f, 0.0f,
-        -0.8f,-0.8f, 0.0f,
-         0.8f,-0.8f, 0.0f,
+        //  X     Y     Z       U     V
+         0.0f, 0.8f, 0.0f,   0.5f, 1.0f,
+        -0.8f,-0.8f, 0.0f,   0.0f, 0.0f,
+         0.8f,-0.8f, 0.0f,   1.0f, 0.0f,
     };
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
-    
+
     // connect the xyz to the "vert" attribute of the vertex shader
     glEnableVertexAttribArray(gProgram->attrib("vert"));
-    glVertexAttribPointer(gProgram->attrib("vert"), 3, GL_FLOAT, GL_FALSE, 0, NULL);
-    
-    // unbind the VBO and VAO
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glVertexAttribPointer(gProgram->attrib("vert"), 3, GL_FLOAT, GL_FALSE, 5*sizeof(GLfloat), NULL);
+        
+    // connect the uv coords to the "vertTexCoord" attribute of the vertex shader
+    glEnableVertexAttribArray(gProgram->attrib("vertTexCoord"));
+    glVertexAttribPointer(gProgram->attrib("vertTexCoord"), 2, GL_FLOAT, GL_TRUE,  5*sizeof(GLfloat), (const GLvoid*)(3 * sizeof(GLfloat)));
+
+    // unbind the VAO
     glBindVertexArray(0);
 
     // we can delete the VBO because it is held inside the VAO now
     glDeleteBuffers(1, &vbo);
+}
+
+
+// loads the file "hazard.png" into gTexture
+static void LoadTexture() {
+    tdogl::Bitmap bmp = tdogl::Bitmap::bitmapFromFile(ResourcePath("hazard.png"));
+    bmp.flipVertically();
+    gTexture = new tdogl::Texture(bmp);
 }
 
 
@@ -97,24 +111,27 @@ static void Render() {
     glClear(GL_COLOR_BUFFER_BIT);
     
     // bind the program (the shaders)
-    glUseProgram(gProgram->object());
+    gProgram->use();
         
+    // bind the texture and set the "tex" uniform in the fragment shader
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, gTexture->object());
+    gProgram->setUniform("tex", 0); //set to 0 because the texture is bound to GL_TEXTURE0
+
     // bind the VAO (the triangle)
     glBindVertexArray(gVAO);
     
     // draw the VAO
     glDrawArrays(GL_TRIANGLES, 0, 3);
     
-    // unbind the VAO
+    // unbind the VAO, the program and the texture
     glBindVertexArray(0);
-    
-    // unbind the program
-    glUseProgram(0);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    gProgram->stopUsing();
     
     // swap the display buffers (displays what was just drawn)
     glfwSwapBuffers();
 }
-
 
 // the program starts here
 int main(int argc, char *argv[]) {
@@ -147,6 +164,9 @@ int main(int argc, char *argv[]) {
 
     // load vertex and fragment shaders into opengl
     LoadShaders();
+
+    // load the texture
+    LoadTexture();
 
     // create buffer and fill it with the points of the triangle
     LoadTriangle();
