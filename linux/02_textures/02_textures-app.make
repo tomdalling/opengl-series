@@ -65,6 +65,7 @@ endif
 
 OBJECTS := \
 	$(OBJDIR)/main.o \
+	$(OBJDIR)/Helper.o \
 	$(OBJDIR)/Bitmap.o \
 	$(OBJDIR)/Program.o \
 	$(OBJDIR)/Shader.o \
@@ -130,6 +131,9 @@ $(GCH): $(PCH)
 endif
 
 $(OBJDIR)/main.o: source/main.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+$(OBJDIR)/Helper.o: source/Helper.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/Bitmap.o: source/tdogl/Bitmap.cpp

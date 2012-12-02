@@ -6,3 +6,7 @@
 windows/*/Debug/
 windows/*/Release/
 windows/*/ipch/
+
+# linux build output
+linux/*/bin/
+linux/*/obj/
