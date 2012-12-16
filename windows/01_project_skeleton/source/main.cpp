@@ -116,7 +116,7 @@ static void Render() {
 
 
 // the program starts here
-int main(int argc, char *argv[]) {
+void AppMain() {
     // initialise GLFW
     if(!glfwInit())
         throw std::runtime_error("glfwInit failed");
@@ -158,6 +158,16 @@ int main(int argc, char *argv[]) {
 
     // clean up and exit
     glfwTerminate();
-    return EXIT_SUCCESS;
 }
 
+
+int main(int argc, char *argv[]) {
+    try {
+        AppMain();
+    } catch (const std::exception& e){
+        std::cerr << "ERROR: " << e.what() << std::endl;
+        return EXIT_FAILURE;
+    }
+
+    return EXIT_SUCCESS;
+}
