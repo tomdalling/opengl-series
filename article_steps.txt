@@ -1,0 +1,9 @@
+[ ] Write OSX code
+[ ] Check for deprecated API use
+[ ] Write article draft
+[ ] Edit article draft
+[ ] Update previous articles if needed
+[ ] Port to Windows
+[ ] Port to Linux
+[ ] Update README.md with link to new article
+[ ] Publish article
