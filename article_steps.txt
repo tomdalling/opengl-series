@@ -7,3 +7,4 @@
 [ ] Port to Linux
 [ ] Update README.md with link to new article
 [ ] Publish article
+[ ] Check links in article and README.md
