@@ -21,6 +21,7 @@
 #include <fstream>
 #include <string>
 #include <cassert>
+#include <sstream>
 
 using namespace tdogl;
 
@@ -88,27 +89,17 @@ Shader& Shader::operator = (const Shader& other) {
 Shader Shader::shaderFromFile(const std::string& filePath, GLenum shaderType) {
     //open file
     std::ifstream f;
-    f.open(filePath.c_str());
+    f.open(filePath.c_str(), std::ios::in | std::ios::binary);
     if(!f.is_open()){
         throw std::runtime_error(std::string("Failed to open file: ") + filePath);
     }
-    
-    //get length of file
-    f.seekg(0, std::ios::end);
-    std::streampos length = f.tellg();
-    f.seekg(0, std::ios::beg);
-    
-    //read whole file into a char buffer
-    char* sourceCode = new char[(size_t)length+1];
-    f.read(sourceCode, length);
-    sourceCode[(size_t)length] = 0;
-    
-    //convert char buffer into std::string
-    std::string sourceCodeStr(sourceCode);
-    delete[] sourceCode; sourceCode = NULL;
-    
+
+    //read whole file into stringstream buffer
+    std::stringstream buffer;
+    buffer << f.rdbuf();
+
     //return new shader
-    Shader shader(sourceCodeStr, shaderType);
+    Shader shader(buffer.str(), shaderType);
     return shader;
 }
 
