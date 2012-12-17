@@ -108,7 +108,8 @@ Shader Shader::shaderFromFile(const std::string& filePath, GLenum shaderType) {
     delete[] sourceCode; sourceCode = NULL;
     
     //return new shader
-    return Shader(sourceCodeStr, shaderType);
+    Shader shader(sourceCodeStr, shaderType);
+    return shader;
 }
 
 void Shader::_retain() {
