@@ -61,12 +61,6 @@ static void LoadShaders() {
     shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("vertex-shader.txt"), GL_VERTEX_SHADER));
     shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("fragment-shader.txt"), GL_FRAGMENT_SHADER));
     gProgram = new tdogl::Program(shaders);
-
-    //set the "projection" uniform in the vertex shader
-    glm::mat4 perspective = glm::perspective<float>(50.0, SCREEN_SIZE.x/SCREEN_SIZE.y, 0.1, 10.0);
-    gProgram->use();
-    gProgram->setUniform("projection", perspective);
-    gProgram->stopUsing();
 }
 
 
@@ -140,7 +134,7 @@ static void Render() {
     gProgram->use();
 
     // set the uniform for the camera
-    gProgram->setUniform("camera", gCamera.matrix());
+    gProgram->setUniform("camera", gCamera.matrix(SCREEN_SIZE.x, SCREEN_SIZE.y));
         
     // bind the texture and set the "tex" uniform in the fragment shader
     glActiveTexture(GL_TEXTURE0);
@@ -182,12 +176,11 @@ void Update(float secondsElapsed) {
     }
 
     
-    float centerX = SCREEN_SIZE.x/2;
-    float centerY = SCREEN_SIZE.y/2;
+    const float mouseSensitivity = 0.1;
     int mouseX, mouseY;
     glfwGetMousePos(&mouseX, &mouseY);
-    gCamera.offsetOrientation(mouseY - centerY, mouseX - centerX, 0.1);
-    glfwSetMousePos(centerX, centerY); //re-center the mouse, so it doesn't go out of the window
+    gCamera.offsetOrientation(mouseSensitivity * mouseY, mouseSensitivity * mouseX);
+    glfwSetMousePos(0, 0); //reset the mouse, so it doesn't go out of the window
 }
 
 // the program starts here
@@ -230,8 +223,7 @@ int main(int argc, char *argv[]) {
     LoadTriangle();
 
     glfwDisable(GLFW_MOUSE_CURSOR);
-    glfwSetMousePos(SCREEN_SIZE.x/2, SCREEN_SIZE.y/2);
-
+    glfwSetMousePos(0, 0);
 
     // run while the window is open
     double lastTime = glfwGetTime();

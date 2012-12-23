@@ -19,7 +19,7 @@
 #pragma once
 
 #include <glm/glm.hpp>
-#include <glm/gtc/quaternion.hpp>
+
 
 namespace tdogl {
 
@@ -31,19 +31,27 @@ namespace tdogl {
         void setPosition(const glm::vec3& position);
         void offsetPosition(const glm::vec3& offset);
 
-        glm::quat orientation() const;
-        void offsetOrientation(float upOffset, float rightOffset, float sensitivity);
+        float viewingAngle() const;
+        void setViewingAngle(float viewingAngle);
+
+        float viewingDistance() const;
+        void setViewingDistance(float viewingDistance);
+
+        glm::mat4 orientation() const;
+        void offsetOrientation(float upAngle, float rightAngle);
         
         glm::vec3 forward() const;
         glm::vec3 right() const;
         glm::vec3 up() const;
 
-        glm::mat4 matrix() const;
+        glm::mat4 matrix(float screenWidth, float screenHeight) const;
 
     private:
         glm::vec3 _position;
         float _horizontalAngle;
         float _verticalAngle;
+        float _viewingAngle;
+        float _viewingDistance;
     };
 
 }
