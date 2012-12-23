@@ -7,6 +7,10 @@ windows/*/Debug/
 windows/*/Release/
 windows/*/ipch/
 
+# Xcode crap
+*.xcodeproj
+!*.xcodeproj/project.pbxproj
+
 # linux build output
 linux/*/bin/
 linux/*/obj/
