@@ -181,6 +181,17 @@ void Update(float secondsElapsed) {
     glfwGetMousePos(&mouseX, &mouseY);
     gCamera.offsetOrientation(mouseSensitivity * mouseY, mouseSensitivity * mouseX);
     glfwSetMousePos(0, 0); //reset the mouse, so it doesn't go out of the window
+
+    std::cerr << (float)glfwGetMouseWheel() << std::endl;
+    const float zoomSensitivity = -0.2;
+    const float viewAngle = gCamera.viewingAngle() + zoomSensitivity * (float)glfwGetMouseWheel();
+    if(viewAngle < 5.0f)
+        gCamera.setViewingAngle(5.0f);
+    else if(viewAngle > 130.0f)
+        gCamera.setViewingAngle(130.0f);
+    else
+        gCamera.setViewingAngle(viewAngle);
+    glfwSetMouseWheel(0);
 }
 
 // the program starts here
@@ -196,7 +207,12 @@ int main(int argc, char *argv[]) {
     glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
     if(!glfwOpenWindow(SCREEN_SIZE.x, SCREEN_SIZE.y, 8, 8, 8, 8, 16, 0, GLFW_WINDOW))
         throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
-    
+
+    // GLFW settings
+    glfwDisable(GLFW_MOUSE_CURSOR);
+    glfwSetMousePos(0, 0);
+    glfwSetMouseWheel(0);
+
     // initialise GLEW
     glewExperimental = GL_TRUE; //stops glew crashing on OSX :-/
     if(glewInit() != GLEW_OK)
@@ -211,7 +227,7 @@ int main(int argc, char *argv[]) {
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
     glFrontFace(GL_CCW);
-    gCamera.setPosition(glm::vec3(0.0f, 0.0f, 2.0f));
+    gCamera.setPosition(glm::vec3(0, 0, 2));
 
     // load vertex and fragment shaders into opengl
     LoadShaders();
@@ -221,9 +237,6 @@ int main(int argc, char *argv[]) {
 
     // create buffer and fill it with the points of the triangle
     LoadTriangle();
-
-    glfwDisable(GLFW_MOUSE_CURSOR);
-    glfwSetMousePos(0, 0);
 
     // run while the window is open
     double lastTime = glfwGetTime();
