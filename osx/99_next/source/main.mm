@@ -134,7 +134,7 @@ static void Render() {
     gProgram->use();
 
     // set the uniform for the camera
-    gProgram->setUniform("camera", gCamera.matrix(SCREEN_SIZE.x, SCREEN_SIZE.y));
+    gProgram->setUniform("camera", gCamera.matrix());
         
     // bind the texture and set the "tex" uniform in the fragment shader
     glActiveTexture(GL_TEXTURE0);
@@ -159,6 +159,7 @@ static void Render() {
 
 // update the scene based on the time elapsed since last update
 void Update(float secondsElapsed) {
+    //move position of camera based on WASD keys
     if(glfwGetKey('S')){
         gCamera.offsetPosition(secondsElapsed * -gCamera.forward());
     } else if(glfwGetKey('W')){
@@ -170,27 +171,25 @@ void Update(float secondsElapsed) {
         gCamera.offsetPosition(secondsElapsed * gCamera.right());
     }
     if(glfwGetKey('Z')){
-        gCamera.offsetPosition(secondsElapsed * glm::vec3(0,1,0));
-    } else if(glfwGetKey('X')){
         gCamera.offsetPosition(secondsElapsed * -glm::vec3(0,1,0));
+    } else if(glfwGetKey('X')){
+        gCamera.offsetPosition(secondsElapsed * glm::vec3(0,1,0));
     }
 
-    
+    //rotate camera based on mouse movement
     const float mouseSensitivity = 0.1;
     int mouseX, mouseY;
     glfwGetMousePos(&mouseX, &mouseY);
     gCamera.offsetOrientation(mouseSensitivity * mouseY, mouseSensitivity * mouseX);
     glfwSetMousePos(0, 0); //reset the mouse, so it doesn't go out of the window
 
+    //increase or decrease field of view based on mouse wheel
     std::cerr << (float)glfwGetMouseWheel() << std::endl;
     const float zoomSensitivity = -0.2;
-    const float viewAngle = gCamera.viewingAngle() + zoomSensitivity * (float)glfwGetMouseWheel();
-    if(viewAngle < 5.0f)
-        gCamera.setViewingAngle(5.0f);
-    else if(viewAngle > 130.0f)
-        gCamera.setViewingAngle(130.0f);
-    else
-        gCamera.setViewingAngle(viewAngle);
+    float fieldOfView = gCamera.fieldOfView() + zoomSensitivity * (float)glfwGetMouseWheel();
+    if(fieldOfView < 5.0f) fieldOfView = 5.0f;
+    if(fieldOfView > 130.0f) fieldOfView = 130.0f;
+    gCamera.setFieldOfView(fieldOfView);
     glfwSetMouseWheel(0);
 }
 
@@ -228,6 +227,7 @@ int main(int argc, char *argv[]) {
     glCullFace(GL_BACK);
     glFrontFace(GL_CCW);
     gCamera.setPosition(glm::vec3(0, 0, 2));
+    gCamera.setViewportAspectRatio(SCREEN_SIZE.x/SCREEN_SIZE.y);
 
     // load vertex and fragment shaders into opengl
     LoadShaders();
