@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04_camera", "04_camera.vcxproj", "{39E0D9AD-3960-4FB6-8BFE-C520DB242ED0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39E0D9AD-3960-4FB6-8BFE-C520DB242ED0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{39E0D9AD-3960-4FB6-8BFE-C520DB242ED0}.Debug|Win32.Build.0 = Debug|Win32
+		{39E0D9AD-3960-4FB6-8BFE-C520DB242ED0}.Release|Win32.ActiveCfg = Release|Win32
+		{39E0D9AD-3960-4FB6-8BFE-C520DB242ED0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
