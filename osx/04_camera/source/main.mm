@@ -36,7 +36,6 @@
 
 // constants
 const glm::vec2 SCREEN_SIZE(800, 600);
-const float MOVE_SPEED = 2.0; //units per second
 
 // globals
 tdogl::Texture* gTexture = NULL;
@@ -192,20 +191,21 @@ void Update(float secondsElapsed) {
     while(gDegreesRotated > 360.0f) gDegreesRotated -= 360.0f;
 
     //move position of camera based on WASD keys, and XZ keys for up and down
+    const float moveSpeed = 2.0; //units per second
     if(glfwGetKey('S')){
-        gCamera.offsetPosition(secondsElapsed * MOVE_SPEED * -gCamera.forward());
+        gCamera.offsetPosition(secondsElapsed * moveSpeed * -gCamera.forward());
     } else if(glfwGetKey('W')){
-        gCamera.offsetPosition(secondsElapsed * MOVE_SPEED * gCamera.forward());
+        gCamera.offsetPosition(secondsElapsed * moveSpeed * gCamera.forward());
     }
     if(glfwGetKey('A')){
-        gCamera.offsetPosition(secondsElapsed * MOVE_SPEED * -gCamera.right());
+        gCamera.offsetPosition(secondsElapsed * moveSpeed * -gCamera.right());
     } else if(glfwGetKey('D')){
-        gCamera.offsetPosition(secondsElapsed * MOVE_SPEED * gCamera.right());
+        gCamera.offsetPosition(secondsElapsed * moveSpeed * gCamera.right());
     }
     if(glfwGetKey('Z')){
-        gCamera.offsetPosition(secondsElapsed * MOVE_SPEED * -glm::vec3(0,1,0));
+        gCamera.offsetPosition(secondsElapsed * moveSpeed * -glm::vec3(0,1,0));
     } else if(glfwGetKey('X')){
-        gCamera.offsetPosition(secondsElapsed * MOVE_SPEED * glm::vec3(0,1,0));
+        gCamera.offsetPosition(secondsElapsed * moveSpeed * glm::vec3(0,1,0));
     }
 
     //rotate camera based on mouse movement
@@ -242,7 +242,7 @@ void AppMain() {
     glfwDisable(GLFW_MOUSE_CURSOR);
     glfwSetMousePos(0, 0);
     glfwSetMouseWheel(0);
-    
+
     // initialise GLEW
     glewExperimental = GL_TRUE; //stops glew crashing on OSX :-/
     if(glewInit() != GLEW_OK)
