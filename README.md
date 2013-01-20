@@ -8,6 +8,7 @@ List of articles:
  1. [Getting Started in Xcode, Visual C++, and Linux](http://tomdalling.com/blog/modern-opengl/01-getting-started-in-xcode-and-visual-cpp/)
  2. [Textures](http://tomdalling.com/blog/modern-opengl/02-textures/)
  3. [Matrices, Depth Buffering, Animation](http://tomdalling.com/blog/modern-opengl/03-matrices-depth-buffering-animation/)
+ 4. [Cameras, Vectors & Input](http://tomdalling.com/blog/modern-opengl/04-cameras-vectors-and-input/)
 
 # Credits
 
