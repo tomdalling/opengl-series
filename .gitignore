@@ -8,8 +8,8 @@ windows/*/Release/
 windows/*/ipch/
 
 # Xcode crap
-*.xcodeproj
-!*.xcodeproj/project.pbxproj
+osx/*/*.xcodeproj/*
+!osx/*/*.xcodeproj/project.pbxproj
 
 # linux build output
 linux/*/bin/
