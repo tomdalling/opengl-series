@@ -35,7 +35,19 @@
 #include "tdogl/Texture.h"
 #include "tdogl/Camera.h"
 
+/*
+ Represents a textured geometry asset
+ 
+ Contains everything necessary to draw arbitrary geometry with a single texture:
+ 
+  - shaders
+  - a texture
+  - a VBO
+  - a VAO
+  - the parameters to glDrawArrays (drawType, drawStart, drawCount)
+ */
 struct Asset {
+    tdogl::Program* shaders;
     tdogl::Texture* texture;
     GLuint vbo;
     GLuint vao;
@@ -44,6 +56,7 @@ struct Asset {
     GLint drawCount;
 
     Asset() :
+        shaders(NULL),
         texture(NULL),
         vbo(0),
         vao(0),
@@ -53,6 +66,11 @@ struct Asset {
     {}
 };
 
+/*
+ Represents an instance of an `Asset`
+ 
+ Contains a pointer to the asset, and a model transformation matrix to be used when drawing.
+ */
 struct Instance {
     Asset* asset;
     glm::mat4 transform;
@@ -64,7 +82,6 @@ struct Instance {
 const glm::vec2 SCREEN_SIZE(800, 600);
 
 // globals
-tdogl::Program* gProgram = NULL;
 tdogl::Camera gCamera;
 Asset gWoodenCrate;
 std::list<Instance> gInstances;
@@ -79,16 +96,17 @@ static std::string ResourcePath(std::string fileName) {
 }
 
 
-// loads the vertex shader and fragment shader, and links them to make the global gProgram
-static void LoadShaders() {
+// returns a new tdogl::Program created from the given vertex and fragment shader filenames
+static tdogl::Program* LoadShaders(const char* vertFilename, const char* fragFilename) {
     std::vector<tdogl::Shader> shaders;
-    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("vertex-shader.txt"), GL_VERTEX_SHADER));
-    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("fragment-shader.txt"), GL_FRAGMENT_SHADER));
-    gProgram = new tdogl::Program(shaders);
+    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath(vertFilename), GL_VERTEX_SHADER));
+    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath(fragFilename), GL_FRAGMENT_SHADER));
+    return new tdogl::Program(shaders);
 }
 
 
-tdogl::Texture* LoadTexture(const char* filename) {
+// returns a new tdogl::Texture created from the given filename
+static tdogl::Texture* LoadTexture(const char* filename) {
     tdogl::Bitmap bmp = tdogl::Bitmap::bitmapFromFile(ResourcePath(filename));
     bmp.flipVertically();
     return new tdogl::Texture(bmp);
@@ -97,14 +115,21 @@ tdogl::Texture* LoadTexture(const char* filename) {
 
 // initialises the gWoodenCrate global
 static void LoadWoodenCrateAsset() {
-    // make and bind the VAO
-    glGenVertexArrays(1, &gWoodenCrate.vao);
-    glBindVertexArray(gWoodenCrate.vao);
-    
-    // make and bind the VBO
+    // set all the properties of gWoodenCrate
+    gWoodenCrate.shaders = LoadShaders("vertex-shader.txt", "fragment-shader.txt");
+    gWoodenCrate.drawType = GL_TRIANGLES;
+    gWoodenCrate.drawStart = 0;
+    gWoodenCrate.drawCount = 6*2*3;
+    gWoodenCrate.texture = LoadTexture("wooden-crate.jpg");
     glGenBuffers(1, &gWoodenCrate.vbo);
+    glGenVertexArrays(1, &gWoodenCrate.vao);
+
+    // bind the VAO
+    glBindVertexArray(gWoodenCrate.vao);
+
+    // bind the VBO
     glBindBuffer(GL_ARRAY_BUFFER, gWoodenCrate.vbo);
-    
+
     // Make a cube out of triangles (two triangles per side)
     GLfloat vertexData[] = {
         //  X     Y     Z       U     V
@@ -159,20 +184,15 @@ static void LoadWoodenCrateAsset() {
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
 
     // connect the xyz to the "vert" attribute of the vertex shader
-    glEnableVertexAttribArray(gProgram->attrib("vert"));
-    glVertexAttribPointer(gProgram->attrib("vert"), 3, GL_FLOAT, GL_FALSE, 5*sizeof(GLfloat), NULL);
+    glEnableVertexAttribArray(gWoodenCrate.shaders->attrib("vert"));
+    glVertexAttribPointer(gWoodenCrate.shaders->attrib("vert"), 3, GL_FLOAT, GL_FALSE, 5*sizeof(GLfloat), NULL);
         
     // connect the uv coords to the "vertTexCoord" attribute of the vertex shader
-    glEnableVertexAttribArray(gProgram->attrib("vertTexCoord"));
-    glVertexAttribPointer(gProgram->attrib("vertTexCoord"), 2, GL_FLOAT, GL_TRUE,  5*sizeof(GLfloat), (const GLvoid*)(3 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(gWoodenCrate.shaders->attrib("vertTexCoord"));
+    glVertexAttribPointer(gWoodenCrate.shaders->attrib("vertTexCoord"), 2, GL_FLOAT, GL_TRUE,  5*sizeof(GLfloat), (const GLvoid*)(3 * sizeof(GLfloat)));
 
     // unbind the VAO
     glBindVertexArray(0);
-
-    gWoodenCrate.drawType = GL_TRIANGLES;
-    gWoodenCrate.drawStart = 0;
-    gWoodenCrate.drawCount = 6*2*3;
-    gWoodenCrate.texture = LoadTexture("wooden-crate.jpg");
 }
 
 
@@ -214,18 +234,30 @@ static void CreateInstances() {
 }
 
 
-static void RenderAsset(const Asset& asset) {
-    glBindTexture(GL_TEXTURE_2D, asset.texture->object());
-    glBindVertexArray(asset.vao);
-    glDrawArrays(asset.drawType, asset.drawStart, asset.drawCount);
+//renders a single `Instance`
+static void RenderInstance(const Instance& inst, const glm::mat4& camera) {
+    Asset* asset = inst.asset;
+    tdogl::Program* shaders = asset->shaders;
+
+    //bind the shaders
+    shaders->use();
+
+    //set the shader uniforms
+    shaders->setUniform("modelViewProjection", camera * inst.transform);
+    shaders->setUniform("tex", 0); //set to 0 because the texture is bound to GL_TEXTURE0
+
+    //bind the texture
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, asset->texture->object());
+
+    //bind VAO and draw
+    glBindVertexArray(asset->vao);
+    glDrawArrays(asset->drawType, asset->drawStart, asset->drawCount);
+
+    //unbind everything
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
-}
-
-
-static void RenderInstance(const Instance& inst) {
-    gProgram->setUniform("model", inst.transform);
-    RenderAsset(*inst.asset);
+    shaders->stopUsing();
 }
 
 
@@ -235,20 +267,11 @@ static void Render() {
     glClearColor(0, 0, 0, 1); // black
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    // bind and initialise the program (the shaders)
-    gProgram->use();
-    gProgram->setUniform("camera", gCamera.matrix());
-    glActiveTexture(GL_TEXTURE0);
-    gProgram->setUniform("tex", 0); //set to 0 because the texture is bound to GL_TEXTURE0
-
     // render all the instances
     std::list<Instance>::const_iterator it;
     for(it = gInstances.begin(); it != gInstances.end(); ++it){
-        RenderInstance(*it);
+        RenderInstance(*it, gCamera.matrix());
     }
-
-    //unbind the program
-    gProgram->stopUsing();
     
     // swap the display buffers (displays what was just drawn)
     glfwSwapBuffers();
@@ -337,9 +360,6 @@ void AppMain() {
     // OpenGL settings
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
-
-    // load vertex and fragment shaders into opengl
-    LoadShaders();
 
     // initialise the gWoodenCreate asset
     LoadWoodenCrateAsset();
