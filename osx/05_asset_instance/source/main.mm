@@ -46,7 +46,7 @@
   - a VAO
   - the parameters to glDrawArrays (drawType, drawStart, drawCount)
  */
-struct Asset {
+struct ModelAsset {
     tdogl::Program* shaders;
     tdogl::Texture* texture;
     GLuint vbo;
@@ -55,7 +55,7 @@ struct Asset {
     GLint drawStart;
     GLint drawCount;
 
-    Asset() :
+    ModelAsset() :
         shaders(NULL),
         texture(NULL),
         vbo(0),
@@ -67,15 +67,15 @@ struct Asset {
 };
 
 /*
- Represents an instance of an `Asset`
+ Represents an instance of an `ModelAsset`
  
  Contains a pointer to the asset, and a model transformation matrix to be used when drawing.
  */
-struct Instance {
-    Asset* asset;
+struct ModelInstance {
+    ModelAsset* asset;
     glm::mat4 transform;
 
-    Instance() :
+    ModelInstance() :
         asset(NULL),
         transform()
     {}
@@ -86,8 +86,8 @@ const glm::vec2 SCREEN_SIZE(800, 600);
 
 // globals
 tdogl::Camera gCamera;
-Asset gWoodenCrate;
-std::list<Instance> gInstances;
+ModelAsset gWoodenCrate;
+std::list<ModelInstance> gInstances;
 GLfloat gDegreesRotated = 0.0f;
 
 
@@ -213,36 +213,36 @@ glm::mat4 scale(GLfloat x, GLfloat y, GLfloat z) {
 
 //create all the `instance` structs for the 3D scene, and add them to `gInstances`
 static void CreateInstances() {
-    Instance dot;
+    ModelInstance dot;
     dot.asset = &gWoodenCrate;
     dot.transform = glm::mat4();
     gInstances.push_back(dot);
 
-    Instance i;
+    ModelInstance i;
     i.asset = &gWoodenCrate;
     i.transform = translate(0,-4,0) * scale(1,2,1);
     gInstances.push_back(i);
 
-    Instance hLeft;
+    ModelInstance hLeft;
     hLeft.asset = &gWoodenCrate;
     hLeft.transform = translate(-8,0,0) * scale(1,6,1);
     gInstances.push_back(hLeft);
 
-    Instance hRight;
+    ModelInstance hRight;
     hRight.asset = &gWoodenCrate;
     hRight.transform = translate(-4,0,0) * scale(1,6,1);
     gInstances.push_back(hRight);
 
-    Instance hMid;
+    ModelInstance hMid;
     hMid.asset = &gWoodenCrate;
     hMid.transform = translate(-6,0,0) * scale(2,1,0.8);
     gInstances.push_back(hMid);
 }
 
 
-//renders a single `Instance`
-static void RenderInstance(const Instance& inst, const glm::mat4& camera) {
-    Asset* asset = inst.asset;
+//renders a single `ModelInstance`
+static void RenderInstance(const ModelInstance& inst, const glm::mat4& camera) {
+    ModelAsset* asset = inst.asset;
     tdogl::Program* shaders = asset->shaders;
 
     //bind the shaders
@@ -274,7 +274,7 @@ static void Render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // render all the instances
-    std::list<Instance>::const_iterator it;
+    std::list<ModelInstance>::const_iterator it;
     for(it = gInstances.begin(); it != gInstances.end(); ++it){
         RenderInstance(*it, gCamera.matrix());
     }
