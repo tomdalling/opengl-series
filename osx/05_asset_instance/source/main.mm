@@ -75,7 +75,10 @@ struct Instance {
     Asset* asset;
     glm::mat4 transform;
 
-    Instance() : asset(NULL), transform() {}
+    Instance() :
+        asset(NULL),
+        transform()
+    {}
 };
 
 // constants
@@ -115,7 +118,7 @@ static tdogl::Texture* LoadTexture(const char* filename) {
 
 // initialises the gWoodenCrate global
 static void LoadWoodenCrateAsset() {
-    // set all the properties of gWoodenCrate
+    // set all the elements of gWoodenCrate
     gWoodenCrate.shaders = LoadShaders("vertex-shader.txt", "fragment-shader.txt");
     gWoodenCrate.drawType = GL_TRIANGLES;
     gWoodenCrate.drawStart = 0;
@@ -196,16 +199,19 @@ static void LoadWoodenCrateAsset() {
 }
 
 
+// convenience function that returns a translation matrix
 glm::mat4 translate(GLfloat x, GLfloat y, GLfloat z) {
     return glm::translate(glm::mat4(), glm::vec3(x,y,z));
 }
 
 
+// convenience function that returns a scaling matrix
 glm::mat4 scale(GLfloat x, GLfloat y, GLfloat z) {
     return glm::scale(glm::mat4(), glm::vec3(x,y,z));
 }
 
 
+//create all the `instance` structs for the 3D scene, and add them to `gInstances`
 static void CreateInstances() {
     Instance dot;
     dot.asset = &gWoodenCrate;
@@ -280,7 +286,7 @@ static void Render() {
 
 // update the scene based on the time elapsed since last update
 void Update(float secondsElapsed) {
-    //rotate the cube
+    //rotate the first instance in `gInstances`
     const GLfloat degreesPerSecond = 180.0f;
     gDegreesRotated += secondsElapsed * degreesPerSecond;
     while(gDegreesRotated > 360.0f) gDegreesRotated -= 360.0f;
@@ -361,9 +367,10 @@ void AppMain() {
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
 
-    // initialise the gWoodenCreate asset
+    // initialise the gWoodenCrate asset
     LoadWoodenCrateAsset();
 
+    // create all the instances in the 3D scene based on the gWoodenCrate asset
     CreateInstances();
 
     // setup gCamera
