@@ -286,7 +286,7 @@ static void Render() {
 
 
 // update the scene based on the time elapsed since last update
-void Update(float secondsElapsed) {
+static void Update(float secondsElapsed) {
     //rotate the first instance in `gInstances`
     const GLfloat degreesPerSecond = 180.0f;
     gDegreesRotated += secondsElapsed * degreesPerSecond;
