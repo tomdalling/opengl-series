@@ -1,6 +1,7 @@
 #version 150
 
-uniform mat4 modelViewProjection;
+uniform mat4 camera;
+uniform mat4 model;
 
 in vec4 vert;
 in vec2 vertTexCoord;
@@ -12,5 +13,5 @@ void main() {
     fragTexCoord = vertTexCoord;
     
     // Apply all matrix transformations to vert
-    gl_Position = modelViewProjection * vert;
+    gl_Position = camera * model * vert;
 }

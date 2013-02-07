@@ -249,8 +249,9 @@ static void RenderInstance(const ModelInstance& inst, const glm::mat4& camera) {
     shaders->use();
 
     //set the shader uniforms
-    shaders->setUniform("modelViewProjection", camera * inst.transform);
-    shaders->setUniform("tex", 0); //set to 0 because the texture is bound to GL_TEXTURE0
+    shaders->setUniform("camera", camera);
+    shaders->setUniform("model", inst.transform);
+    shaders->setUniform("tex", 0); //set to 0 because the texture will be bound to GL_TEXTURE0
 
     //bind the texture
     glActiveTexture(GL_TEXTURE0);
