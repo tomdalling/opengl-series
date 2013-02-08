@@ -21,11 +21,17 @@
 
 using namespace tdogl;
 
+static const float MaxVerticalAngle = 85.0f; //must be less than 90 to avoid gimbal lock
+
 
 Camera::Camera() :
-    _position(0,0,1),
-    _horizontalAngle(0),
-    _verticalAngle(0)
+    _position(0.0f, 0.0f, 1.0f),
+    _horizontalAngle(0.0f),
+    _verticalAngle(0.0f),
+    _fieldOfView(50.0f),
+    _nearPlane(0.01f),
+    _farPlane(100.0f),
+    _viewportAspectRatio(4.0f/3.0f)
 {
 }
 
@@ -41,35 +47,74 @@ void Camera::offsetPosition(const glm::vec3& offset) {
     _position += offset;
 }
 
-glm::quat Camera::orientation() const {
-    glm::quat q;
-    q = glm::rotate(q, _verticalAngle, glm::vec3(1,0,0));
-    q = glm::rotate(q, _horizontalAngle, glm::vec3(0,1,0));
-    return q;
+float Camera::fieldOfView() const {
+    return _fieldOfView;
 }
 
-glm::vec3 Camera::forward() const {
-    return glm::vec3(0,0,-1) * orientation();
+void Camera::setFieldOfView(float fieldOfView) {
+    assert(fieldOfView > 0.0f && fieldOfView < 180.0f);
+    _fieldOfView = fieldOfView;
 }
 
-glm::vec3 Camera::right() const {
-    return glm::vec3(1,0,0) * orientation();
+float Camera::nearPlane() const {
+    return _nearPlane;
 }
 
-glm::vec3 Camera::up() const {
-    return glm::vec3(0,-1,0) * orientation();
+float Camera::farPlane() const {
+    return _farPlane;
 }
 
-void Camera::offsetOrientation(float upOffset, float rightOffset, float sensitivity) {
-    _horizontalAngle += rightOffset * sensitivity;
+void Camera::setNearAndFarPlanes(float nearPlane, float farPlane) {
+    assert(nearPlane > 0.0f);
+    assert(farPlane > nearPlane);
+    _nearPlane = nearPlane;
+    _farPlane = farPlane;
+}
+
+glm::mat4 Camera::orientation() const {
+    glm::mat4 orientation;
+    orientation = glm::rotate(orientation, _verticalAngle, glm::vec3(1,0,0));
+    orientation = glm::rotate(orientation, _horizontalAngle, glm::vec3(0,1,0));
+    return orientation;
+}
+
+void Camera::offsetOrientation(float upAngle, float rightAngle) {
+    _horizontalAngle += rightAngle;
     while(_horizontalAngle > 360.0f) _horizontalAngle -= 360.0;
     while(_horizontalAngle < 0.0f) _horizontalAngle += 360.0;
 
-    _verticalAngle += upOffset * sensitivity;
-    if(_verticalAngle > 80.0f) _verticalAngle = 80.0f;
-    if(_verticalAngle < -80.0f) _verticalAngle = -80.0f;
+    _verticalAngle += upAngle;
+    if(_verticalAngle > MaxVerticalAngle) _verticalAngle = MaxVerticalAngle;
+    if(_verticalAngle < -MaxVerticalAngle) _verticalAngle = -MaxVerticalAngle;
+}
+
+float Camera::viewportAspectRatio() const {
+    return _viewportAspectRatio;
+}
+
+void Camera::setViewportAspectRatio(float viewportAspectRatio) {
+    assert(viewportAspectRatio > 0.0);
+    _viewportAspectRatio = viewportAspectRatio;
+}
+
+glm::vec3 Camera::forward() const {
+    glm::vec4 forward = glm::inverse(orientation()) * glm::vec4(0,0,-1,1);
+    return glm::vec3(forward);
+}
+
+glm::vec3 Camera::right() const {
+    glm::vec4 right = glm::inverse(orientation()) * glm::vec4(1,0,0,1);
+    return glm::vec3(right);
+}
+
+glm::vec3 Camera::up() const {
+    glm::vec4 up = glm::inverse(orientation()) * glm::vec4(0,1,0,1);
+    return glm::vec3(up);
 }
 
 glm::mat4 Camera::matrix() const {
-    return glm::mat4_cast(orientation()) * glm::translate(glm::mat4(), -_position);
+    glm::mat4 camera = glm::perspective(_fieldOfView, _viewportAspectRatio, _nearPlane, _farPlane);
+    camera *= orientation();
+    camera = glm::translate(camera, -_position);
+    return camera;
 }

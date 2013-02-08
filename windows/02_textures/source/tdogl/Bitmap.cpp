@@ -148,7 +148,12 @@ static FormatConverterFunc ConverterFuncForFormats(Bitmap::Format srcFormat, Bit
             throw std::runtime_error("Unhandled bitmap format");
     }
 }
-                    
+
+
+/*
+ * Misc funcs
+ */
+
 inline unsigned GetPixelOffset(unsigned col, unsigned row, unsigned width, unsigned height, Bitmap::Format format) {
     return (row*width + col)*format;
 }
@@ -164,6 +169,11 @@ inline bool RectsOverlap(unsigned srcCol, unsigned srcRow, unsigned destCol, uns
     
     return false;
 }
+
+
+/*
+ * Bitmap class
+ */
 
 Bitmap::Bitmap(unsigned width, 
                unsigned height, 
