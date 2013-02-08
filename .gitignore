@@ -9,6 +9,7 @@ windows/*/ipch/
 
 # Xcode crap
 osx/*/*.xcodeproj/*
+osx/*/build/
 !osx/*/*.xcodeproj/project.pbxproj
 
 # linux build output
