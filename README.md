@@ -9,6 +9,7 @@ List of articles:
  2. [Textures](http://tomdalling.com/blog/modern-opengl/02-textures/)
  3. [Matrices, Depth Buffering, Animation](http://tomdalling.com/blog/modern-opengl/03-matrices-depth-buffering-animation/)
  4. [Cameras, Vectors & Input](http://tomdalling.com/blog/modern-opengl/04-cameras-vectors-and-input/)
+ 5. [Model Assets & Instances](http://tomdalling.com/blog/modern-opengl/05-model-assets-and-instances/)
 
 # Credits
 
