@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>
+      </Extensions>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{4399bbbd-8cc5-411d-9dcc-308c93d817d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\tdogl">
+      <UniqueIdentifier>{31a1e652-75d8-404e-a7fb-a268c3bbb581}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tdogl\Bitmap.cpp">
+      <Filter>source\tdogl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tdogl\Program.cpp">
+      <Filter>source\tdogl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tdogl\Shader.cpp">
+      <Filter>source\tdogl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tdogl\Texture.cpp">
+      <Filter>source\tdogl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tdogl\Camera.cpp">
+      <Filter>source\tdogl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\tdogl\Bitmap.h">
+      <Filter>source\tdogl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tdogl\Program.h">
+      <Filter>source\tdogl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tdogl\Shader.h">
+      <Filter>source\tdogl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tdogl\Texture.h">
+      <Filter>source\tdogl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tdogl\Camera.h">
+      <Filter>source\tdogl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\fragment-shader.txt">
+      <Filter>resources</Filter>
+    </None>
+    <None Include="resources\vertex-shader.txt">
+      <Filter>resources</Filter>
+    </None>
+    <None Include="resources\wooden-crate.jpg">
+      <Filter>resources</Filter>
+    </None>
+  </ItemGroup>
+</Project>
