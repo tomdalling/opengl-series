@@ -324,9 +324,22 @@ static void Update(float secondsElapsed) {
         gCamera.offsetPosition(secondsElapsed * moveSpeed * glm::vec3(0,1,0));
     }
 
-    //move light to camera position if spacebar is pressed
-    if(glfwGetKey(GLFW_KEY_SPACE))
+    //move light
+    if(glfwGetKey('1'))
+        // point light, located at the camera's current position
+        gLight.position = glm::vec4(gCamera.position(), 1);
+    else if(glfwGetKey('2'))
+        // directional light, shining in the direction the camera is facing
         gLight.position = glm::vec4(-gCamera.forward(), 0);
+
+    // change light color
+    if(glfwGetKey('3'))
+        gLight.color = glm::vec3(1,0,0); //red
+    else if(glfwGetKey('4'))
+        gLight.color = glm::vec3(0,1,0); //green
+    else if(glfwGetKey('5'))
+        gLight.color = glm::vec3(1,1,1); //white
+
 
     //rotate camera based on mouse movement
     const float mouseSensitivity = 0.1;
@@ -397,7 +410,7 @@ void AppMain() {
     gCamera.setNearAndFarPlanes(0.5f, 100.0f);
 
     // setup gLight
-    gLight.position = glm::vec4(-gCamera.forward(), 0);
+    gLight.position = glm::vec4(1,1,1,0);
     gLight.color = glm::vec3(1,1,1);
 
     // run while the window is open

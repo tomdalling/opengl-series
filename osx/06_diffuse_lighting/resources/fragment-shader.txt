@@ -11,13 +11,22 @@ uniform struct Light {
 
 in vec2 fragTexCoord;
 in vec3 fragNormal;
+in vec3 fragVert;
 
 out vec4 finalColor;
 
 void main() {
     vec3 normal = normalize(transpose(inverse(mat3(view * model))) * fragNormal);
-    vec3 directionToLight = vec3(normalize(view * light.position)); //only works for directional lights
-    float cosAngIncidence = clamp(dot(normal, directionToLight), 0, 1);
     
+    vec3 directionToLight;
+    if(light.position.w == 0){
+        directionToLight = normalize(vec3(view * light.position));
+    } else {
+        vec3 lightPos = vec3(view * light.position);
+        directionToLight = normalize(lightPos - fragVert);
+    }
+
+    float cosAngIncidence = clamp(dot(normal, directionToLight), 0, 1);
+
     finalColor = cosAngIncidence * vec4(light.color, 1) * texture(tex, fragTexCoord);
 }

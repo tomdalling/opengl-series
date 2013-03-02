@@ -10,11 +10,13 @@ in vec3 vertNormal;
 
 out vec2 fragTexCoord;
 out vec3 fragNormal;
+out vec3 fragVert;
 
 void main() {
-    // Pass the tex coord and vertex normal straight through to the fragment shader
+    // Pass some variables to the fragment shader
     fragTexCoord = vertTexCoord;
     fragNormal = vertNormal;
+    fragVert = vec3(view * model * vert);
     
     // Apply all matrix transformations to vert
     gl_Position = projection * view * model * vert;
