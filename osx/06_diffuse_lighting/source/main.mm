@@ -1,10 +1,8 @@
 //TODO: make shader vert vec3 instead of vec4 in all articles
-//TODO: copy camera and program to all articles
 //TODO: rename "vert" shader var to "position", and rethink all the other shader var names
-//TODO: change RenderInstance in last article so it doesn't take the camera matrix
 /*
  main
- 
+
  Copyright 2012 Thomas Dalling - http://tomdalling.com/
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,9 +39,9 @@
 
 /*
  Represents a textured geometry asset
- 
+
  Contains everything necessary to draw arbitrary geometry with a single texture:
- 
+
   - shaders
   - a texture
   - a VBO
@@ -74,7 +72,7 @@ struct ModelAsset {
 
 /*
  Represents an instance of an `ModelAsset`
- 
+
  Contains a pointer to the asset, and a model transformation matrix to be used when drawing.
  */
 struct ModelInstance {
@@ -204,7 +202,7 @@ static void LoadWoodenCrateAsset() {
     // connect the xyz to the "vert" attribute of the vertex shader
     glEnableVertexAttribArray(gWoodenCrate.shaders->attrib("vert"));
     glVertexAttribPointer(gWoodenCrate.shaders->attrib("vert"), 3, GL_FLOAT, GL_FALSE, 8*sizeof(GLfloat), NULL);
-        
+
     // connect the uv coords to the "vertTexCoord" attribute of the vertex shader
     glEnableVertexAttribArray(gWoodenCrate.shaders->attrib("vertTexCoord"));
     glVertexAttribPointer(gWoodenCrate.shaders->attrib("vertTexCoord"), 2, GL_FLOAT, GL_TRUE,  8*sizeof(GLfloat), (const GLvoid*)(3 * sizeof(GLfloat)));
@@ -295,13 +293,13 @@ static void Render() {
     // clear everything
     glClearColor(0, 0, 0, 1); // black
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    
+
     // render all the instances
     std::list<ModelInstance>::const_iterator it;
     for(it = gInstances.begin(); it != gInstances.end(); ++it){
         RenderInstance(*it);
     }
-    
+
     // swap the display buffers (displays what was just drawn)
     glfwSwapBuffers();
 }
@@ -367,7 +365,7 @@ void AppMain() {
     // initialise GLFW
     if(!glfwInit())
         throw std::runtime_error("glfwInit failed");
-    
+
     // open a window with GLFW
     glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
@@ -385,7 +383,7 @@ void AppMain() {
     glewExperimental = GL_TRUE; //stops glew crashing on OSX :-/
     if(glewInit() != GLEW_OK)
         throw std::runtime_error("glewInit failed");
-    
+
     // GLEW throws some errors, so discard all the errors so far
     while(glGetError() != GL_NO_ERROR) {}
 
@@ -425,7 +423,7 @@ void AppMain() {
         double thisTime = glfwGetTime();
         Update(thisTime - lastTime);
         lastTime = thisTime;
-        
+
         // draw one frame
         Render();
 
