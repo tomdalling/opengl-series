@@ -101,6 +101,8 @@ namespace tdogl {
         void setUniform(const GLchar* uniformName, const glm::mat2& m, GLboolean transpose=GL_FALSE);
         void setUniform(const GLchar* uniformName, const glm::mat3& m, GLboolean transpose=GL_FALSE);
         void setUniform(const GLchar* uniformName, const glm::mat4& m, GLboolean transpose=GL_FALSE);
+        void setUniform(const GLchar* uniformName, const glm::vec3& v);
+        void setUniform(const GLchar* uniformName, const glm::vec4& v);
 
         
     private:
