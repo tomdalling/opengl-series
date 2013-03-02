@@ -131,7 +131,7 @@ namespace tdogl {
 
         /**
          The translation and rotation matrix of the camera.
-         
+
          Same as the `matrix` method, except the return value does not include the projection
          transformation.
          */

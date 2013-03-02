@@ -124,6 +124,19 @@ namespace tdogl {
          */
         glm::mat4 matrix() const;
 
+        /**
+         The perspective projection transformation matrix
+         */
+        glm::mat4 projection() const;
+
+        /**
+         The translation and rotation matrix of the camera.
+
+         Same as the `matrix` method, except the return value does not include the projection
+         transformation.
+         */
+        glm::mat4 view() const;
+
     private:
         glm::vec3 _position;
         float _horizontalAngle;

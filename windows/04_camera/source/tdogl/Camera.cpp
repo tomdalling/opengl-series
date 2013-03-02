@@ -113,8 +113,13 @@ glm::vec3 Camera::up() const {
 }
 
 glm::mat4 Camera::matrix() const {
-    glm::mat4 camera = glm::perspective(_fieldOfView, _viewportAspectRatio, _nearPlane, _farPlane);
-    camera *= orientation();
-    camera = glm::translate(camera, -_position);
-    return camera;
+    return projection() * view();
+}
+
+glm::mat4 Camera::projection() const {
+    return glm::perspective(_fieldOfView, _viewportAspectRatio, _nearPlane, _farPlane);
+}
+
+glm::mat4 Camera::view() const {
+    return orientation() * glm::translate(glm::mat4(), -_position);
 }
