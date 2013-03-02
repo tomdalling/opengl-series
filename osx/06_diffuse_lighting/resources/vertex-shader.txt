@@ -1,0 +1,21 @@
+#version 150
+
+uniform mat4 projection;
+uniform mat4 view;
+uniform mat4 model;
+
+in vec4 vert;
+in vec2 vertTexCoord;
+in vec3 vertNormal;
+
+out vec2 fragTexCoord;
+out vec3 fragNormal;
+
+void main() {
+    // Pass the tex coord and vertex normal straight through to the fragment shader
+    fragTexCoord = vertTexCoord;
+    fragNormal = vertNormal;
+    
+    // Apply all matrix transformations to vert
+    gl_Position = projection * view * model * vert;
+}

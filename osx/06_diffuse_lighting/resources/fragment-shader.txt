@@ -1,0 +1,23 @@
+#version 150
+
+uniform mat4 model;
+uniform mat4 view;
+uniform sampler2D tex;
+
+uniform struct Light {
+   vec4 position;
+   vec3 color; //a.k.a intensity
+} light;
+
+in vec2 fragTexCoord;
+in vec3 fragNormal;
+
+out vec4 finalColor;
+
+void main() {
+    vec3 normal = normalize(transpose(inverse(mat3(view * model))) * fragNormal);
+    vec3 directionToLight = vec3(normalize(view * light.position)); //only works for directional lights
+    float cosAngIncidence = clamp(dot(normal, directionToLight), 0, 1);
+    
+    finalColor = cosAngIncidence * vec4(light.color, 1) * texture(tex, fragTexCoord);
+}
