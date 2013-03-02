@@ -4,20 +4,20 @@ uniform mat4 projection;
 uniform mat4 view;
 uniform mat4 model;
 
-in vec4 vert;
+in vec3 vert;
 in vec2 vertTexCoord;
 in vec3 vertNormal;
 
+out vec3 fragVert;
 out vec2 fragTexCoord;
 out vec3 fragNormal;
-out vec3 fragVert;
 
 void main() {
     // Pass some variables to the fragment shader
     fragTexCoord = vertTexCoord;
     fragNormal = vertNormal;
-    fragVert = vec3(view * model * vert);
+    fragVert = vert;
     
     // Apply all matrix transformations to vert
-    gl_Position = projection * view * model * vert;
+    gl_Position = projection * view * model * vec4(vert, 1);
 }

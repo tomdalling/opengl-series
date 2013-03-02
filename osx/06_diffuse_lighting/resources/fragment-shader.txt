@@ -1,11 +1,10 @@
 #version 150
 
 uniform mat4 model;
-uniform mat4 view;
 uniform sampler2D tex;
 
 uniform struct Light {
-   vec4 position;
+   vec3 position;
    vec3 color; //a.k.a intensity
 } light;
 
@@ -16,17 +15,23 @@ in vec3 fragVert;
 out vec4 finalColor;
 
 void main() {
-    vec3 normal = normalize(transpose(inverse(mat3(view * model))) * fragNormal);
+    //calculate normal in world coordinates
+    vec3 normal = transpose(inverse(mat3(model))) * fragNormal;
+    normal = normalize(normal);
     
-    vec3 directionToLight;
-    if(light.position.w == 0){
-        directionToLight = normalize(vec3(view * light.position));
-    } else {
-        vec3 lightPos = vec3(view * light.position);
-        directionToLight = normalize(lightPos - fragVert);
-    }
+    //calculate the location of this fragment (pixel) in world coordinates
+    vec3 fragPosition = vec3(model * vec4(fragVert, 1));
+    
+    //calculate the direction from this pixel to the light source
+    vec3 directionToLight = normalize(light.position - fragPosition);
 
-    float cosAngIncidence = clamp(dot(normal, directionToLight), 0, 1);
+    //calculate the cosine of the angle of incidence
+    float cosAngleOfIncidence = dot(normal, directionToLight);
+    cosAngleOfIncidence = clamp(cosAngleOfIncidence, 0, 1);
 
-    finalColor = cosAngIncidence * vec4(light.color, 1) * texture(tex, fragTexCoord);
+    //calculate final color of the pixel, based on:
+    // 1. The angle of incidence: cosAngleOfIncidence
+    // 2. The color of the light: light.color
+    // 3. The texture and texture coord: texture(tex, fragTexCoord)
+    finalColor = cosAngleOfIncidence * vec4(light.color, 1) * texture(tex, fragTexCoord);
 }

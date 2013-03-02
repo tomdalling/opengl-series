@@ -1,3 +1,7 @@
+//TODO: make shader vert vec3 instead of vec4 in all articles
+//TODO: copy camera and program to all articles
+//TODO: rename "vert" shader var to "position", and rethink all the other shader var names
+//TODO: change RenderInstance in last article so it doesn't take the camera matrix
 /*
  main
  
@@ -45,6 +49,7 @@
   - a VBO
   - a VAO
   - the parameters to glDrawArrays (drawType, drawStart, drawCount)
+  - material properties used for lighting (diffuseReflectance)
  */
 struct ModelAsset {
     tdogl::Program* shaders;
@@ -63,7 +68,8 @@ struct ModelAsset {
         drawType(GL_TRIANGLES),
         drawStart(0),
         drawCount(0)
-    {}
+    {
+    }
 };
 
 /*
@@ -81,8 +87,11 @@ struct ModelInstance {
     {}
 };
 
+/*
+ Represents a point light
+ */
 struct Light {
-    glm::vec4 position;
+    glm::vec3 position;
     glm::vec3 color;
 };
 
@@ -326,18 +335,14 @@ static void Update(float secondsElapsed) {
 
     //move light
     if(glfwGetKey('1'))
-        // point light, located at the camera's current position
-        gLight.position = glm::vec4(gCamera.position(), 1);
-    else if(glfwGetKey('2'))
-        // directional light, shining in the direction the camera is facing
-        gLight.position = glm::vec4(-gCamera.forward(), 0);
+        gLight.position = gCamera.position();
 
     // change light color
-    if(glfwGetKey('3'))
+    if(glfwGetKey('2'))
         gLight.color = glm::vec3(1,0,0); //red
-    else if(glfwGetKey('4'))
+    else if(glfwGetKey('3'))
         gLight.color = glm::vec3(0,1,0); //green
-    else if(glfwGetKey('5'))
+    else if(glfwGetKey('4'))
         gLight.color = glm::vec3(1,1,1); //white
 
 
@@ -410,7 +415,7 @@ void AppMain() {
     gCamera.setNearAndFarPlanes(0.5f, 100.0f);
 
     // setup gLight
-    gLight.position = glm::vec4(1,1,1,0);
+    gLight.position = gCamera.position();
     gLight.color = glm::vec3(1,1,1);
 
     // run while the window is open
