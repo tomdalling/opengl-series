@@ -90,7 +90,7 @@ struct ModelInstance {
  */
 struct Light {
     glm::vec3 position;
-    glm::vec3 color;
+    glm::vec3 intensities; //a.k.a. the color of the light
 };
 
 // constants
@@ -271,7 +271,7 @@ static void RenderInstance(const ModelInstance& inst) {
     shaders->setUniform("model", inst.transform);
     shaders->setUniform("tex", 0); //set to 0 because the texture will be bound to GL_TEXTURE0
     shaders->setUniform("light.position", gLight.position);
-    shaders->setUniform("light.color", gLight.color);
+    shaders->setUniform("light.intensities", gLight.intensities);
 
     //bind the texture
     glActiveTexture(GL_TEXTURE0);
@@ -314,7 +314,7 @@ static void Update(float secondsElapsed) {
     gInstances.front().transform = glm::rotate(glm::mat4(), gDegreesRotated, glm::vec3(0,1,0));
 
     //move position of camera based on WASD keys, and XZ keys for up and down
-    const float moveSpeed = 2.0; //units per second
+    const float moveSpeed = 4.0; //units per second
     if(glfwGetKey('S')){
         gCamera.offsetPosition(secondsElapsed * moveSpeed * -gCamera.forward());
     } else if(glfwGetKey('W')){
@@ -337,11 +337,11 @@ static void Update(float secondsElapsed) {
 
     // change light color
     if(glfwGetKey('2'))
-        gLight.color = glm::vec3(1,0,0); //red
+        gLight.intensities = glm::vec3(1,0,0); //red
     else if(glfwGetKey('3'))
-        gLight.color = glm::vec3(0,1,0); //green
+        gLight.intensities = glm::vec3(0,1,0); //green
     else if(glfwGetKey('4'))
-        gLight.color = glm::vec3(1,1,1); //white
+        gLight.intensities = glm::vec3(1,1,1); //white
 
 
     //rotate camera based on mouse movement
@@ -414,7 +414,7 @@ void AppMain() {
 
     // setup gLight
     gLight.position = gCamera.position();
-    gLight.color = glm::vec3(1,1,1);
+    gLight.intensities = glm::vec3(1,1,1); //white
 
     // run while the window is open
     double lastTime = glfwGetTime();
