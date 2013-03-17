@@ -1,0 +1,9 @@
+#version 100
+
+uniform sampler2D tex;
+
+varying highp vec2 fragTexCoord;
+
+void main() {
+    gl_FragColor = texture2D(tex, fragTexCoord);
+}

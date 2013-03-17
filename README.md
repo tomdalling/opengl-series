@@ -11,6 +11,11 @@ List of articles:
  4. [Cameras, Vectors & Input](http://tomdalling.com/blog/modern-opengl/04-cameras-vectors-and-input/)
  5. [Model Assets & Instances](http://tomdalling.com/blog/modern-opengl/05-model-assets-and-instances/)
 
+# OpenGLES/iOS Migration Notes
+
+Migration notes for OpenGLES 2.0 based iOS can be found here:
+http://whackylabs.com/rants/?p=769
+
 # Credits
 
 Thanks to Martin (SpartanJ) Golini for the Linux ports.
