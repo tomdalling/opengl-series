@@ -1,0 +1,10 @@
+#version 100
+
+uniform sampler2D tex;
+
+varying highp vec2 fragTexCoord;
+
+void main() {
+    //note: the texture function was called texture2D in older versions of GLSL
+    gl_FragColor = texture2D(tex, fragTexCoord);
+}
