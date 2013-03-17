@@ -19,6 +19,9 @@
 	int glState;
 }
 @property (strong, nonatomic) EAGLContext *context;
+//	Research shows that screen's width and height are prepared after the update call.
+//	And glkView:drawInRect: gets invoked first.
+//	Let's wait for all the setup to get over with.
 - (void)GL_WillSetup;
 - (void)GL_DidSetup;
 - (void)GL_Destroy;
@@ -63,15 +66,14 @@
     }
 }
 
-
-//Doesn't has right value for screen dimensions
+//	Doesn't has right value for screen dimensions
 - (void)GL_WillSetup{
     [EAGLContext setCurrentContext:self.context];
 	glState |= kGL_StateInit;
 	NSLog(@"State: Init");
 }
 
-//Could be called multiple times. Do check.
+//	Could be called multiple times. Do check.
 //	We've the screen ready
 -(void)GL_DidSetup{
 	// already in setup state = do nothing
@@ -115,7 +117,6 @@
 		[self GL_DidSetup];
 		return;
 	}
-	//	t->update(self.timeSinceLastUpdate);
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
@@ -131,11 +132,6 @@
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-//	UITouch *tch = [touches anyObject];
-//	CGPoint tchPt = [tch locationInView:self.view];
-//	//convert to GL coords
-//	GLKVector2 gl_tchPt = GLKVector2Make(tchPt.x - self.view.bounds.size.width/2, self.view.bounds.size.height/2 - tchPt.y);
-//	t->touchEnd(gl_tchPt);
 }
 
 @end
