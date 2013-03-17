@@ -141,10 +141,6 @@
 //	| - | S | - |
 //	-------------
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-	RegsiterGesture(eGesture_None);
-}
-
--(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 	UITouch *t = [touches anyObject];
 	CGPoint tPt = [t locationInView:self.view];
 	double scr_w_one_third = self.view.bounds.size.width/3;
@@ -152,6 +148,7 @@
 	int touch_index_x = tPt.x/scr_w_one_third;
 	int touch_index_y = tPt.y/scr_h_one_third;
 	
+	NSLog(@"%d,%d",touch_index_x, touch_index_y);
 	switch(touch_index_x){
 		case 0:
 			if(touch_index_y == 1){
@@ -174,6 +171,10 @@
 			break;
 	}
 }
+
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+}
+
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 	RegsiterGesture(eGesture_None);
 }

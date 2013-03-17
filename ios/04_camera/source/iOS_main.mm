@@ -43,7 +43,7 @@ tdogl::Camera gCamera;
 GLuint gVAO = 0;
 GLuint gVBO = 0;
 GLfloat gDegreesRotated = 0.0f;
-eGesture gesture;
+eGesture gesture = eGesture_None;
 
 // returns the full path to the file `fileName` in the resources directory of the app bundle
 static std::string ResourcePath(std::string fileName) {
