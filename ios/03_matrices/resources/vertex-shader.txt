@@ -1,0 +1,18 @@
+#version 100
+
+uniform mat4 projection;
+uniform mat4 camera;
+uniform mat4 model;
+
+attribute vec3 vert;
+attribute vec2 vertTexCoord;
+
+varying vec2 fragTexCoord;
+
+void main() {
+    // Pass the tex coord straight through to the fragment shader
+    fragTexCoord = vertTexCoord;
+    
+    // Apply all matrix transformations to vert
+    gl_Position = projection * camera * model * vec4(vert, 1);
+}
