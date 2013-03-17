@@ -16,6 +16,8 @@
  limitations under the License.
  */
 
+#include "iOS_main.h"
+
 // third-party libraries
 #import <Foundation/Foundation.h>
 #include <glm/gtc/matrix_transform.hpp>
