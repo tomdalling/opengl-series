@@ -5,7 +5,7 @@ uniform sampler2D tex;
 
 uniform struct Light {
    vec3 position;
-   vec3 color; //a.k.a intensity
+   vec3 intensities; //a.k.a the color of the light
 } light;
 
 in vec2 fragTexCoord;
@@ -31,7 +31,7 @@ void main() {
 
     //calculate final color of the pixel, based on:
     // 1. The angle of incidence: cosAngleOfIncidence
-    // 2. The color of the light: light.color
+    // 2. The color/intensities of the light: light.intensities
     // 3. The texture and texture coord: texture(tex, fragTexCoord)
-    finalColor = cosAngleOfIncidence * vec4(light.color, 1) * texture(tex, fragTexCoord);
+    finalColor = cosAngleOfIncidence * vec4(light.intensities, 1) * texture(tex, fragTexCoord);
 }
