@@ -7,6 +7,9 @@
 //
 
 #import "WLViewController.h"
+
+#import <CoreMotion/CoreMotion.h>
+
 #import "iOS_main.h"
 
 //GL_State masks flags
@@ -17,6 +20,7 @@
 #define	kGL_StateUpdate			(1<<4)	//Ready to update
 @interface WLViewController(){
 	int glState;
+	CMMotionManager *motionMgr;
 }
 @property (strong, nonatomic) EAGLContext *context;
 //	Research shows that screen's width and height are prepared after the update call.
@@ -35,6 +39,7 @@
         [EAGLContext setCurrentContext:nil];
     }
     [_context release];
+	[motionMgr release];
     [super dealloc];
 }
 
@@ -47,6 +52,8 @@
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+	
+	motionMgr = [[CMMotionManager alloc]init];
 	
 	NSLog(@"State: Unknown");
 	glState = kGL_StateUnknown;
@@ -100,11 +107,22 @@
 	iOS_main();
 	glState |= kGL_StateSetup;
 	NSLog(@"State: Setup");
+	
+	[motionMgr startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+		double x = accelerometerData.acceleration.x;
+		if(x < 0.06){
+			RegisterGesture(eGesture_Move_Up);
+		}else if( x > 0.12){
+			RegisterGesture(eGesture_Move_Down);
+		}
+	}];
 }
 
 - (void)GL_Destroy{
     [EAGLContext setCurrentContext:self.context];
 	glState = kGL_StateUnknown;
+	
+	[motionMgr stopAccelerometerUpdates];
 	NSLog(@"State: Unknown");
 }
 
@@ -148,25 +166,24 @@
 	int touch_index_x = tPt.x/scr_w_one_third;
 	int touch_index_y = tPt.y/scr_h_one_third;
 	
-	NSLog(@"%d,%d",touch_index_x, touch_index_y);
 	switch(touch_index_x){
 		case 0:
 			if(touch_index_y == 1){
-				RegsiterGesture(eGesture_Move_Left);
+				RegisterGesture(eGesture_Move_Left);
 			}
 			break;
 			
 		case 1:
 			if(touch_index_y == 0){
-				RegsiterGesture(eGesture_Move_Forward);
+				RegisterGesture(eGesture_Move_Forward);
 			}else if(touch_index_y == 2){
-				RegsiterGesture(eGesture_Move_Back);
+				RegisterGesture(eGesture_Move_Back);
 			}
 			break;
 			
 		case 2:
 			if(touch_index_y == 1){
-				RegsiterGesture(eGesture_Move_Right);
+				RegisterGesture(eGesture_Move_Right);
 			}
 			break;
 	}
@@ -176,7 +193,6 @@
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-	RegsiterGesture(eGesture_None);
+	RegisterGesture(eGesture_None);
 }
-
 @end

@@ -26,5 +26,5 @@ extern glm::vec2 SCREEN_SIZE;
 int iOS_main();
 void Render();
 void Update(float secondsElapsed);
-void RegsiterGesture(eGesture g);
+void RegisterGesture(eGesture g);
 #endif

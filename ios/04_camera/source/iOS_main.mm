@@ -221,7 +221,7 @@ void Update(float secondsElapsed) {
 //    glfwSetMouseWheel(0);
 }
 
-void RegsiterGesture(eGesture g){
+void RegisterGesture(eGesture g){
 	gesture = g;
 }
 

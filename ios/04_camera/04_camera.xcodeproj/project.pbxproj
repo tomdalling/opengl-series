@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1949ADDF16F5D20600287931 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1949ADDE16F5D20600287931 /* CoreMotion.framework */; };
 		1960665D16F57D3B008FFBDF /* iOS_main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1960664D16F57D3B008FFBDF /* iOS_main.mm */; };
 		1960665E16F57D3B008FFBDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1960664F16F57D3B008FFBDF /* main.m */; };
 		1960665F16F57D3B008FFBDF /* WLAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1960665116F57D3B008FFBDF /* WLAppDelegate.mm */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1949ADDE16F5D20600287931 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		1960664C16F57D3B008FFBDF /* iOS_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOS_main.h; sourceTree = "<group>"; };
 		1960664D16F57D3B008FFBDF /* iOS_main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOS_main.mm; sourceTree = "<group>"; };
 		1960664F16F57D3B008FFBDF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		1960667016F594A7008FFBDF /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
 		1960667216F59A08008FFBDF /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		1960667316F59A08008FFBDF /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
-		198F9C1E16F5685900316EC8 /* 01_project_skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = 01_project_skeleton.app; path = 03_matrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		198F9C1E16F5685900316EC8 /* 04_camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 04_camera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		198F9C2116F5685900316EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		198F9C2316F5685900316EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		198F9C2516F5685900316EC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1949ADDF16F5D20600287931 /* CoreMotion.framework in Frameworks */,
 				198F9C2216F5685900316EC8 /* UIKit.framework in Frameworks */,
 				198F9C2416F5685900316EC8 /* Foundation.framework in Frameworks */,
 				198F9C2616F5685900316EC8 /* CoreGraphics.framework in Frameworks */,
@@ -161,7 +164,7 @@
 		198F9C1F16F5685900316EC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				198F9C1E16F5685900316EC8 /* 01_project_skeleton.app */,
+				198F9C1E16F5685900316EC8 /* 04_camera.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 		198F9C2016F5685900316EC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1949ADDE16F5D20600287931 /* CoreMotion.framework */,
 				198F9C2116F5685900316EC8 /* UIKit.framework */,
 				198F9C2316F5685900316EC8 /* Foundation.framework */,
 				198F9C2516F5685900316EC8 /* CoreGraphics.framework */,
@@ -207,7 +211,7 @@
 			);
 			name = 04_camera;
 			productName = 01_project_skeleton;
-			productReference = 198F9C1E16F5685900316EC8 /* 01_project_skeleton.app */;
+			productReference = 198F9C1E16F5685900316EC8 /* 04_camera.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
