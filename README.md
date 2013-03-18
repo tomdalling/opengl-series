@@ -20,6 +20,9 @@ http://whackylabs.com/rants/?p=769
 
 Thanks to Martin (SpartanJ) Golini for the Linux ports.
 
+Thanks to Sidharth Juyal of [Whacky Labs](http://whackylabs.com/) for
+the iOS ports.
+
 # License
 
 Licensed under the Apache License, Version 2.0. See LICENSE.txt.
