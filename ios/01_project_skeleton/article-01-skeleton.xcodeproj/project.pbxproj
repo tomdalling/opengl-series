@@ -7,63 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1949ADDF16F5D20600287931 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1949ADDE16F5D20600287931 /* CoreMotion.framework */; };
-		1960665D16F57D3B008FFBDF /* iOS_main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1960664D16F57D3B008FFBDF /* iOS_main.mm */; };
-		1960665E16F57D3B008FFBDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1960664F16F57D3B008FFBDF /* main.m */; };
-		1960665F16F57D3B008FFBDF /* WLAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1960665116F57D3B008FFBDF /* WLAppDelegate.mm */; };
-		1960666016F57D3B008FFBDF /* WLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1960665316F57D3B008FFBDF /* WLViewController.mm */; };
-		1960666116F57D3B008FFBDF /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1960665516F57D3B008FFBDF /* Bitmap.cpp */; };
-		1960666216F57D3B008FFBDF /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1960665716F57D3B008FFBDF /* Program.cpp */; };
-		1960666316F57D3B008FFBDF /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1960665916F57D3B008FFBDF /* Shader.cpp */; };
-		1960666416F57D3B008FFBDF /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1960665B16F57D3B008FFBDF /* Texture.cpp */; };
-		1960666D16F57D7B008FFBDF /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1960666916F57D7B008FFBDF /* fragment-shader.txt */; };
-		1960666F16F57D7B008FFBDF /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1960666B16F57D7B008FFBDF /* vertex-shader.txt */; };
-		1960667116F594A7008FFBDF /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1960667016F594A7008FFBDF /* wooden-crate.jpg */; };
-		1960667416F59A08008FFBDF /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1960667216F59A08008FFBDF /* Camera.cpp */; };
 		198F9C2216F5685900316EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198F9C2116F5685900316EC8 /* UIKit.framework */; };
 		198F9C2416F5685900316EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198F9C2316F5685900316EC8 /* Foundation.framework */; };
 		198F9C2616F5685900316EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198F9C2516F5685900316EC8 /* CoreGraphics.framework */; };
 		198F9C2816F5685900316EC8 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198F9C2716F5685900316EC8 /* GLKit.framework */; };
 		198F9C2A16F5685900316EC8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198F9C2916F5685900316EC8 /* OpenGLES.framework */; };
+		198F9C6316F569CC00316EC8 /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = 198F9C5116F569CC00316EC8 /* fragment-shader.txt */; };
+		198F9C6416F569CC00316EC8 /* iOS_main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 198F9C5216F569CC00316EC8 /* iOS_main.mm */; };
+		198F9C6516F569CC00316EC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 198F9C5316F569CC00316EC8 /* main.m */; };
+		198F9C6616F569CC00316EC8 /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198F9C5416F569CC00316EC8 /* Program.cpp */; };
+		198F9C6716F569CC00316EC8 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 198F9C5616F569CC00316EC8 /* Shader.cpp */; };
+		198F9C6816F569CC00316EC8 /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = 198F9C5816F569CC00316EC8 /* vertex-shader.txt */; };
+		198F9C6916F569CC00316EC8 /* WLAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 198F9C5A16F569CC00316EC8 /* WLAppDelegate.mm */; };
+		198F9C6A16F569CC00316EC8 /* WLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 198F9C5C16F569CC00316EC8 /* WLViewController.mm */; };
 		198F9C6C16F569CC00316EC8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 198F9C6016F569CC00316EC8 /* Default-568h@2x.png */; };
 		198F9C6D16F569CC00316EC8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 198F9C6116F569CC00316EC8 /* Default.png */; };
 		198F9C6E16F569CC00316EC8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 198F9C6216F569CC00316EC8 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1949ADDE16F5D20600287931 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		1960664C16F57D3B008FFBDF /* iOS_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOS_main.h; sourceTree = "<group>"; };
-		1960664D16F57D3B008FFBDF /* iOS_main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOS_main.mm; sourceTree = "<group>"; };
-		1960664F16F57D3B008FFBDF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1960665016F57D3B008FFBDF /* WLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAppDelegate.h; sourceTree = "<group>"; };
-		1960665116F57D3B008FFBDF /* WLAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WLAppDelegate.mm; sourceTree = "<group>"; };
-		1960665216F57D3B008FFBDF /* WLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLViewController.h; sourceTree = "<group>"; };
-		1960665316F57D3B008FFBDF /* WLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WLViewController.mm; sourceTree = "<group>"; };
-		1960665516F57D3B008FFBDF /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
-		1960665616F57D3B008FFBDF /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
-		1960665716F57D3B008FFBDF /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
-		1960665816F57D3B008FFBDF /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
-		1960665916F57D3B008FFBDF /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
-		1960665A16F57D3B008FFBDF /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
-		1960665B16F57D3B008FFBDF /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
-		1960665C16F57D3B008FFBDF /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
-		1960666716F57D7B008FFBDF /* stb_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image.c; sourceTree = "<group>"; };
-		1960666916F57D7B008FFBDF /* fragment-shader.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "fragment-shader.txt"; sourceTree = "<group>"; };
-		1960666B16F57D7B008FFBDF /* vertex-shader.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "vertex-shader.txt"; sourceTree = "<group>"; };
-		1960667016F594A7008FFBDF /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
-		1960667216F59A08008FFBDF /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
-		1960667316F59A08008FFBDF /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
-		198F9C1E16F5685900316EC8 /* 05_asset_instance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 05_asset_instance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		198F9C1E16F5685900316EC8 /* 01_project_skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 01_project_skeleton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		198F9C2116F5685900316EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		198F9C2316F5685900316EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		198F9C2516F5685900316EC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		198F9C2716F5685900316EC8 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		198F9C2916F5685900316EC8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		198F9C5116F569CC00316EC8 /* fragment-shader.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "fragment-shader.txt"; sourceTree = "<group>"; };
+		198F9C5216F569CC00316EC8 /* iOS_main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOS_main.mm; sourceTree = "<group>"; };
+		198F9C5316F569CC00316EC8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		198F9C5416F569CC00316EC8 /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		198F9C5516F569CC00316EC8 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		198F9C5616F569CC00316EC8 /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		198F9C5716F569CC00316EC8 /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		198F9C5816F569CC00316EC8 /* vertex-shader.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "vertex-shader.txt"; sourceTree = "<group>"; };
+		198F9C5916F569CC00316EC8 /* WLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAppDelegate.h; sourceTree = "<group>"; };
+		198F9C5A16F569CC00316EC8 /* WLAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WLAppDelegate.mm; sourceTree = "<group>"; };
+		198F9C5B16F569CC00316EC8 /* WLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLViewController.h; sourceTree = "<group>"; };
+		198F9C5C16F569CC00316EC8 /* WLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WLViewController.mm; sourceTree = "<group>"; };
 		198F9C5E16F569CC00316EC8 /* 01_project_skeleton-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "01_project_skeleton-Info.plist"; sourceTree = "<group>"; };
 		198F9C5F16F569CC00316EC8 /* 01_project_skeleton-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "01_project_skeleton-Prefix.pch"; sourceTree = "<group>"; };
 		198F9C6016F569CC00316EC8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		198F9C6116F569CC00316EC8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		198F9C6216F569CC00316EC8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		198F9C6F16F56AFB00316EC8 /* iOS_main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_main.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1949ADDF16F5D20600287931 /* CoreMotion.framework in Frameworks */,
 				198F9C2216F5685900316EC8 /* UIKit.framework in Frameworks */,
 				198F9C2416F5685900316EC8 /* Foundation.framework in Frameworks */,
 				198F9C2616F5685900316EC8 /* CoreGraphics.framework in Frameworks */,
@@ -83,79 +68,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1960664B16F57D3B008FFBDF /* source */ = {
-			isa = PBXGroup;
-			children = (
-				1960664C16F57D3B008FFBDF /* iOS_main.h */,
-				1960664D16F57D3B008FFBDF /* iOS_main.mm */,
-				1960664E16F57D3B008FFBDF /* ios_specific */,
-				1960665416F57D3B008FFBDF /* tdogl */,
-			);
-			path = source;
-			sourceTree = "<group>";
-		};
-		1960664E16F57D3B008FFBDF /* ios_specific */ = {
-			isa = PBXGroup;
-			children = (
-				1960664F16F57D3B008FFBDF /* main.m */,
-				1960665016F57D3B008FFBDF /* WLAppDelegate.h */,
-				1960665116F57D3B008FFBDF /* WLAppDelegate.mm */,
-				1960665216F57D3B008FFBDF /* WLViewController.h */,
-				1960665316F57D3B008FFBDF /* WLViewController.mm */,
-			);
-			path = ios_specific;
-			sourceTree = "<group>";
-		};
-		1960665416F57D3B008FFBDF /* tdogl */ = {
-			isa = PBXGroup;
-			children = (
-				1960665516F57D3B008FFBDF /* Bitmap.cpp */,
-				1960665616F57D3B008FFBDF /* Bitmap.h */,
-				1960665716F57D3B008FFBDF /* Program.cpp */,
-				1960665816F57D3B008FFBDF /* Program.h */,
-				1960665916F57D3B008FFBDF /* Shader.cpp */,
-				1960665A16F57D3B008FFBDF /* Shader.h */,
-				1960665B16F57D3B008FFBDF /* Texture.cpp */,
-				1960665C16F57D3B008FFBDF /* Texture.h */,
-				1960667216F59A08008FFBDF /* Camera.cpp */,
-				1960667316F59A08008FFBDF /* Camera.h */,
-			);
-			path = tdogl;
-			sourceTree = "<group>";
-		};
-		1960666516F57D7B008FFBDF /* thirdparty */ = {
-			isa = PBXGroup;
-			children = (
-				1960666616F57D7B008FFBDF /* stb_image */,
-			);
-			path = thirdparty;
-			sourceTree = "<group>";
-		};
-		1960666616F57D7B008FFBDF /* stb_image */ = {
-			isa = PBXGroup;
-			children = (
-				1960666716F57D7B008FFBDF /* stb_image.c */,
-			);
-			path = stb_image;
-			sourceTree = "<group>";
-		};
-		1960666816F57D7B008FFBDF /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				1960667016F594A7008FFBDF /* wooden-crate.jpg */,
-				1960666916F57D7B008FFBDF /* fragment-shader.txt */,
-				1960666B16F57D7B008FFBDF /* vertex-shader.txt */,
-			);
-			path = resources;
-			sourceTree = "<group>";
-		};
 		198F9C1516F5685900316EC8 = {
 			isa = PBXGroup;
 			children = (
-				1960664B16F57D3B008FFBDF /* source */,
+				198F9C5016F569CC00316EC8 /* source */,
 				198F9C5D16F569CC00316EC8 /* sys */,
-				1960666516F57D7B008FFBDF /* thirdparty */,
-				1960666816F57D7B008FFBDF /* resources */,
 				198F9C2016F5685900316EC8 /* Frameworks */,
 				198F9C1F16F5685900316EC8 /* Products */,
 			);
@@ -164,7 +81,7 @@
 		198F9C1F16F5685900316EC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				198F9C1E16F5685900316EC8 /* 05_asset_instance.app */,
+				198F9C1E16F5685900316EC8 /* 01_project_skeleton.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,7 +89,6 @@
 		198F9C2016F5685900316EC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1949ADDE16F5D20600287931 /* CoreMotion.framework */,
 				198F9C2116F5685900316EC8 /* UIKit.framework */,
 				198F9C2316F5685900316EC8 /* Foundation.framework */,
 				198F9C2516F5685900316EC8 /* CoreGraphics.framework */,
@@ -180,6 +96,26 @@
 				198F9C2916F5685900316EC8 /* OpenGLES.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		198F9C5016F569CC00316EC8 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				198F9C5816F569CC00316EC8 /* vertex-shader.txt */,
+				198F9C5116F569CC00316EC8 /* fragment-shader.txt */,
+				198F9C5316F569CC00316EC8 /* main.m */,
+				198F9C6F16F56AFB00316EC8 /* iOS_main.h */,
+				198F9C5216F569CC00316EC8 /* iOS_main.mm */,
+				198F9C5416F569CC00316EC8 /* Program.cpp */,
+				198F9C5516F569CC00316EC8 /* Program.h */,
+				198F9C5616F569CC00316EC8 /* Shader.cpp */,
+				198F9C5716F569CC00316EC8 /* Shader.h */,
+				198F9C5916F569CC00316EC8 /* WLAppDelegate.h */,
+				198F9C5A16F569CC00316EC8 /* WLAppDelegate.mm */,
+				198F9C5B16F569CC00316EC8 /* WLViewController.h */,
+				198F9C5C16F569CC00316EC8 /* WLViewController.mm */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 		198F9C5D16F569CC00316EC8 /* sys */ = {
@@ -197,9 +133,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		198F9C1D16F5685900316EC8 /* 05_asset_instance */ = {
+		198F9C1D16F5685900316EC8 /* article-01-skeleton */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 198F9C4C16F5685900316EC8 /* Build configuration list for PBXNativeTarget "05_asset_instance" */;
+			buildConfigurationList = 198F9C4C16F5685900316EC8 /* Build configuration list for PBXNativeTarget "article-01-skeleton" */;
 			buildPhases = (
 				198F9C1A16F5685900316EC8 /* Sources */,
 				198F9C1B16F5685900316EC8 /* Frameworks */,
@@ -209,9 +145,9 @@
 			);
 			dependencies = (
 			);
-			name = 05_asset_instance;
+			name = "article-01-skeleton";
 			productName = 01_project_skeleton;
-			productReference = 198F9C1E16F5685900316EC8 /* 05_asset_instance.app */;
+			productReference = 198F9C1E16F5685900316EC8 /* 01_project_skeleton.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +160,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = whackylabs;
 			};
-			buildConfigurationList = 198F9C1916F5685900316EC8 /* Build configuration list for PBXProject "05_asset_instance" */;
+			buildConfigurationList = 198F9C1916F5685900316EC8 /* Build configuration list for PBXProject "article-01-skeleton" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -236,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				198F9C1D16F5685900316EC8 /* 05_asset_instance */,
+				198F9C1D16F5685900316EC8 /* article-01-skeleton */,
 			);
 		};
 /* End PBXProject section */
@@ -246,12 +182,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				198F9C6316F569CC00316EC8 /* fragment-shader.txt in Resources */,
+				198F9C6816F569CC00316EC8 /* vertex-shader.txt in Resources */,
 				198F9C6C16F569CC00316EC8 /* Default-568h@2x.png in Resources */,
 				198F9C6D16F569CC00316EC8 /* Default.png in Resources */,
 				198F9C6E16F569CC00316EC8 /* Default@2x.png in Resources */,
-				1960666D16F57D7B008FFBDF /* fragment-shader.txt in Resources */,
-				1960666F16F57D7B008FFBDF /* vertex-shader.txt in Resources */,
-				1960667116F594A7008FFBDF /* wooden-crate.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,15 +197,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1960665D16F57D3B008FFBDF /* iOS_main.mm in Sources */,
-				1960665E16F57D3B008FFBDF /* main.m in Sources */,
-				1960665F16F57D3B008FFBDF /* WLAppDelegate.mm in Sources */,
-				1960666016F57D3B008FFBDF /* WLViewController.mm in Sources */,
-				1960666116F57D3B008FFBDF /* Bitmap.cpp in Sources */,
-				1960666216F57D3B008FFBDF /* Program.cpp in Sources */,
-				1960666316F57D3B008FFBDF /* Shader.cpp in Sources */,
-				1960666416F57D3B008FFBDF /* Texture.cpp in Sources */,
-				1960667416F59A08008FFBDF /* Camera.cpp in Sources */,
+				198F9C6416F569CC00316EC8 /* iOS_main.mm in Sources */,
+				198F9C6516F569CC00316EC8 /* main.m in Sources */,
+				198F9C6616F569CC00316EC8 /* Program.cpp in Sources */,
+				198F9C6716F569CC00316EC8 /* Shader.cpp in Sources */,
+				198F9C6916F569CC00316EC8 /* WLAppDelegate.mm in Sources */,
+				198F9C6A16F569CC00316EC8 /* WLViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +294,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		198F9C1916F5685900316EC8 /* Build configuration list for PBXProject "05_asset_instance" */ = {
+		198F9C1916F5685900316EC8 /* Build configuration list for PBXProject "article-01-skeleton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				198F9C4A16F5685900316EC8 /* Debug */,
@@ -371,7 +303,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		198F9C4C16F5685900316EC8 /* Build configuration list for PBXNativeTarget "05_asset_instance" */ = {
+		198F9C4C16F5685900316EC8 /* Build configuration list for PBXNativeTarget "article-01-skeleton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				198F9C4D16F5685900316EC8 /* Debug */,
