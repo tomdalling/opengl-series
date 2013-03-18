@@ -26,12 +26,12 @@ void main() {
     vec3 directionToLight = normalize(light.position - fragPosition);
 
     //calculate the cosine of the angle of incidence
-    float cosAngleOfIncidence = dot(normal, directionToLight);
-    cosAngleOfIncidence = clamp(cosAngleOfIncidence, 0, 1);
+    float brightness = dot(normal, directionToLight);
+    brightness = clamp(brightness, 0, 1);
 
     //calculate final color of the pixel, based on:
-    // 1. The angle of incidence: cosAngleOfIncidence
+    // 1. The angle of incidence: brightness
     // 2. The color/intensities of the light: light.intensities
     // 3. The texture and texture coord: texture(tex, fragTexCoord)
-    finalColor = cosAngleOfIncidence * vec4(light.intensities, 1) * texture(tex, fragTexCoord);
+    finalColor = brightness * vec4(light.intensities, 1) * texture(tex, fragTexCoord);
 }
