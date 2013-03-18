@@ -12,6 +12,10 @@ osx/*/*.xcodeproj/*
 osx/*/build/
 !osx/*/*.xcodeproj/project.pbxproj
 
+ios/*/*.xcodeproj/*
+ios/*/build/
+!ios/*/*.xcodeproj/project.pbxproj
+
 # linux build output
 linux/*/bin/
 linux/*/obj/
