@@ -11,10 +11,7 @@ windows/*/ipch/
 osx/*/*.xcodeproj/*
 osx/*/build/
 !osx/*/*.xcodeproj/project.pbxproj
-
-ios/*/*.xcodeproj/*
-ios/*/build/
-!ios/*/*.xcodeproj/project.pbxproj
+xcuserdata/
 
 # linux build output
 linux/*/bin/
