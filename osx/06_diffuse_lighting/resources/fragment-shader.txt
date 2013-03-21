@@ -16,17 +16,17 @@ out vec4 finalColor;
 
 void main() {
     //calculate normal in world coordinates
-    vec3 normal = transpose(inverse(mat3(model))) * fragNormal;
-    normal = normalize(normal);
+    mat3 normalMatrix = transpose(inverse(mat3(model)));
+    vec3 normal = normalize(normalMatrix * fragNormal);
     
     //calculate the location of this fragment (pixel) in world coordinates
     vec3 fragPosition = vec3(model * vec4(fragVert, 1));
     
-    //calculate the direction from this pixel to the light source
-    vec3 directionToLight = normalize(light.position - fragPosition);
+    //calculate the vector from this pixels surface to the light source
+    vec3 surfaceToLight = light.position - fragPosition;
 
     //calculate the cosine of the angle of incidence
-    float brightness = dot(normal, directionToLight);
+    float brightness = dot(normal, surfaceToLight) / length(surfaceToLight);
     brightness = clamp(brightness, 0, 1);
 
     //calculate final color of the pixel, based on:
