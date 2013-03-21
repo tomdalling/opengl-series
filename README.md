@@ -26,3 +26,8 @@ the iOS ports.
 # License
 
 Licensed under the Apache License, Version 2.0. See LICENSE.txt.
+
+# TODO
+
+ - Rename "vert" shader var to "position", and rethink all the other
+   shader var names

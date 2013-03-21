@@ -1,5 +1,3 @@
-//TODO: make shader vert vec3 instead of vec4 in all articles
-//TODO: rename "vert" shader var to "position", and rethink all the other shader var names
 /*
  main
 
@@ -47,7 +45,6 @@
   - a VBO
   - a VAO
   - the parameters to glDrawArrays (drawType, drawStart, drawCount)
-  - material properties used for lighting (diffuseReflectance)
  */
 struct ModelAsset {
     tdogl::Program* shaders;
@@ -66,8 +63,7 @@ struct ModelAsset {
         drawType(GL_TRIANGLES),
         drawStart(0),
         drawCount(0)
-    {
-    }
+    {}
 };
 
 /*
@@ -266,8 +262,7 @@ static void RenderInstance(const ModelInstance& inst) {
     shaders->use();
 
     //set the shader uniforms
-    shaders->setUniform("projection", gCamera.projection());
-    shaders->setUniform("view", gCamera.view());
+    shaders->setUniform("camera", gCamera.matrix());
     shaders->setUniform("model", inst.transform);
     shaders->setUniform("tex", 0); //set to 0 because the texture will be bound to GL_TEXTURE0
     shaders->setUniform("light.position", gLight.position);
