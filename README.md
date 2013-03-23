@@ -10,6 +10,7 @@ List of articles:
  3. [Matrices, Depth Buffering, Animation](http://tomdalling.com/blog/modern-opengl/03-matrices-depth-buffering-animation/)
  4. [Cameras, Vectors & Input](http://tomdalling.com/blog/modern-opengl/04-cameras-vectors-and-input/)
  5. [Model Assets & Instances](http://tomdalling.com/blog/modern-opengl/05-model-assets-and-instances/)
+ 6. [Diffuse Point Lighting](http://tomdalling.com/blog/modern-opengl/06-diffuse-point-lighting/)
 
 # OpenGLES/iOS Migration Notes
 
