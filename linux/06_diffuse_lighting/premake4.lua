@@ -1,14 +1,15 @@
-solution "99_next"
+solution "06_diffuse_lighting"
 	location("./")
 	targetdir("./bin")
 	configurations { "debug", "release" }
 	objdir("obj/" .. os.get() .. "/")
 	includedirs {"./thirdparty/stb_image"}
 
-	project "99_next-app"
-		kind "ConsoleApp"
+	project "06_diffuse_lighting-app"
+		kind "WindowedApp"
 		language "C++"
 		files { "source/**.cpp" }
+		buildoptions { "-Wno-unknown-pragmas" }
 
 		configuration "windows"
 			links {"glu32", "opengl32", "gdi32", "winmm", "user32","GLEW"}
@@ -31,10 +32,10 @@ solution "99_next"
 			defines { "DEBUG" }
 			flags { "Symbols" }
 			buildoptions{ "-Wall" }
-			targetname "99_next-debug"
+			targetname "06_diffuse_lighting-debug"
 
 		configuration "release"
 			defines { "NDEBUG" }
 			flags { "Optimize" }
 			buildoptions{ "-Wall" }
-			targetname "99_next-release"
+			targetname "06_diffuse_lighting-release"
