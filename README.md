@@ -10,6 +10,12 @@ List of articles:
  3. [Matrices, Depth Buffering, Animation](http://tomdalling.com/blog/modern-opengl/03-matrices-depth-buffering-animation/)
  4. [Cameras, Vectors & Input](http://tomdalling.com/blog/modern-opengl/04-cameras-vectors-and-input/)
  5. [Model Assets & Instances](http://tomdalling.com/blog/modern-opengl/05-model-assets-and-instances/)
+ 6. [Diffuse Point Lighting](http://tomdalling.com/blog/modern-opengl/06-diffuse-point-lighting/)
+
+# OpenGLES/iOS Migration Notes
+
+Migration notes for OpenGLES 2.0 based iOS can be found here:
+http://whackylabs.com/rants/?p=769
 
 # OpenGLES/iOS Migration Notes
 
@@ -20,6 +26,14 @@ http://whackylabs.com/rants/?p=769
 
 Thanks to Martin (SpartanJ) Golini for the Linux ports.
 
+Thanks to Sidharth Juyal of [Whacky Labs](http://whackylabs.com/) for
+the iOS ports.
+
 # License
 
 Licensed under the Apache License, Version 2.0. See LICENSE.txt.
+
+# TODO
+
+ - Rename "vert" shader var to "position", and rethink all the other
+   shader var names
