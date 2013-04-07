@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		E21E3B9B165F718000D9ED06 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E21E3B94165F718000D9ED06 /* main.mm */; };
-		E21E3BA0165F718900D9ED06 /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E21E3B9F165F718900D9ED06 /* libglfw.a */; };
 		E236EB61165DDD890036543D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E236EB5C165DDD760036543D /* Cocoa.framework */; };
 		E236EB66165DE4AE0036543D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E236EB64165DE49D0036543D /* OpenGL.framework */; };
 		E236EB6B165DE4FB0036543D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E236EB69165DE4F60036543D /* IOKit.framework */; };
-		E236EB6E165DE5570036543D /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E236EB6C165DE5510036543D /* libGLEW.a */; };
 		E2A330A116A12E620027AA48 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A3309E16A12E5A0027AA48 /* Camera.cpp */; };
 		E2C1243A1661A513005893A6 /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2C124321661A513005893A6 /* Bitmap.cpp */; };
 		E2C1243B1661A513005893A6 /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2C124341661A513005893A6 /* Program.cpp */; };
 		E2C1243C1661A513005893A6 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2C124361661A513005893A6 /* Shader.cpp */; };
 		E2C1243D1661A513005893A6 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2C124381661A513005893A6 /* Texture.cpp */; };
+		E2D9B9CB1711299200D92140 /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D9B9CA1711299200D92140 /* libglfw.a */; };
+		E2D9B9CE171129AC00D92140 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E2D9B9CD171129AC00D92140 /* glew.c */; };
 		E2EE3DDE16740DE400A91A07 /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2EE3DDD16740DE400A91A07 /* wooden-crate.jpg */; };
 		E2EE3DE116741EFA00A91A07 /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2EE3DDF16741EFA00A91A07 /* fragment-shader.txt */; };
 		E2EE3DE216741EFA00A91A07 /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2EE3DE016741EFA00A91A07 /* vertex-shader.txt */; };
@@ -25,12 +25,10 @@
 
 /* Begin PBXFileReference section */
 		E21E3B94165F718000D9ED06 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		E21E3B9F165F718900D9ED06 /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = thirdparty/glfw/libglfw.a; sourceTree = "<group>"; };
 		E236EB35165DD1380036543D /* article-04-camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "article-04-camera.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E236EB5C165DDD760036543D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		E236EB64165DE49D0036543D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E236EB69165DE4F60036543D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
-		E236EB6C165DE5510036543D /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = /opt/local/lib/libGLEW.a; sourceTree = "<absolute>"; };
 		E2A3309E16A12E5A0027AA48 /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		E2A3309F16A12E5A0027AA48 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		E2C124321661A513005893A6 /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
@@ -41,6 +39,8 @@
 		E2C124371661A513005893A6 /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		E2C124381661A513005893A6 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		E2C124391661A513005893A6 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		E2D9B9CA1711299200D92140 /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = ../thirdparty/glfw/libglfw.a; sourceTree = "<group>"; };
+		E2D9B9CD171129AC00D92140 /* glew.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glew.c; path = ../thirdparty/glew/src/glew.c; sourceTree = "<group>"; };
 		E2EE3DDD16740DE400A91A07 /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
 		E2EE3DDF16741EFA00A91A07 /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
 		E2EE3DE016741EFA00A91A07 /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
@@ -51,11 +51,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E236EB6E165DE5570036543D /* libGLEW.a in Frameworks */,
+				E2D9B9CB1711299200D92140 /* libglfw.a in Frameworks */,
 				E236EB61165DDD890036543D /* Cocoa.framework in Frameworks */,
 				E236EB6B165DE4FB0036543D /* IOKit.framework in Frameworks */,
 				E236EB66165DE4AE0036543D /* OpenGL.framework in Frameworks */,
-				E21E3BA0165F718900D9ED06 /* libglfw.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +75,7 @@
 			children = (
 				E21E3B92165F718000D9ED06 /* source */,
 				E2C124461661B7DC005893A6 /* resources */,
+				E2D9B9CC1711299A00D92140 /* thirdparty */,
 				E236EB38165DD1380036543D /* Frameworks */,
 				E236EB36165DD1380036543D /* Products */,
 			);
@@ -92,8 +92,7 @@
 		E236EB38165DD1380036543D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E21E3B9F165F718900D9ED06 /* libglfw.a */,
-				E236EB6C165DE5510036543D /* libGLEW.a */,
+				E2D9B9CA1711299200D92140 /* libglfw.a */,
 				E236EB69165DE4F60036543D /* IOKit.framework */,
 				E236EB64165DE49D0036543D /* OpenGL.framework */,
 				E236EB5C165DDD760036543D /* Cocoa.framework */,
@@ -126,6 +125,14 @@
 				E2EE3DDD16740DE400A91A07 /* wooden-crate.jpg */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		E2D9B9CC1711299A00D92140 /* thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				E2D9B9CD171129AC00D92140 /* glew.c */,
+			);
+			name = thirdparty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +206,7 @@
 				E2C1243C1661A513005893A6 /* Shader.cpp in Sources */,
 				E2C1243D1661A513005893A6 /* Texture.cpp in Sources */,
 				E2A330A116A12E620027AA48 /* Camera.cpp in Sources */,
+				E2D9B9CE171129AC00D92140 /* glew.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,11 +232,12 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_PEDANTIC = YES;
 				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
-					"\"$SRCROOT/thirdparty/glfw/include\"",
-					"\"$SRCROOT/thirdparty/stb_image\"",
+					"\"$SRCROOT/../thirdparty/glew/include\"",
+					"\"$SRCROOT/../thirdparty/glfw/include\"",
+					"\"$SRCROOT/../thirdparty/stb_image\"",
+					"\"$SRCROOT/../thirdparty/glm\"",
 				);
-				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				LIBRARY_SEARCH_PATHS = "\"$SRCROOT/../thirdparty/glfw\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx10.7;
@@ -249,11 +258,12 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_PEDANTIC = YES;
 				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
-					"\"$SRCROOT/thirdparty/glfw/include\"",
-					"\"$SRCROOT/thirdparty/stb_image\"",
+					"\"$SRCROOT/../thirdparty/glew/include\"",
+					"\"$SRCROOT/../thirdparty/glfw/include\"",
+					"\"$SRCROOT/../thirdparty/stb_image\"",
+					"\"$SRCROOT/../thirdparty/glm\"",
 				);
-				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				LIBRARY_SEARCH_PATHS = "\"$SRCROOT/../thirdparty/glfw\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx10.7;
 				WARNING_CFLAGS = "-Wall";
@@ -265,10 +275,6 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/thirdparty/glfw\"",
-				);
 				PRODUCT_NAME = "article-04-camera";
 				WRAPPER_EXTENSION = app;
 			};
@@ -279,10 +285,6 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/thirdparty/glfw\"",
-				);
 				PRODUCT_NAME = "article-04-camera";
 				WRAPPER_EXTENSION = app;
 			};
