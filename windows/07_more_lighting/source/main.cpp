@@ -64,7 +64,9 @@ struct ModelAsset {
         vao(0),
         drawType(GL_TRIANGLES),
         drawStart(0),
-        drawCount(0)
+        drawCount(0),
+        shininess(0.0f),
+        specularColor(1.0f, 1.0f, 1.0f)
     {}
 };
 
