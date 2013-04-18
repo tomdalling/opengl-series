@@ -254,7 +254,7 @@ static void CreateInstances() {
 
     ModelInstance hMid;
     hMid.asset = &gWoodenCrate;
-    hMid.transform = translate(-6,0,0) * scale(2,1,0.8);
+    hMid.transform = translate(-6,0,0) * scale(2,1,0.8f);
     gInstances.push_back(hMid);
 }
 
@@ -351,14 +351,14 @@ static void Update(float secondsElapsed) {
 
 
     //rotate camera based on mouse movement
-    const float mouseSensitivity = 0.1;
+    const float mouseSensitivity = 0.1f;
     int mouseX, mouseY;
     glfwGetMousePos(&mouseX, &mouseY);
     gCamera.offsetOrientation(mouseSensitivity * mouseY, mouseSensitivity * mouseX);
     glfwSetMousePos(0, 0); //reset the mouse, so it doesn't go out of the window
 
     //increase or decrease field of view based on mouse wheel
-    const float zoomSensitivity = -0.2;
+    const float zoomSensitivity = -0.2f;
     float fieldOfView = gCamera.fieldOfView() + zoomSensitivity * (float)glfwGetMouseWheel();
     if(fieldOfView < 5.0f) fieldOfView = 5.0f;
     if(fieldOfView > 130.0f) fieldOfView = 130.0f;
@@ -419,7 +419,7 @@ void AppMain() {
     gCamera.setNearAndFarPlanes(0.5f, 100.0f);
 
     // setup gLight
-    gLight.position = gCamera.position();
+    gLight.position = glm::vec3(-4,0,4);
     gLight.intensities = glm::vec3(1,1,1); //white
     gLight.attenuation = 0.2f;
     gLight.ambientCoefficient = 0.005f;
@@ -429,7 +429,7 @@ void AppMain() {
     while(glfwGetWindowParam(GLFW_OPENED)){
         // update the scene based on the time elapsed since last update
         double thisTime = glfwGetTime();
-        Update(thisTime - lastTime);
+        Update((float)(thisTime - lastTime));
         lastTime = thisTime;
 
         // draw one frame
