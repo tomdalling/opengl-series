@@ -6,18 +6,18 @@ ifndef config
 endif
 export config
 
-PROJECTS := 06_diffuse_lighting-app
+PROJECTS := 07_more_lighting-app
 
 .PHONY: all clean help $(PROJECTS)
 
 all: $(PROJECTS)
 
-06_diffuse_lighting-app: 
-	@echo "==== Building 06_diffuse_lighting-app ($(config)) ===="
-	@${MAKE} --no-print-directory -C . -f 06_diffuse_lighting-app.make
+07_more_lighting-app: 
+	@echo "==== Building 07_more_lighting-app ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f 07_more_lighting-app.make
 
 clean:
-	@${MAKE} --no-print-directory -C . -f 06_diffuse_lighting-app.make clean
+	@${MAKE} --no-print-directory -C . -f 07_more_lighting-app.make clean
 
 help:
 	@echo "Usage: make [config=name] [target]"
@@ -29,6 +29,6 @@ help:
 	@echo "TARGETS:"
 	@echo "   all (default)"
 	@echo "   clean"
-	@echo "   06_diffuse_lighting-app"
+	@echo "   07_more_lighting-app"
 	@echo ""
 	@echo "For more information, see http://industriousone.com/premake/quick-start"

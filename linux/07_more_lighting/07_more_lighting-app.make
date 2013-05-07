@@ -30,7 +30,7 @@ endif
 ifeq ($(config),debug)
   OBJDIR     = obj/linux/debug
   TARGETDIR  = bin
-  TARGET     = $(TARGETDIR)/06_diffuse_lighting-debug
+  TARGET     = $(TARGETDIR)/07_more_lighting-debug
   DEFINES   += -DDEBUG
   INCLUDES  += -Ithirdparty/stb_image
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
@@ -52,7 +52,7 @@ endif
 ifeq ($(config),release)
   OBJDIR     = obj/linux/release
   TARGETDIR  = bin
-  TARGET     = $(TARGETDIR)/06_diffuse_lighting-release
+  TARGET     = $(TARGETDIR)/07_more_lighting-release
   DEFINES   += -DNDEBUG
   INCLUDES  += -Ithirdparty/stb_image
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
@@ -96,7 +96,7 @@ all: $(TARGETDIR) $(OBJDIR) prebuild prelink $(TARGET)
 	@:
 
 $(TARGET): $(GCH) $(OBJECTS) $(LDDEPS) $(RESOURCES)
-	@echo Linking 06_diffuse_lighting-app
+	@echo Linking 07_more_lighting-app
 	$(SILENT) $(LINKCMD)
 	$(POSTBUILDCMDS)
 
@@ -117,7 +117,7 @@ else
 endif
 
 clean:
-	@echo Cleaning 06_diffuse_lighting-app
+	@echo Cleaning 07_more_lighting-app
 ifeq (posix,$(SHELLTYPE))
 	$(SILENT) rm -f  $(TARGET)
 	$(SILENT) rm -rf $(OBJDIR)

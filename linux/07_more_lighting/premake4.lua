@@ -1,11 +1,11 @@
-solution "06_diffuse_lighting"
+solution "07_more_lighting"
 	location("./")
 	targetdir("./bin")
 	configurations { "debug", "release" }
 	objdir("obj/" .. os.get() .. "/")
 	includedirs {"./thirdparty/stb_image"}
 
-	project "06_diffuse_lighting-app"
+	project "07_more_lighting-app"
 		kind "WindowedApp"
 		language "C++"
 		files { "source/**.cpp" }
@@ -32,10 +32,10 @@ solution "06_diffuse_lighting"
 			defines { "DEBUG" }
 			flags { "Symbols" }
 			buildoptions{ "-Wall" }
-			targetname "06_diffuse_lighting-debug"
+			targetname "07_more_lighting-debug"
 
 		configuration "release"
 			defines { "NDEBUG" }
 			flags { "Optimize" }
 			buildoptions{ "-Wall" }
-			targetname "06_diffuse_lighting-release"
+			targetname "07_more_lighting-release"
