@@ -15,13 +15,18 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include "Camera.h"
 #include <glm/gtc/matrix_transform.hpp>
 
 using namespace tdogl;
 
 static const float MaxVerticalAngle = 85.0f; //must be less than 90 to avoid gimbal lock
+
+static inline float RadiansToDegrees(float radians) {
+    return radians * 180.0f / (float)M_PI;
+}
 
 
 Camera::Camera() :
@@ -80,12 +85,16 @@ glm::mat4 Camera::orientation() const {
 
 void Camera::offsetOrientation(float upAngle, float rightAngle) {
     _horizontalAngle += rightAngle;
-    while(_horizontalAngle > 360.0f) _horizontalAngle -= 360.0;
-    while(_horizontalAngle < 0.0f) _horizontalAngle += 360.0;
-
     _verticalAngle += upAngle;
-    if(_verticalAngle > MaxVerticalAngle) _verticalAngle = MaxVerticalAngle;
-    if(_verticalAngle < -MaxVerticalAngle) _verticalAngle = -MaxVerticalAngle;
+    normalizeAngles();
+}
+
+void Camera::lookAt(glm::vec3 position) {
+    assert(position != _position);
+    glm::vec3 direction = glm::normalize(position - _position);
+    _verticalAngle = RadiansToDegrees(asinf(-direction.y));
+    _horizontalAngle = -RadiansToDegrees(atan2f(-direction.x, -direction.z));
+    normalizeAngles();
 }
 
 float Camera::viewportAspectRatio() const {
@@ -122,4 +131,16 @@ glm::mat4 Camera::projection() const {
 
 glm::mat4 Camera::view() const {
     return orientation() * glm::translate(glm::mat4(), -_position);
+}
+
+void Camera::normalizeAngles() {
+    _horizontalAngle = fmodf(_horizontalAngle, 360.0f);
+    //fmodf can return negative values, but this will make them all positive
+    if(_horizontalAngle < 0.0f)
+        _horizontalAngle += 360.0f;
+
+    if(_verticalAngle > MaxVerticalAngle)
+        _verticalAngle = MaxVerticalAngle;
+    else if(_verticalAngle < -MaxVerticalAngle)
+        _verticalAngle = -MaxVerticalAngle;
 }

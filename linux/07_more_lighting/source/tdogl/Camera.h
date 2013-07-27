@@ -101,6 +101,13 @@ namespace tdogl {
         void offsetOrientation(float upAngle, float rightAngle);
 
         /**
+         Orients the camera so that is it directly facing `position`
+
+         @param position  the position to look at
+         */
+        void lookAt(glm::vec3 position);
+
+        /**
          The width divided by the height of the screen/window/viewport
 
          Incorrect values will make the 3D scene look stretched.
@@ -145,6 +152,8 @@ namespace tdogl {
         float _nearPlane;
         float _farPlane;
         float _viewportAspectRatio;
+
+        void normalizeAngles();
     };
 
 }
