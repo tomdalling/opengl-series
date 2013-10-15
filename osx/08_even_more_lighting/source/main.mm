@@ -277,12 +277,13 @@ static void RenderInstance(const ModelInstance& inst) {
     shaders->setUniform("material.tex", 0); //set to 0 because the texture will be bound to GL_TEXTURE0
     shaders->setUniform("material.shininess", asset->shininess);
     shaders->setUniform("material.specularColor", asset->specularColor);
-    shaders->setUniform("light.position", gLight.position);
-    shaders->setUniform("light.intensities", gLight.intensities);
-    shaders->setUniform("light.attenuation", gLight.attenuation);
-    shaders->setUniform("light.ambientCoefficient", gLight.ambientCoefficient);
-    shaders->setUniform("light.coneAngle", gLight.coneAngle);
-    shaders->setUniform("light.coneDirection", gLight.coneDirection);
+    shaders->setUniform("numLights", 1);
+    shaders->setUniform("lights[0].position", gLight.position);
+    shaders->setUniform("lights[0].intensities", gLight.intensities);
+    shaders->setUniform("lights[0].attenuation", gLight.attenuation);
+    shaders->setUniform("lights[0].ambientCoefficient", gLight.ambientCoefficient);
+    shaders->setUniform("lights[0].coneAngle", gLight.coneAngle);
+    shaders->setUniform("lights[0].coneDirection", gLight.coneDirection);
     shaders->setUniform("cameraPosition", gCamera.position());
 
     //bind the texture
