@@ -14,6 +14,8 @@ uniform struct Light {
    vec3 intensities; //a.k.a the color of the light
    float attenuation;
    float ambientCoefficient;
+   float coneAngle;
+   vec3 coneDirection;
 } light;
 
 in vec2 fragTexCoord;
@@ -38,8 +40,13 @@ void main() {
         surfaceToLight = normalize(light.position.xyz - surfacePos);
         float distanceToLight = length(light.position.xyz - surfacePos);
         attenuation = 1.0 / (1.0 + light.attenuation * pow(distanceToLight, 2));
+
+        //cone restrictions (affects attenuation)
+        float lightToSurfaceAngle = degrees(acos(dot(-surfaceToLight, normalize(light.coneDirection))));
+        attenuation = (1.0-step(light.coneAngle/2.0, lightToSurfaceAngle)) * attenuation;
     }
     
+
     //ambient
     vec3 ambient = light.ambientCoefficient * surfaceColor.rgb * light.intensities;
 

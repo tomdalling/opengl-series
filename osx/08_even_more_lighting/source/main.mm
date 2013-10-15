@@ -93,6 +93,8 @@ struct Light {
     glm::vec3 intensities; //a.k.a. the color of the light
     float attenuation;
     float ambientCoefficient;
+    float coneAngle;
+    glm::vec3 coneDirection;
 };
 
 // constants
@@ -279,6 +281,8 @@ static void RenderInstance(const ModelInstance& inst) {
     shaders->setUniform("light.intensities", gLight.intensities);
     shaders->setUniform("light.attenuation", gLight.attenuation);
     shaders->setUniform("light.ambientCoefficient", gLight.ambientCoefficient);
+    shaders->setUniform("light.coneAngle", gLight.coneAngle);
+    shaders->setUniform("light.coneDirection", gLight.coneDirection);
     shaders->setUniform("cameraPosition", gCamera.position());
 
     //bind the texture
@@ -340,8 +344,10 @@ static void Update(float secondsElapsed) {
     }
 
     //move light
-    if(glfwGetKey('1'))
-        gLight.position = glm::vec4(-gCamera.forward(), 0.0);
+    if(glfwGetKey('1')){
+        gLight.position = glm::vec4(gCamera.position(), 1.0);
+        gLight.coneDirection = gCamera.forward();
+    }
 
     // change light color
     if(glfwGetKey('2'))
@@ -421,10 +427,12 @@ void AppMain() {
     gCamera.setNearAndFarPlanes(0.5f, 100.0f);
 
     // setup gLight
-    gLight.position = glm::vec4(-4,0,4,0);
+    gLight.position = glm::vec4(-4,0,17,1);
     gLight.intensities = glm::vec3(1,1,1); //white
-    gLight.attenuation = 0.2f;
+    gLight.attenuation = 0.1f;
     gLight.ambientCoefficient = 0.005f;
+    gLight.coneAngle = 30.0f;
+    gLight.coneDirection = glm::vec3(0,0,-1);
 
     // run while the window is open
     double lastTime = glfwGetTime();
