@@ -29,6 +29,7 @@
 #include <stdexcept>
 #include <cmath>
 #include <list>
+#include <sstream>
 
 // tdogl classes
 #include "tdogl/Program.h"
@@ -105,7 +106,7 @@ tdogl::Camera gCamera;
 ModelAsset gWoodenCrate;
 std::list<ModelInstance> gInstances;
 GLfloat gDegreesRotated = 0.0f;
-Light gLight;
+std::vector<Light> gLights;
 
 
 // returns the full path to the file `fileName` in the resources directory of the app bundle
@@ -262,6 +263,14 @@ static void CreateInstances() {
     gInstances.push_back(hMid);
 }
 
+template <typename T>
+void SetLightUniform(tdogl::Program* shaders, const char* propertyName, size_t lightIndex, const T& value) {
+    std::ostringstream ss;
+    ss << "allLights[" << lightIndex << "]." << propertyName;
+    std::string uniformName = ss.str();
+
+    shaders->setUniform(uniformName.c_str(), value);
+}
 
 //renders a single `ModelInstance`
 static void RenderInstance(const ModelInstance& inst) {
@@ -277,14 +286,17 @@ static void RenderInstance(const ModelInstance& inst) {
     shaders->setUniform("material.tex", 0); //set to 0 because the texture will be bound to GL_TEXTURE0
     shaders->setUniform("material.shininess", asset->shininess);
     shaders->setUniform("material.specularColor", asset->specularColor);
-    shaders->setUniform("numLights", 1);
-    shaders->setUniform("lights[0].position", gLight.position);
-    shaders->setUniform("lights[0].intensities", gLight.intensities);
-    shaders->setUniform("lights[0].attenuation", gLight.attenuation);
-    shaders->setUniform("lights[0].ambientCoefficient", gLight.ambientCoefficient);
-    shaders->setUniform("lights[0].coneAngle", gLight.coneAngle);
-    shaders->setUniform("lights[0].coneDirection", gLight.coneDirection);
     shaders->setUniform("cameraPosition", gCamera.position());
+    shaders->setUniform("numLights", (int)gLights.size());
+
+    for(size_t i = 0; i < gLights.size(); ++i){
+        SetLightUniform(shaders, "position", i, gLights[i].position);
+        SetLightUniform(shaders, "intensities", i, gLights[i].intensities);
+        SetLightUniform(shaders, "attenuation", i, gLights[i].attenuation);
+        SetLightUniform(shaders, "ambientCoefficient", i, gLights[i].ambientCoefficient);
+        SetLightUniform(shaders, "coneAngle", i, gLights[i].coneAngle);
+        SetLightUniform(shaders, "coneDirection", i, gLights[i].coneDirection);
+    }
 
     //bind the texture
     glActiveTexture(GL_TEXTURE0);
@@ -346,17 +358,17 @@ static void Update(float secondsElapsed) {
 
     //move light
     if(glfwGetKey('1')){
-        gLight.position = glm::vec4(gCamera.position(), 1.0);
-        gLight.coneDirection = gCamera.forward();
+        gLights[0].position = glm::vec4(gCamera.position(), 1.0);
+        gLights[0].coneDirection = gCamera.forward();
     }
 
     // change light color
     if(glfwGetKey('2'))
-        gLight.intensities = glm::vec3(1,0,0); //red
+        gLights[0].intensities = glm::vec3(2,0,0); //red
     else if(glfwGetKey('3'))
-        gLight.intensities = glm::vec3(0,1,0); //green
+        gLights[0].intensities = glm::vec3(0,2,0); //green
     else if(glfwGetKey('4'))
-        gLight.intensities = glm::vec3(1,1,1); //white
+        gLights[0].intensities = glm::vec3(2,2,2); //white
 
 
     //rotate camera based on mouse movement
@@ -427,13 +439,23 @@ void AppMain() {
     gCamera.setViewportAspectRatio(SCREEN_SIZE.x / SCREEN_SIZE.y);
     gCamera.setNearAndFarPlanes(0.5f, 100.0f);
 
-    // setup gLight
-    gLight.position = glm::vec4(-4,0,17,1);
-    gLight.intensities = glm::vec3(1,1,1); //white
-    gLight.attenuation = 0.1f;
-    gLight.ambientCoefficient = 0.005f;
-    gLight.coneAngle = 30.0f;
-    gLight.coneDirection = glm::vec3(0,0,-1);
+    // setup lights
+    Light spotlight;
+    spotlight.position = glm::vec4(-4,0,10,1);
+    spotlight.intensities = glm::vec3(2,2,2); //strong white light
+    spotlight.attenuation = 0.1f;
+    spotlight.ambientCoefficient = 0.0f; //no ambient light
+    spotlight.coneAngle = 30.0f;
+    spotlight.coneDirection = glm::vec3(0,0,-1);
+
+    Light directionalLight;
+    directionalLight.position = glm::vec4(1, 0.8, 0.6, 0); //w == 0 indications a directional light
+    directionalLight.intensities = glm::vec3(0.4,0.3,0.1); //weak yellowish light
+    directionalLight.ambientCoefficient = 0.06;
+
+    gLights.push_back(spotlight);
+    gLights.push_back(directionalLight);
+
 
     // run while the window is open
     double lastTime = glfwGetTime();
