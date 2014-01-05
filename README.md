@@ -13,10 +13,10 @@ List of articles:
  6. [Diffuse Point Lighting](http://tomdalling.com/blog/modern-opengl/06-diffuse-point-lighting/)
  7. [More Lighting: Ambient, Specular, Attenuation, Gamma](http://tomdalling.com/blog/modern-opengl/07-more-lighting-ambient-specular-attenuation-gamma/)
 
-# OpenGLES/iOS Migration Notes
+# Ports & Related Resources
 
-Migration notes for OpenGLES 2.0 based iOS can be found here:
-http://whackylabs.com/rants/?p=769
+ - Migration notes for iOS with OpenGLES 2.0: http://whackylabs.com/rants/?p=769
+ - A C# port of the articles: https://github.com/ZeronSix/opengl-series-csharp
 
 # Credits
 
@@ -24,6 +24,8 @@ Thanks to Martin (SpartanJ) Golini for the Linux ports.
 
 Thanks to Sidharth Juyal of [Whacky Labs](http://whackylabs.com/) for
 the iOS ports.
+
+Thanks to Vyacheslav (ZeronSix) Zeronov for the C# port.
 
 # License
 
