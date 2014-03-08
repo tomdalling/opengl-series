@@ -3,11 +3,10 @@
 uniform mat4 model;
 uniform vec3 cameraPosition;
 
-uniform struct Material {
-    sampler2D tex;
-    float shininess;
-    vec3 specularColor;
-} material;
+// material settings
+uniform sampler2D materialTex;
+uniform float materialShininess;
+uniform vec3 materialSpecularColor;
 
 uniform struct Light {
    vec3 position;
@@ -25,7 +24,7 @@ out vec4 finalColor;
 void main() {
     vec3 normal = normalize(transpose(inverse(mat3(model))) * fragNormal);
     vec3 surfacePos = vec3(model * vec4(fragVert, 1));
-    vec4 surfaceColor = texture(material.tex, fragTexCoord);
+    vec4 surfaceColor = texture(materialTex, fragTexCoord);
     vec3 surfaceToLight = normalize(light.position - surfacePos);
     vec3 surfaceToCamera = normalize(cameraPosition - surfacePos);
     
@@ -39,8 +38,8 @@ void main() {
     //specular
     float specularCoefficient = 0.0;
     if(diffuseCoefficient > 0.0)
-        specularCoefficient = pow(max(0.0, dot(surfaceToCamera, reflect(-surfaceToLight, normal))), material.shininess);
-    vec3 specular = specularCoefficient * material.specularColor * light.intensities;
+        specularCoefficient = pow(max(0.0, dot(surfaceToCamera, reflect(-surfaceToLight, normal))), materialShininess);
+    vec3 specular = specularCoefficient * materialSpecularColor * light.intensities;
     
     //attenuation
     float distanceToLight = length(light.position - surfacePos);

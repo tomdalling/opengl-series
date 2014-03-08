@@ -272,9 +272,9 @@ static void RenderInstance(const ModelInstance& inst) {
     //set the shader uniforms
     shaders->setUniform("camera", gCamera.matrix());
     shaders->setUniform("model", inst.transform);
-    shaders->setUniform("material.tex", 0); //set to 0 because the texture will be bound to GL_TEXTURE0
-    shaders->setUniform("material.shininess", asset->shininess);
-    shaders->setUniform("material.specularColor", asset->specularColor);
+    shaders->setUniform("materialTex", 0); //set to 0 because the texture will be bound to GL_TEXTURE0
+    shaders->setUniform("materialShininess", asset->shininess);
+    shaders->setUniform("materialSpecularColor", asset->specularColor);
     shaders->setUniform("light.position", gLight.position);
     shaders->setUniform("light.intensities", gLight.intensities);
     shaders->setUniform("light.attenuation", gLight.attenuation);
