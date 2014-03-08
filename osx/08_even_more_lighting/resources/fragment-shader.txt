@@ -3,11 +3,9 @@
 uniform mat4 model;
 uniform vec3 cameraPosition;
 
-uniform struct Material {
-    sampler2D tex;
-    float shininess;
-    vec3 specularColor;
-} material;
+uniform sampler2D materialTex;
+uniform float materialShininess;
+uniform vec3 materialSpecularColor;
 
 #define MAX_LIGHTS 10
 uniform int numLights;
@@ -54,8 +52,8 @@ vec3 ApplyLight(Light light, vec3 surfaceColor, vec3 normal, vec3 surfacePos, ve
     //specular
     float specularCoefficient = 0.0;
     if(diffuseCoefficient > 0.0)
-        specularCoefficient = pow(max(0.0, dot(surfaceToCamera, reflect(-surfaceToLight, normal))), material.shininess);
-    vec3 specular = specularCoefficient * material.specularColor * light.intensities;
+        specularCoefficient = pow(max(0.0, dot(surfaceToCamera, reflect(-surfaceToLight, normal))), materialShininess);
+    vec3 specular = specularCoefficient * materialSpecularColor * light.intensities;
 
     //linear color (color before gamma correction)
     return ambient + attenuation*(diffuse + specular);
@@ -64,7 +62,7 @@ vec3 ApplyLight(Light light, vec3 surfaceColor, vec3 normal, vec3 surfacePos, ve
 void main() {
     vec3 normal = normalize(transpose(inverse(mat3(model))) * fragNormal);
     vec3 surfacePos = vec3(model * vec4(fragVert, 1));
-    vec4 surfaceColor = texture(material.tex, fragTexCoord);
+    vec4 surfaceColor = texture(materialTex, fragTexCoord);
     vec3 surfaceToCamera = normalize(cameraPosition - surfacePos);
 
     //combine color from all the lights
