@@ -8,9 +8,9 @@ windows/*/Release/
 windows/*/ipch/
 
 # Xcode crap
-osx/*/*.xcodeproj/*
+osx/*.xcodeproj/*
 osx/*/build/
-!osx/*/*.xcodeproj/project.pbxproj
+!osx/*.xcodeproj/project.pbxproj
 xcuserdata/
 
 # linux build output
