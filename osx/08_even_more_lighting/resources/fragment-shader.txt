@@ -39,7 +39,9 @@ vec3 ApplyLight(Light light, vec3 surfaceColor, vec3 normal, vec3 surfacePos, ve
 
         //cone restrictions (affects attenuation)
         float lightToSurfaceAngle = degrees(acos(dot(-surfaceToLight, normalize(light.coneDirection))));
-        attenuation = (1.0-step(light.coneAngle/2.0, lightToSurfaceAngle)) * attenuation;
+        if(lightToSurfaceAngle > light.coneAngle){
+            attenuation = 0.0;
+        }
     }
 
     //ambient

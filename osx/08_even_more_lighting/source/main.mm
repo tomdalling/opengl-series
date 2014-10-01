@@ -445,7 +445,7 @@ void AppMain() {
     spotlight.intensities = glm::vec3(2,2,2); //strong white light
     spotlight.attenuation = 0.1f;
     spotlight.ambientCoefficient = 0.0f; //no ambient light
-    spotlight.coneAngle = 30.0f;
+    spotlight.coneAngle = 15.0f;
     spotlight.coneDirection = glm::vec3(0,0,-1);
 
     Light directionalLight;
