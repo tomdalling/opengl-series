@@ -156,6 +156,10 @@ int main(int argc, char *argv[]) {
     if(!GLEW_VERSION_3_2)
         throw std::runtime_error("OpenGL 3.2 API is not available.");
 
+    // OpenGL settings
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     // load vertex and fragment shaders into opengl
     LoadShaders();
 
