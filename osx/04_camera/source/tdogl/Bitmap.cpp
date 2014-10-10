@@ -18,10 +18,12 @@
 
 #include "Bitmap.h"
 #include <stdexcept>
+#include <cstdlib>
 
 //uses stb_image to try load files
 #define STBI_FAILURE_USERMSG
-#include <stb_image.c>
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
 
 using namespace tdogl;
 
