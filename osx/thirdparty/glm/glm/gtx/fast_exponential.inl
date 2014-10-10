@@ -1,13 +1,11 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// OpenGL Mathematics Copyright (c) 2005 - 2012 G-Truc Creation (www.g-truc.net)
+// OpenGL Mathematics Copyright (c) 2005 - 2014 G-Truc Creation (www.g-truc.net)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Created : 2006-01-09
 // Updated : 2006-01-09
 // Licence : This source is under MIT License
 // File    : glm/gtx/fast_exponential.inl
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-#include "../core/_vectorize.hpp"
 
 namespace glm
 {
@@ -23,39 +21,39 @@ namespace glm
 	template <typename T>
 	GLM_FUNC_QUALIFIER T fastPow(const T x, int y)
 	{
-		T f = T(1);
+		T f = static_cast<T>(1);
 		for(int i = 0; i < y; ++i)
 			f *= x;
 		return f;
 	}
 
-	template <typename T>
-	GLM_FUNC_QUALIFIER detail::tvec2<T> fastPow(
-		const detail::tvec2<T>& x, 
-		const detail::tvec2<int>& y)
+	template <typename T, precision P>
+	GLM_FUNC_QUALIFIER detail::tvec2<T, P> fastPow(
+		const detail::tvec2<T, P>& x, 
+		const detail::tvec2<int, P>& y)
 	{
-		return detail::tvec2<T>(
+		return detail::tvec2<T, P>(
 			fastPow(x.x, y.x),
 			fastPow(x.y, y.y));
 	}
 
-	template <typename T>
-	GLM_FUNC_QUALIFIER detail::tvec3<T> fastPow(
-		const detail::tvec3<T>& x, 
-		const detail::tvec3<int>& y)
+	template <typename T, precision P>
+	GLM_FUNC_QUALIFIER detail::tvec3<T, P> fastPow(
+		const detail::tvec3<T, P>& x, 
+		const detail::tvec3<int, P>& y)
 	{
-		return detail::tvec3<T>(
+		return detail::tvec3<T, P>(
 			fastPow(x.x, y.x),
 			fastPow(x.y, y.y),
 			fastPow(x.z, y.z));
 	}
 
-	template <typename T>
-	GLM_FUNC_QUALIFIER detail::tvec4<T> fastPow(
-		const detail::tvec4<T>& x, 
-		const detail::tvec4<int>& y)
+	template <typename T, precision P>
+	GLM_FUNC_QUALIFIER detail::tvec4<T, P> fastPow(
+		const detail::tvec4<T, P>& x, 
+		const detail::tvec4<int, P>& y)
 	{
-		return detail::tvec4<T>(
+		return detail::tvec4<T, P>(
 			fastPow(x.x, y.x),
 			fastPow(x.y, y.y),
 			fastPow(x.z, y.z),

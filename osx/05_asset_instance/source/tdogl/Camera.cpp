@@ -24,11 +24,6 @@ using namespace tdogl;
 
 static const float MaxVerticalAngle = 85.0f; //must be less than 90 to avoid gimbal lock
 
-static inline float RadiansToDegrees(float radians) {
-    return radians * 180.0f / (float)M_PI;
-}
-
-
 Camera::Camera() :
     _position(0.0f, 0.0f, 1.0f),
     _horizontalAngle(0.0f),
@@ -78,8 +73,8 @@ void Camera::setNearAndFarPlanes(float nearPlane, float farPlane) {
 
 glm::mat4 Camera::orientation() const {
     glm::mat4 orientation;
-    orientation = glm::rotate(orientation, _verticalAngle, glm::vec3(1,0,0));
-    orientation = glm::rotate(orientation, _horizontalAngle, glm::vec3(0,1,0));
+    orientation = glm::rotate(orientation, glm::radians(_verticalAngle), glm::vec3(1,0,0));
+    orientation = glm::rotate(orientation, glm::radians(_horizontalAngle), glm::vec3(0,1,0));
     return orientation;
 }
 
@@ -92,8 +87,8 @@ void Camera::offsetOrientation(float upAngle, float rightAngle) {
 void Camera::lookAt(glm::vec3 position) {
     assert(position != _position);
     glm::vec3 direction = glm::normalize(position - _position);
-    _verticalAngle = RadiansToDegrees(asinf(-direction.y));
-    _horizontalAngle = -RadiansToDegrees(atan2f(-direction.x, -direction.z));
+    _verticalAngle = glm::radians(asinf(-direction.y));
+    _horizontalAngle = -glm::radians(atan2f(-direction.x, -direction.z));
     normalizeAngles();
 }
 
@@ -126,7 +121,7 @@ glm::mat4 Camera::matrix() const {
 }
 
 glm::mat4 Camera::projection() const {
-    return glm::perspective(_fieldOfView, _viewportAspectRatio, _nearPlane, _farPlane);
+    return glm::perspective(glm::radians(_fieldOfView), _viewportAspectRatio, _nearPlane, _farPlane);
 }
 
 glm::mat4 Camera::view() const {

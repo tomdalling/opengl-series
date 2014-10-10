@@ -1,6 +1,6 @@
 The MIT License
 
-Copyright (c) 2005 - 2012 G-Truc Creation
+Copyright (c) 2005 - 2013 G-Truc Creation
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

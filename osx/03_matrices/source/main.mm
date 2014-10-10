@@ -168,7 +168,7 @@ static void Render() {
     gProgram->use();
 
     // set the "model" uniform in the vertex shader, based on the gDegreesRotated global
-    gProgram->setUniform("model", glm::rotate(glm::mat4(), gDegreesRotated, glm::vec3(0,1,0)));
+    gProgram->setUniform("model", glm::rotate(glm::mat4(), glm::radians(gDegreesRotated), glm::vec3(0,1,0)));
         
     // bind the texture and set the "tex" uniform in the fragment shader
     glActiveTexture(GL_TEXTURE0);

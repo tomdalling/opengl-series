@@ -1,15 +1,36 @@
-//////////////////////////////////////////////////////////////////////////////////
-// OpenGL Mathematics Copyright (c) 2005 - 2012 G-Truc Creation (www.g-truc.net)
-//////////////////////////////////////////////////////////////////////////////////
-// Created : 2011-09-19
-// Updated : 2011-09-19
-// Licence : This source is under MIT License
-// File    : glm/gtc/random.inl
-//////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+/// OpenGL Mathematics (glm.g-truc.net)
+///
+/// Copyright (c) 2005 - 2014 G-Truc Creation (www.g-truc.net)
+/// Permission is hereby granted, free of charge, to any person obtaining a copy
+/// of this software and associated documentation files (the "Software"), to deal
+/// in the Software without restriction, including without limitation the rights
+/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+/// copies of the Software, and to permit persons to whom the Software is
+/// furnished to do so, subject to the following conditions:
+/// 
+/// The above copyright notice and this permission notice shall be included in
+/// all copies or substantial portions of the Software.
+/// 
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+/// THE SOFTWARE.
+///
+/// @ref gtc_random
+/// @file glm/gtc/random.inl
+/// @date 2011-09-19 / 2012-04-07
+/// @author Christophe Riccio
+///////////////////////////////////////////////////////////////////////////////////
 
+#include "../geometric.hpp"
+#include "../exponential.hpp"
+#include <cstdlib>
 #include <ctime>
 #include <cassert>
-#include "../core/_vectorize.hpp"
 
 namespace glm{
 namespace detail
@@ -25,12 +46,6 @@ namespace detail
 		}
 */
 	};
-    
-	template <>
-	GLM_FUNC_QUALIFIER half compute_linearRand::operator()<half> (half const & Min, half const & Max) const
-	{
-		return half(float(std::rand()) / float(RAND_MAX) * (float(Max) - float(Min)) + float(Min));
-	}
 
 	template <>
 	GLM_FUNC_QUALIFIER float compute_linearRand::operator()<float> (float const & Min, float const & Max) const
@@ -43,7 +58,7 @@ namespace detail
 	{
 		return double(std::rand()) / double(RAND_MAX) * (Max - Min) + Min;
 	}
-    
+
 	template <>
 	GLM_FUNC_QUALIFIER long double compute_linearRand::operator()<long double> (long double const & Min, long double const & Max) const
 	{
@@ -54,7 +69,7 @@ namespace detail
 	template <typename genType> 
 	GLM_FUNC_QUALIFIER genType linearRand
 	(
-		genType const & Min, 
+		genType const & Min,
 		genType const & Max
 	)
 	{
@@ -86,17 +101,19 @@ namespace detail
 	VECTORIZE_VEC_VEC(gaussRand)
 
 	template <typename T>
-	GLM_FUNC_QUALIFIER detail::tvec2<T> diskRand
+	GLM_FUNC_QUALIFIER detail::tvec2<T, defaultp> diskRand
 	(
 		T const & Radius
 	)
 	{		
-		detail::tvec2<T> Result(T(0));
+		detail::tvec2<T, defaultp> Result(T(0));
 		T LenRadius(T(0));
 		
 		do
 		{
-			Result = linearRand(detail::tvec2<T>(-Radius), detail::tvec2<T>(Radius));
+			Result = linearRand(
+				detail::tvec2<T, defaultp>(-Radius),
+				detail::tvec2<T, defaultp>(Radius));
 			LenRadius = length(Result);
 		}
 		while(LenRadius > Radius);
@@ -105,17 +122,19 @@ namespace detail
 	}
 	
 	template <typename T>
-	GLM_FUNC_QUALIFIER detail::tvec3<T> ballRand
+	GLM_FUNC_QUALIFIER detail::tvec3<T, defaultp> ballRand
 	(
 		T const & Radius
 	)
 	{		
-		detail::tvec3<T> Result(T(0));
+		detail::tvec3<T, defaultp> Result(T(0));
 		T LenRadius(T(0));
 		
 		do
 		{
-			Result = linearRand(detail::tvec3<T>(-Radius), detail::tvec3<T>(Radius));
+			Result = linearRand(
+				detail::tvec3<T, defaultp>(-Radius),
+				detail::tvec3<T, defaultp>(Radius));
 			LenRadius = length(Result);
 		}
 		while(LenRadius > Radius);
@@ -123,18 +142,18 @@ namespace detail
 		return Result;
 	}
 	
-	template <typename T> 
-	GLM_FUNC_QUALIFIER detail::tvec2<T> circularRand
+	template <typename T>
+	GLM_FUNC_QUALIFIER detail::tvec2<T, defaultp> circularRand
 	(
 		T const & Radius
 	)
 	{
 		T a = linearRand(T(0), T(6.283185307179586476925286766559f));
-		return detail::tvec2<T>(cos(a), sin(a)) * Radius;		
+		return detail::tvec2<T, defaultp>(cos(a), sin(a)) * Radius;		
 	}
 	
-	template <typename T> 
-	GLM_FUNC_QUALIFIER detail::tvec3<T> sphericalRand
+	template <typename T>
+	GLM_FUNC_QUALIFIER detail::tvec3<T, defaultp> sphericalRand
 	(
 		T const & Radius
 	)
@@ -147,6 +166,6 @@ namespace detail
 		T x = r * cos(a);
 		T y = r * sin(a);
 	
-		return detail::tvec3<T>(x, y, z) * Radius;	
+		return detail::tvec3<T, defaultp>(x, y, z) * Radius;	
 	}
 }//namespace glm

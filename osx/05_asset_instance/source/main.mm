@@ -291,7 +291,7 @@ static void Update(float secondsElapsed) {
     const GLfloat degreesPerSecond = 180.0f;
     gDegreesRotated += secondsElapsed * degreesPerSecond;
     while(gDegreesRotated > 360.0f) gDegreesRotated -= 360.0f;
-    gInstances.front().transform = glm::rotate(glm::mat4(), gDegreesRotated, glm::vec3(0,1,0));
+    gInstances.front().transform = glm::rotate(glm::mat4(), glm::radians(gDegreesRotated), glm::vec3(0,1,0));
 
     //move position of camera based on WASD keys, and XZ keys for up and down
     const float moveSpeed = 2.0; //units per second
