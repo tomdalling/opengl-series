@@ -853,7 +853,7 @@
 		E2639943190D145C00B6251A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = E2639946190D145C00B6251A /* Build configuration list for PBXProject "opengl-series" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1084,6 +1084,7 @@
 					"\"$(PROJECT_DIR)/thirdparty\"/**",
 				);
 				LIBRARY_SEARCH_PATHS = "\"$(PROJECT_DIR)/thirdparty\"/**";
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
