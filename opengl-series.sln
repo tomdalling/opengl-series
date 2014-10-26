@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_project_skeleton", "platforms\windows\01_project_skeleton.vcxproj", "{0E839A2B-C52A-406F-B290-E21A585D9178}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_textures", "platforms\windows\02_textures.vcxproj", "{872F49FD-A39D-4180-B5EC-52D4325FD9A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{0E839A2B-C52A-406F-B290-E21A585D9178}.Debug|Win32.Build.0 = Debug|Win32
 		{0E839A2B-C52A-406F-B290-E21A585D9178}.Release|Win32.ActiveCfg = Release|Win32
 		{0E839A2B-C52A-406F-B290-E21A585D9178}.Release|Win32.Build.0 = Release|Win32
+		{872F49FD-A39D-4180-B5EC-52D4325FD9A3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{872F49FD-A39D-4180-B5EC-52D4325FD9A3}.Debug|Win32.Build.0 = Debug|Win32
+		{872F49FD-A39D-4180-B5EC-52D4325FD9A3}.Release|Win32.ActiveCfg = Release|Win32
+		{872F49FD-A39D-4180-B5EC-52D4325FD9A3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,8 @@
   <PropertyGroup>
     <IncludePath>$(SolutionDir)source\common\thirdparty\glfw\include;$(SolutionDir)source\common\thirdparty\glew\include;$(SolutionDir)source\common\thirdparty\glm;$(SolutionDir)source\common\thirdparty\stb_image;$(SolutionDir)source\common;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)platforms\windows;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)Build\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Build\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Build\$(ProjectName)\$(Configuration)\Intermediates\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
