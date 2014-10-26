@@ -15,7 +15,7 @@
 		E2639A4B190D14E600B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
 		E2639A7C190D14F500B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
 		E2639AAD190D150700B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
-		E2639AE3190D156500B6251A /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADC190D156500B6251A /* main.mm */; };
+		E2639AE3190D156500B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADC190D156500B6251A /* main.cpp */; };
 		E2639AE4190D156500B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADD190D156500B6251A /* Program.cpp */; };
 		E2639AE5190D156500B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADF190D156500B6251A /* Shader.cpp */; };
 		E2639AE8190D169200B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
@@ -33,7 +33,7 @@
 		E2639B20190D179B00B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B12190D179B00B6251A /* fragment-shader.txt */; };
 		E2639B21190D179B00B6251A /* hazard.png in Resources */ = {isa = PBXBuildFile; fileRef = E2639B13190D179B00B6251A /* hazard.png */; };
 		E2639B22190D179B00B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B14190D179B00B6251A /* vertex-shader.txt */; };
-		E2639B23190D179B00B6251A /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2639B16190D179B00B6251A /* main.mm */; };
+		E2639B23190D179B00B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B16190D179B00B6251A /* main.cpp */; };
 		E2639B24190D179B00B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B18190D179B00B6251A /* Bitmap.cpp */; };
 		E2639B25190D179B00B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B1A190D179B00B6251A /* Program.cpp */; };
 		E2639B26190D179B00B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B1C190D179B00B6251A /* Shader.cpp */; };
@@ -43,7 +43,7 @@
 		E2639B3A190D1AE200B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B2C190D1AE200B6251A /* fragment-shader.txt */; };
 		E2639B3B190D1AE200B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B2D190D1AE200B6251A /* vertex-shader.txt */; };
 		E2639B3C190D1AE200B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639B2E190D1AE200B6251A /* wooden-crate.jpg */; };
-		E2639B3D190D1AE200B6251A /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2639B30190D1AE200B6251A /* main.mm */; };
+		E2639B3D190D1AE200B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B30190D1AE200B6251A /* main.cpp */; };
 		E2639B3E190D1AE200B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B32190D1AE200B6251A /* Bitmap.cpp */; };
 		E2639B3F190D1AE200B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B34190D1AE200B6251A /* Program.cpp */; };
 		E2639B40190D1AE200B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B36190D1AE200B6251A /* Shader.cpp */; };
@@ -63,7 +63,7 @@
 		E2639B60190D1B5300B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B50190D1B5300B6251A /* fragment-shader.txt */; };
 		E2639B61190D1B5300B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B51190D1B5300B6251A /* vertex-shader.txt */; };
 		E2639B62190D1B5300B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639B52190D1B5300B6251A /* wooden-crate.jpg */; };
-		E2639B63190D1B5300B6251A /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2639B54190D1B5300B6251A /* main.mm */; };
+		E2639B63190D1B5300B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B54190D1B5300B6251A /* main.cpp */; };
 		E2639B64190D1B5300B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B56190D1B5300B6251A /* Bitmap.cpp */; };
 		E2639B65190D1B5300B6251A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B58190D1B5300B6251A /* Camera.cpp */; };
 		E2639B66190D1B5300B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B5A190D1B5300B6251A /* Program.cpp */; };
@@ -72,7 +72,7 @@
 		E2639B7B190D1B8F00B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B6B190D1B8F00B6251A /* fragment-shader.txt */; };
 		E2639B7C190D1B8F00B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B6C190D1B8F00B6251A /* vertex-shader.txt */; };
 		E2639B7D190D1B8F00B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639B6D190D1B8F00B6251A /* wooden-crate.jpg */; };
-		E2639B7E190D1B8F00B6251A /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2639B6F190D1B8F00B6251A /* main.mm */; };
+		E2639B7E190D1B8F00B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B6F190D1B8F00B6251A /* main.cpp */; };
 		E2639B7F190D1B8F00B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B71190D1B8F00B6251A /* Bitmap.cpp */; };
 		E2639B80190D1B8F00B6251A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B73190D1B8F00B6251A /* Camera.cpp */; };
 		E2639B81190D1B8F00B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B75190D1B8F00B6251A /* Program.cpp */; };
@@ -81,7 +81,7 @@
 		E2639B96190D1BC000B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B86190D1BC000B6251A /* fragment-shader.txt */; };
 		E2639B97190D1BC100B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B87190D1BC000B6251A /* vertex-shader.txt */; };
 		E2639B98190D1BC100B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639B88190D1BC000B6251A /* wooden-crate.jpg */; };
-		E2639B99190D1BC100B6251A /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2639B8A190D1BC000B6251A /* main.mm */; };
+		E2639B99190D1BC100B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B8A190D1BC000B6251A /* main.cpp */; };
 		E2639B9A190D1BC100B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B8C190D1BC000B6251A /* Bitmap.cpp */; };
 		E2639B9B190D1BC100B6251A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B8E190D1BC000B6251A /* Camera.cpp */; };
 		E2639B9C190D1BC100B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B90190D1BC000B6251A /* Program.cpp */; };
@@ -90,7 +90,7 @@
 		E2639BB1190D1BEC00B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639BA1190D1BEC00B6251A /* fragment-shader.txt */; };
 		E2639BB2190D1BEC00B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639BA2190D1BEC00B6251A /* vertex-shader.txt */; };
 		E2639BB3190D1BEC00B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639BA3190D1BEC00B6251A /* wooden-crate.jpg */; };
-		E2639BB4190D1BEC00B6251A /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2639BA5190D1BEC00B6251A /* main.mm */; };
+		E2639BB4190D1BEC00B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BA5190D1BEC00B6251A /* main.cpp */; };
 		E2639BB5190D1BEC00B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BA7190D1BEC00B6251A /* Bitmap.cpp */; };
 		E2639BB6190D1BEC00B6251A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BA9190D1BEC00B6251A /* Camera.cpp */; };
 		E2639BB7190D1BEC00B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BAB190D1BEC00B6251A /* Program.cpp */; };
@@ -99,7 +99,7 @@
 		E2639BCC190D1C1700B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639BBC190D1C1700B6251A /* fragment-shader.txt */; };
 		E2639BCD190D1C1700B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639BBD190D1C1700B6251A /* vertex-shader.txt */; };
 		E2639BCE190D1C1700B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639BBE190D1C1700B6251A /* wooden-crate.jpg */; };
-		E2639BCF190D1C1700B6251A /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC0190D1C1700B6251A /* main.mm */; };
+		E2639BCF190D1C1700B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC0190D1C1700B6251A /* main.cpp */; };
 		E2639BD0190D1C1700B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC2190D1C1700B6251A /* Bitmap.cpp */; };
 		E2639BD1190D1C1700B6251A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC4190D1C1700B6251A /* Camera.cpp */; };
 		E2639BD2190D1C1700B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC6190D1C1700B6251A /* Program.cpp */; };
@@ -141,7 +141,7 @@
 		E2639A4A190D14E600B6251A /* 06_diffuse_lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 06_diffuse_lighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2639A7B190D14F500B6251A /* 07_more_lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 07_more_lighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2639AAC190D150700B6251A /* 08_even_more_lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 08_even_more_lighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2639ADC190D156500B6251A /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E2639ADC190D156500B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E2639ADD190D156500B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
 		E2639ADE190D156500B6251A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
 		E2639ADF190D156500B6251A /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		E2639B12190D179B00B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
 		E2639B13190D179B00B6251A /* hazard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hazard.png; sourceTree = "<group>"; };
 		E2639B14190D179B00B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
-		E2639B16190D179B00B6251A /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E2639B16190D179B00B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E2639B18190D179B00B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
 		E2639B19190D179B00B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
 		E2639B1A190D179B00B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		E2639B2C190D1AE200B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
 		E2639B2D190D1AE200B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
 		E2639B2E190D1AE200B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
-		E2639B30190D1AE200B6251A /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E2639B30190D1AE200B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E2639B32190D1AE200B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
 		E2639B33190D1AE200B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
 		E2639B34190D1AE200B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		E2639B50190D1B5300B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
 		E2639B51190D1B5300B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
 		E2639B52190D1B5300B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
-		E2639B54190D1B5300B6251A /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E2639B54190D1B5300B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E2639B56190D1B5300B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
 		E2639B57190D1B5300B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
 		E2639B58190D1B5300B6251A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		E2639B6B190D1B8F00B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
 		E2639B6C190D1B8F00B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
 		E2639B6D190D1B8F00B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
-		E2639B6F190D1B8F00B6251A /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E2639B6F190D1B8F00B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E2639B71190D1B8F00B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
 		E2639B72190D1B8F00B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
 		E2639B73190D1B8F00B6251A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 		E2639B86190D1BC000B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
 		E2639B87190D1BC000B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
 		E2639B88190D1BC000B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
-		E2639B8A190D1BC000B6251A /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E2639B8A190D1BC000B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E2639B8C190D1BC000B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
 		E2639B8D190D1BC000B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
 		E2639B8E190D1BC000B6251A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 		E2639BA1190D1BEC00B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
 		E2639BA2190D1BEC00B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
 		E2639BA3190D1BEC00B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
-		E2639BA5190D1BEC00B6251A /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E2639BA5190D1BEC00B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E2639BA7190D1BEC00B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
 		E2639BA8190D1BEC00B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
 		E2639BA9190D1BEC00B6251A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 		E2639BBC190D1C1700B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
 		E2639BBD190D1C1700B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
 		E2639BBE190D1C1700B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
-		E2639BC0190D1C1700B6251A /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E2639BC0190D1C1700B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E2639BC2190D1C1700B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
 		E2639BC3190D1C1700B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
 		E2639BC4190D1C1700B6251A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
@@ -408,7 +408,7 @@
 		E2639ADA190D156500B6251A /* source */ = {
 			isa = PBXGroup;
 			children = (
-				E2639ADC190D156500B6251A /* main.mm */,
+				E2639ADC190D156500B6251A /* main.cpp */,
 				E2639ADD190D156500B6251A /* Program.cpp */,
 				E2639ADE190D156500B6251A /* Program.h */,
 				E2639ADF190D156500B6251A /* Shader.cpp */,
@@ -448,7 +448,7 @@
 		E2639B15190D179B00B6251A /* source */ = {
 			isa = PBXGroup;
 			children = (
-				E2639B16190D179B00B6251A /* main.mm */,
+				E2639B16190D179B00B6251A /* main.cpp */,
 				E2639B17190D179B00B6251A /* tdogl */,
 			);
 			path = source;
@@ -491,7 +491,7 @@
 		E2639B2F190D1AE200B6251A /* source */ = {
 			isa = PBXGroup;
 			children = (
-				E2639B30190D1AE200B6251A /* main.mm */,
+				E2639B30190D1AE200B6251A /* main.cpp */,
 				E2639B31190D1AE200B6251A /* tdogl */,
 			);
 			path = source;
@@ -534,7 +534,7 @@
 		E2639B53190D1B5300B6251A /* source */ = {
 			isa = PBXGroup;
 			children = (
-				E2639B54190D1B5300B6251A /* main.mm */,
+				E2639B54190D1B5300B6251A /* main.cpp */,
 				E2639B55190D1B5300B6251A /* tdogl */,
 			);
 			path = source;
@@ -579,7 +579,7 @@
 		E2639B6E190D1B8F00B6251A /* source */ = {
 			isa = PBXGroup;
 			children = (
-				E2639B6F190D1B8F00B6251A /* main.mm */,
+				E2639B6F190D1B8F00B6251A /* main.cpp */,
 				E2639B70190D1B8F00B6251A /* tdogl */,
 			);
 			path = source;
@@ -624,7 +624,7 @@
 		E2639B89190D1BC000B6251A /* source */ = {
 			isa = PBXGroup;
 			children = (
-				E2639B8A190D1BC000B6251A /* main.mm */,
+				E2639B8A190D1BC000B6251A /* main.cpp */,
 				E2639B8B190D1BC000B6251A /* tdogl */,
 			);
 			path = source;
@@ -669,7 +669,7 @@
 		E2639BA4190D1BEC00B6251A /* source */ = {
 			isa = PBXGroup;
 			children = (
-				E2639BA5190D1BEC00B6251A /* main.mm */,
+				E2639BA5190D1BEC00B6251A /* main.cpp */,
 				E2639BA6190D1BEC00B6251A /* tdogl */,
 			);
 			path = source;
@@ -714,7 +714,7 @@
 		E2639BBF190D1C1700B6251A /* source */ = {
 			isa = PBXGroup;
 			children = (
-				E2639BC0190D1C1700B6251A /* main.mm */,
+				E2639BC0190D1C1700B6251A /* main.cpp */,
 				E2639BC1190D1C1700B6251A /* tdogl */,
 			);
 			path = source;
@@ -1009,7 +1009,7 @@
 				E2639AE5190D156500B6251A /* Shader.cpp in Sources */,
 				E29C2A9819FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639AF3190D16D900B6251A /* glew.c in Sources */,
-				E2639AE3190D156500B6251A /* main.mm in Sources */,
+				E2639AE3190D156500B6251A /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,7 +1019,7 @@
 			files = (
 				E29C2A9919FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B25190D179B00B6251A /* Program.cpp in Sources */,
-				E2639B23190D179B00B6251A /* main.mm in Sources */,
+				E2639B23190D179B00B6251A /* main.cpp in Sources */,
 				E2639AF4190D16D900B6251A /* glew.c in Sources */,
 				E2639B27190D179B00B6251A /* Texture.cpp in Sources */,
 				E2639B24190D179B00B6251A /* Bitmap.cpp in Sources */,
@@ -1033,7 +1033,7 @@
 			files = (
 				E29C2A9A19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B3F190D1AE200B6251A /* Program.cpp in Sources */,
-				E2639B3D190D1AE200B6251A /* main.mm in Sources */,
+				E2639B3D190D1AE200B6251A /* main.cpp in Sources */,
 				E2639AF5190D16D900B6251A /* glew.c in Sources */,
 				E2639B41190D1AE200B6251A /* Texture.cpp in Sources */,
 				E2639B3E190D1AE200B6251A /* Bitmap.cpp in Sources */,
@@ -1049,7 +1049,7 @@
 				E2639B66190D1B5300B6251A /* Program.cpp in Sources */,
 				E2639B68190D1B5300B6251A /* Texture.cpp in Sources */,
 				E2639B65190D1B5300B6251A /* Camera.cpp in Sources */,
-				E2639B63190D1B5300B6251A /* main.mm in Sources */,
+				E2639B63190D1B5300B6251A /* main.cpp in Sources */,
 				E2639AF6190D16D900B6251A /* glew.c in Sources */,
 				E2639B67190D1B5300B6251A /* Shader.cpp in Sources */,
 				E2639B64190D1B5300B6251A /* Bitmap.cpp in Sources */,
@@ -1064,7 +1064,7 @@
 				E2639B81190D1B8F00B6251A /* Program.cpp in Sources */,
 				E2639B83190D1B8F00B6251A /* Texture.cpp in Sources */,
 				E2639B80190D1B8F00B6251A /* Camera.cpp in Sources */,
-				E2639B7E190D1B8F00B6251A /* main.mm in Sources */,
+				E2639B7E190D1B8F00B6251A /* main.cpp in Sources */,
 				E2639AF7190D16D900B6251A /* glew.c in Sources */,
 				E2639B82190D1B8F00B6251A /* Shader.cpp in Sources */,
 				E2639B7F190D1B8F00B6251A /* Bitmap.cpp in Sources */,
@@ -1079,7 +1079,7 @@
 				E2639B9C190D1BC100B6251A /* Program.cpp in Sources */,
 				E2639B9E190D1BC100B6251A /* Texture.cpp in Sources */,
 				E2639B9B190D1BC100B6251A /* Camera.cpp in Sources */,
-				E2639B99190D1BC100B6251A /* main.mm in Sources */,
+				E2639B99190D1BC100B6251A /* main.cpp in Sources */,
 				E2639AF8190D16D900B6251A /* glew.c in Sources */,
 				E2639B9D190D1BC100B6251A /* Shader.cpp in Sources */,
 				E2639B9A190D1BC100B6251A /* Bitmap.cpp in Sources */,
@@ -1094,7 +1094,7 @@
 				E2639BB7190D1BEC00B6251A /* Program.cpp in Sources */,
 				E2639BB9190D1BEC00B6251A /* Texture.cpp in Sources */,
 				E2639BB6190D1BEC00B6251A /* Camera.cpp in Sources */,
-				E2639BB4190D1BEC00B6251A /* main.mm in Sources */,
+				E2639BB4190D1BEC00B6251A /* main.cpp in Sources */,
 				E2639AF9190D16D900B6251A /* glew.c in Sources */,
 				E2639BB8190D1BEC00B6251A /* Shader.cpp in Sources */,
 				E2639BB5190D1BEC00B6251A /* Bitmap.cpp in Sources */,
@@ -1109,7 +1109,7 @@
 				E2639BD2190D1C1700B6251A /* Program.cpp in Sources */,
 				E2639BD4190D1C1700B6251A /* Texture.cpp in Sources */,
 				E2639BD1190D1C1700B6251A /* Camera.cpp in Sources */,
-				E2639BCF190D1C1700B6251A /* main.mm in Sources */,
+				E2639BCF190D1C1700B6251A /* main.cpp in Sources */,
 				E2639AFA190D16D900B6251A /* glew.c in Sources */,
 				E2639BD3190D1C1700B6251A /* Shader.cpp in Sources */,
 				E2639BD0190D1C1700B6251A /* Bitmap.cpp in Sources */,
