@@ -121,14 +121,14 @@
 		E29C2A9219FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
 		E29C2A9319FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
 		E29C2A9419FB7AB200A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
-		E29C2A9819FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
-		E29C2A9919FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
-		E29C2A9A19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
-		E29C2A9B19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
-		E29C2A9C19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
-		E29C2A9D19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
-		E29C2A9E19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
-		E29C2A9F19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
+		E29C2AA219FC9AEC00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AA119FC9AEC00A6FCD2 /* platform_osx.mm */; };
+		E29C2AA319FC9AEC00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AA119FC9AEC00A6FCD2 /* platform_osx.mm */; };
+		E29C2AA419FC9AEC00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AA119FC9AEC00A6FCD2 /* platform_osx.mm */; };
+		E29C2AA519FC9AEC00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AA119FC9AEC00A6FCD2 /* platform_osx.mm */; };
+		E29C2AA619FC9AEC00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AA119FC9AEC00A6FCD2 /* platform_osx.mm */; };
+		E29C2AA719FC9AEC00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AA119FC9AEC00A6FCD2 /* platform_osx.mm */; };
+		E29C2AA819FC9AEC00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AA119FC9AEC00A6FCD2 /* platform_osx.mm */; };
+		E29C2AA919FC9AEC00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AA119FC9AEC00A6FCD2 /* platform_osx.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -247,8 +247,8 @@
 		E2639BCB190D1C1700B6251A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		E29C2A8319FB71B700A6FCD2 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = thirdparty/glfw/lib/libglfw3.a; sourceTree = "<group>"; };
 		E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		E29C2A9619FC8EA200A6FCD2 /* platform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = platform.hpp; sourceTree = "<group>"; };
-		E29C2A9719FC8EA200A6FCD2 /* platform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = platform.mm; sourceTree = "<group>"; };
+		E29C2AA119FC9AEC00A6FCD2 /* platform_osx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = platform_osx.mm; sourceTree = "<group>"; };
+		E29C2AAA19FC9AF600A6FCD2 /* platform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = platform.hpp; path = ../common/platform.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,7 +362,7 @@
 				E2639B84190D1BC000B6251A /* 06_diffuse_lighting */,
 				E2639B9F190D1BEC00B6251A /* 07_more_lighting */,
 				E2639BBA190D1C1700B6251A /* 08_even_more_lighting */,
-				E29C2A9519FC8E8300A6FCD2 /* common */,
+				E29C2AA019FC9ADC00A6FCD2 /* common */,
 				E263994F190D148400B6251A /* thirdparty */,
 				E263994E190D148400B6251A /* Products */,
 			);
@@ -737,13 +737,13 @@
 			path = tdogl;
 			sourceTree = "<group>";
 		};
-		E29C2A9519FC8E8300A6FCD2 /* common */ = {
+		E29C2AA019FC9ADC00A6FCD2 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				E29C2A9619FC8EA200A6FCD2 /* platform.hpp */,
-				E29C2A9719FC8EA200A6FCD2 /* platform.mm */,
+				E29C2AAA19FC9AF600A6FCD2 /* platform.hpp */,
+				E29C2AA119FC9AEC00A6FCD2 /* platform_osx.mm */,
 			);
-			path = common;
+			name = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1007,9 +1007,9 @@
 			files = (
 				E2639AE4190D156500B6251A /* Program.cpp in Sources */,
 				E2639AE5190D156500B6251A /* Shader.cpp in Sources */,
-				E29C2A9819FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639AF3190D16D900B6251A /* glew.c in Sources */,
 				E2639AE3190D156500B6251A /* main.cpp in Sources */,
+				E29C2AA219FC9AEC00A6FCD2 /* platform_osx.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1017,10 +1017,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29C2A9919FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B25190D179B00B6251A /* Program.cpp in Sources */,
 				E2639B23190D179B00B6251A /* main.cpp in Sources */,
 				E2639AF4190D16D900B6251A /* glew.c in Sources */,
+				E29C2AA319FC9AEC00A6FCD2 /* platform_osx.mm in Sources */,
 				E2639B27190D179B00B6251A /* Texture.cpp in Sources */,
 				E2639B24190D179B00B6251A /* Bitmap.cpp in Sources */,
 				E2639B26190D179B00B6251A /* Shader.cpp in Sources */,
@@ -1031,10 +1031,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29C2A9A19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B3F190D1AE200B6251A /* Program.cpp in Sources */,
 				E2639B3D190D1AE200B6251A /* main.cpp in Sources */,
 				E2639AF5190D16D900B6251A /* glew.c in Sources */,
+				E29C2AA419FC9AEC00A6FCD2 /* platform_osx.mm in Sources */,
 				E2639B41190D1AE200B6251A /* Texture.cpp in Sources */,
 				E2639B3E190D1AE200B6251A /* Bitmap.cpp in Sources */,
 				E2639B40190D1AE200B6251A /* Shader.cpp in Sources */,
@@ -1045,12 +1045,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29C2A9B19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B66190D1B5300B6251A /* Program.cpp in Sources */,
 				E2639B68190D1B5300B6251A /* Texture.cpp in Sources */,
 				E2639B65190D1B5300B6251A /* Camera.cpp in Sources */,
 				E2639B63190D1B5300B6251A /* main.cpp in Sources */,
 				E2639AF6190D16D900B6251A /* glew.c in Sources */,
+				E29C2AA519FC9AEC00A6FCD2 /* platform_osx.mm in Sources */,
 				E2639B67190D1B5300B6251A /* Shader.cpp in Sources */,
 				E2639B64190D1B5300B6251A /* Bitmap.cpp in Sources */,
 			);
@@ -1060,12 +1060,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29C2A9C19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B81190D1B8F00B6251A /* Program.cpp in Sources */,
 				E2639B83190D1B8F00B6251A /* Texture.cpp in Sources */,
 				E2639B80190D1B8F00B6251A /* Camera.cpp in Sources */,
 				E2639B7E190D1B8F00B6251A /* main.cpp in Sources */,
 				E2639AF7190D16D900B6251A /* glew.c in Sources */,
+				E29C2AA619FC9AEC00A6FCD2 /* platform_osx.mm in Sources */,
 				E2639B82190D1B8F00B6251A /* Shader.cpp in Sources */,
 				E2639B7F190D1B8F00B6251A /* Bitmap.cpp in Sources */,
 			);
@@ -1075,12 +1075,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29C2A9D19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B9C190D1BC100B6251A /* Program.cpp in Sources */,
 				E2639B9E190D1BC100B6251A /* Texture.cpp in Sources */,
 				E2639B9B190D1BC100B6251A /* Camera.cpp in Sources */,
 				E2639B99190D1BC100B6251A /* main.cpp in Sources */,
 				E2639AF8190D16D900B6251A /* glew.c in Sources */,
+				E29C2AA719FC9AEC00A6FCD2 /* platform_osx.mm in Sources */,
 				E2639B9D190D1BC100B6251A /* Shader.cpp in Sources */,
 				E2639B9A190D1BC100B6251A /* Bitmap.cpp in Sources */,
 			);
@@ -1090,12 +1090,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29C2A9E19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639BB7190D1BEC00B6251A /* Program.cpp in Sources */,
 				E2639BB9190D1BEC00B6251A /* Texture.cpp in Sources */,
 				E2639BB6190D1BEC00B6251A /* Camera.cpp in Sources */,
 				E2639BB4190D1BEC00B6251A /* main.cpp in Sources */,
 				E2639AF9190D16D900B6251A /* glew.c in Sources */,
+				E29C2AA819FC9AEC00A6FCD2 /* platform_osx.mm in Sources */,
 				E2639BB8190D1BEC00B6251A /* Shader.cpp in Sources */,
 				E2639BB5190D1BEC00B6251A /* Bitmap.cpp in Sources */,
 			);
@@ -1105,12 +1105,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29C2A9F19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639BD2190D1C1700B6251A /* Program.cpp in Sources */,
 				E2639BD4190D1C1700B6251A /* Texture.cpp in Sources */,
 				E2639BD1190D1C1700B6251A /* Camera.cpp in Sources */,
 				E2639BCF190D1C1700B6251A /* main.cpp in Sources */,
 				E2639AFA190D16D900B6251A /* glew.c in Sources */,
+				E29C2AA919FC9AEC00A6FCD2 /* platform_osx.mm in Sources */,
 				E2639BD3190D1C1700B6251A /* Shader.cpp in Sources */,
 				E2639BD0190D1C1700B6251A /* Bitmap.cpp in Sources */,
 			);
