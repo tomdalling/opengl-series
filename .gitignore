@@ -3,16 +3,12 @@
 *.vcxproj.user
 *.sdf
 *.opensdfs
-windows/*/Debug/
-windows/*/Release/
-windows/*/ipch/
 
 # Xcode crap
-osx/*.xcodeproj/*
-osx/build/
-!osx/*.xcodeproj/project.pbxproj
-xcuserdata/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+build/
 
 # linux build output
-linux/*/bin/
-linux/*/obj/
+platforms/linux/*/bin/
+platforms/linux/*/obj/

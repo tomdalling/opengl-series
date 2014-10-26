@@ -1,0 +1,1423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2639951190D148400B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
+		E2639987190D149C00B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
+		E26399B8190D14B200B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
+		E26399E9190D14C000B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
+		E2639A1A190D14D100B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
+		E2639A4B190D14E600B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
+		E2639A7C190D14F500B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
+		E2639AAD190D150700B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
+		E2639AE3190D156500B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADC190D156500B6251A /* main.cpp */; };
+		E2639AE4190D156500B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADD190D156500B6251A /* Program.cpp */; };
+		E2639AE5190D156500B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADF190D156500B6251A /* Shader.cpp */; };
+		E2639AE8190D169200B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
+		E2639AFC190D16FF00B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
+		E2639B00190D174200B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639AFE190D174200B6251A /* fragment-shader.txt */; };
+		E2639B08190D174200B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639AFF190D174200B6251A /* vertex-shader.txt */; };
+		E2639B20190D179B00B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B12190D179B00B6251A /* fragment-shader.txt */; };
+		E2639B21190D179B00B6251A /* hazard.png in Resources */ = {isa = PBXBuildFile; fileRef = E2639B13190D179B00B6251A /* hazard.png */; };
+		E2639B22190D179B00B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B14190D179B00B6251A /* vertex-shader.txt */; };
+		E2639B23190D179B00B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B16190D179B00B6251A /* main.cpp */; };
+		E2639B24190D179B00B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B18190D179B00B6251A /* Bitmap.cpp */; };
+		E2639B25190D179B00B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B1A190D179B00B6251A /* Program.cpp */; };
+		E2639B26190D179B00B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B1C190D179B00B6251A /* Shader.cpp */; };
+		E2639B27190D179B00B6251A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B1E190D179B00B6251A /* Texture.cpp */; };
+		E2639B28190D18DF00B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
+		E2639B29190D18E600B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
+		E2639B3A190D1AE200B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B2C190D1AE200B6251A /* fragment-shader.txt */; };
+		E2639B3B190D1AE200B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B2D190D1AE200B6251A /* vertex-shader.txt */; };
+		E2639B3C190D1AE200B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639B2E190D1AE200B6251A /* wooden-crate.jpg */; };
+		E2639B3D190D1AE200B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B30190D1AE200B6251A /* main.cpp */; };
+		E2639B3E190D1AE200B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B32190D1AE200B6251A /* Bitmap.cpp */; };
+		E2639B3F190D1AE200B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B34190D1AE200B6251A /* Program.cpp */; };
+		E2639B40190D1AE200B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B36190D1AE200B6251A /* Shader.cpp */; };
+		E2639B41190D1AE200B6251A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B38190D1AE200B6251A /* Texture.cpp */; };
+		E2639B42190D1B0300B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
+		E2639B43190D1B0400B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
+		E2639B44190D1B0500B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
+		E2639B45190D1B0600B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
+		E2639B46190D1B0600B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
+		E2639B47190D1B0700B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
+		E2639B48190D1B1400B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
+		E2639B49190D1B1500B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
+		E2639B4A190D1B1500B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
+		E2639B4B190D1B1600B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
+		E2639B4C190D1B1700B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
+		E2639B4D190D1B1700B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
+		E2639B60190D1B5300B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B50190D1B5300B6251A /* fragment-shader.txt */; };
+		E2639B61190D1B5300B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B51190D1B5300B6251A /* vertex-shader.txt */; };
+		E2639B62190D1B5300B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639B52190D1B5300B6251A /* wooden-crate.jpg */; };
+		E2639B63190D1B5300B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B54190D1B5300B6251A /* main.cpp */; };
+		E2639B64190D1B5300B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B56190D1B5300B6251A /* Bitmap.cpp */; };
+		E2639B65190D1B5300B6251A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B58190D1B5300B6251A /* Camera.cpp */; };
+		E2639B66190D1B5300B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B5A190D1B5300B6251A /* Program.cpp */; };
+		E2639B67190D1B5300B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B5C190D1B5300B6251A /* Shader.cpp */; };
+		E2639B68190D1B5300B6251A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B5E190D1B5300B6251A /* Texture.cpp */; };
+		E2639B7B190D1B8F00B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B6B190D1B8F00B6251A /* fragment-shader.txt */; };
+		E2639B7C190D1B8F00B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B6C190D1B8F00B6251A /* vertex-shader.txt */; };
+		E2639B7D190D1B8F00B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639B6D190D1B8F00B6251A /* wooden-crate.jpg */; };
+		E2639B7E190D1B8F00B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B6F190D1B8F00B6251A /* main.cpp */; };
+		E2639B7F190D1B8F00B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B71190D1B8F00B6251A /* Bitmap.cpp */; };
+		E2639B80190D1B8F00B6251A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B73190D1B8F00B6251A /* Camera.cpp */; };
+		E2639B81190D1B8F00B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B75190D1B8F00B6251A /* Program.cpp */; };
+		E2639B82190D1B8F00B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B77190D1B8F00B6251A /* Shader.cpp */; };
+		E2639B83190D1B8F00B6251A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B79190D1B8F00B6251A /* Texture.cpp */; };
+		E2639B96190D1BC000B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B86190D1BC000B6251A /* fragment-shader.txt */; };
+		E2639B97190D1BC100B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639B87190D1BC000B6251A /* vertex-shader.txt */; };
+		E2639B98190D1BC100B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639B88190D1BC000B6251A /* wooden-crate.jpg */; };
+		E2639B99190D1BC100B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B8A190D1BC000B6251A /* main.cpp */; };
+		E2639B9A190D1BC100B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B8C190D1BC000B6251A /* Bitmap.cpp */; };
+		E2639B9B190D1BC100B6251A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B8E190D1BC000B6251A /* Camera.cpp */; };
+		E2639B9C190D1BC100B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B90190D1BC000B6251A /* Program.cpp */; };
+		E2639B9D190D1BC100B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B92190D1BC000B6251A /* Shader.cpp */; };
+		E2639B9E190D1BC100B6251A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639B94190D1BC000B6251A /* Texture.cpp */; };
+		E2639BB1190D1BEC00B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639BA1190D1BEC00B6251A /* fragment-shader.txt */; };
+		E2639BB2190D1BEC00B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639BA2190D1BEC00B6251A /* vertex-shader.txt */; };
+		E2639BB3190D1BEC00B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639BA3190D1BEC00B6251A /* wooden-crate.jpg */; };
+		E2639BB4190D1BEC00B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BA5190D1BEC00B6251A /* main.cpp */; };
+		E2639BB5190D1BEC00B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BA7190D1BEC00B6251A /* Bitmap.cpp */; };
+		E2639BB6190D1BEC00B6251A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BA9190D1BEC00B6251A /* Camera.cpp */; };
+		E2639BB7190D1BEC00B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BAB190D1BEC00B6251A /* Program.cpp */; };
+		E2639BB8190D1BEC00B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BAD190D1BEC00B6251A /* Shader.cpp */; };
+		E2639BB9190D1BEC00B6251A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BAF190D1BEC00B6251A /* Texture.cpp */; };
+		E2639BCC190D1C1700B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639BBC190D1C1700B6251A /* fragment-shader.txt */; };
+		E2639BCD190D1C1700B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639BBD190D1C1700B6251A /* vertex-shader.txt */; };
+		E2639BCE190D1C1700B6251A /* wooden-crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2639BBE190D1C1700B6251A /* wooden-crate.jpg */; };
+		E2639BCF190D1C1700B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC0190D1C1700B6251A /* main.cpp */; };
+		E2639BD0190D1C1700B6251A /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC2190D1C1700B6251A /* Bitmap.cpp */; };
+		E2639BD1190D1C1700B6251A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC4190D1C1700B6251A /* Camera.cpp */; };
+		E2639BD2190D1C1700B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC6190D1C1700B6251A /* Program.cpp */; };
+		E2639BD3190D1C1700B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC8190D1C1700B6251A /* Shader.cpp */; };
+		E2639BD4190D1C1700B6251A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BCA190D1C1700B6251A /* Texture.cpp */; };
+		E29C2A8D19FB7AA500A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A8E19FB7AAD00A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A8F19FB7AAE00A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9019FB7AAF00A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9119FB7AB000A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9219FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9319FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9419FB7AB200A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2ACA19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
+		E29C2ACB19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
+		E29C2ACC19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
+		E29C2ACD19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
+		E29C2ACE19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
+		E29C2ACF19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
+		E29C2AD019FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
+		E29C2AD119FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
+		E29C2AD219FCA21900A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
+		E29C2AD319FCA21C00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
+		E29C2AD419FCA21C00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
+		E29C2AD519FCA21D00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
+		E29C2AD619FCA21E00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
+		E29C2AD719FCA21F00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
+		E29C2AD819FCA21F00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
+		E29C2AD919FCA22100A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
+		E29C2ADA19FCA22D00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
+		E29C2ADB19FCA22E00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
+		E29C2ADC19FCA22F00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
+		E29C2ADD19FCA22F00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
+		E29C2ADE19FCA23000A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
+		E29C2ADF19FCA23100A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
+		E29C2AE019FCA23100A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
+		E29C2AE119FCA23200A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E263994D190D148400B6251A /* 01_project_skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 01_project_skeleton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2639950190D148400B6251A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E2639986190D149C00B6251A /* 02_textures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 02_textures.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26399B7190D14B200B6251A /* 03_matrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 03_matrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26399E8190D14C000B6251A /* 04_camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 04_camera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2639A19190D14D100B6251A /* 05_asset_instance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 05_asset_instance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2639A4A190D14E600B6251A /* 06_diffuse_lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 06_diffuse_lighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2639A7B190D14F500B6251A /* 07_more_lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 07_more_lighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2639AAC190D150700B6251A /* 08_even_more_lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 08_even_more_lighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2639ADC190D156500B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E2639ADD190D156500B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		E2639ADE190D156500B6251A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		E2639ADF190D156500B6251A /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		E2639AE0190D156500B6251A /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E2639AE7190D169200B6251A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		E2639AFB190D16FF00B6251A /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		E2639AFE190D174200B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
+		E2639AFF190D174200B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
+		E2639B12190D179B00B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
+		E2639B13190D179B00B6251A /* hazard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hazard.png; sourceTree = "<group>"; };
+		E2639B14190D179B00B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
+		E2639B16190D179B00B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E2639B18190D179B00B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
+		E2639B19190D179B00B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
+		E2639B1A190D179B00B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		E2639B1B190D179B00B6251A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		E2639B1C190D179B00B6251A /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		E2639B1D190D179B00B6251A /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E2639B1E190D179B00B6251A /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		E2639B1F190D179B00B6251A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		E2639B2C190D1AE200B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
+		E2639B2D190D1AE200B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
+		E2639B2E190D1AE200B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
+		E2639B30190D1AE200B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E2639B32190D1AE200B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
+		E2639B33190D1AE200B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
+		E2639B34190D1AE200B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		E2639B35190D1AE200B6251A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		E2639B36190D1AE200B6251A /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		E2639B37190D1AE200B6251A /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E2639B38190D1AE200B6251A /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		E2639B39190D1AE200B6251A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		E2639B50190D1B5300B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
+		E2639B51190D1B5300B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
+		E2639B52190D1B5300B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
+		E2639B54190D1B5300B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E2639B56190D1B5300B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
+		E2639B57190D1B5300B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
+		E2639B58190D1B5300B6251A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		E2639B59190D1B5300B6251A /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		E2639B5A190D1B5300B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		E2639B5B190D1B5300B6251A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		E2639B5C190D1B5300B6251A /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		E2639B5D190D1B5300B6251A /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E2639B5E190D1B5300B6251A /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		E2639B5F190D1B5300B6251A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		E2639B6B190D1B8F00B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
+		E2639B6C190D1B8F00B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
+		E2639B6D190D1B8F00B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
+		E2639B6F190D1B8F00B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E2639B71190D1B8F00B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
+		E2639B72190D1B8F00B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
+		E2639B73190D1B8F00B6251A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		E2639B74190D1B8F00B6251A /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		E2639B75190D1B8F00B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		E2639B76190D1B8F00B6251A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		E2639B77190D1B8F00B6251A /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		E2639B78190D1B8F00B6251A /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E2639B79190D1B8F00B6251A /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		E2639B7A190D1B8F00B6251A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		E2639B86190D1BC000B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
+		E2639B87190D1BC000B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
+		E2639B88190D1BC000B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
+		E2639B8A190D1BC000B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E2639B8C190D1BC000B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
+		E2639B8D190D1BC000B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
+		E2639B8E190D1BC000B6251A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		E2639B8F190D1BC000B6251A /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		E2639B90190D1BC000B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		E2639B91190D1BC000B6251A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		E2639B92190D1BC000B6251A /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		E2639B93190D1BC000B6251A /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E2639B94190D1BC000B6251A /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		E2639B95190D1BC000B6251A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		E2639BA1190D1BEC00B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
+		E2639BA2190D1BEC00B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
+		E2639BA3190D1BEC00B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
+		E2639BA5190D1BEC00B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E2639BA7190D1BEC00B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
+		E2639BA8190D1BEC00B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
+		E2639BA9190D1BEC00B6251A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		E2639BAA190D1BEC00B6251A /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		E2639BAB190D1BEC00B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		E2639BAC190D1BEC00B6251A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		E2639BAD190D1BEC00B6251A /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		E2639BAE190D1BEC00B6251A /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E2639BAF190D1BEC00B6251A /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		E2639BB0190D1BEC00B6251A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		E2639BBC190D1C1700B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
+		E2639BBD190D1C1700B6251A /* vertex-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vertex-shader.txt"; sourceTree = "<group>"; };
+		E2639BBE190D1C1700B6251A /* wooden-crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wooden-crate.jpg"; sourceTree = "<group>"; };
+		E2639BC0190D1C1700B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E2639BC2190D1C1700B6251A /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
+		E2639BC3190D1C1700B6251A /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
+		E2639BC4190D1C1700B6251A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		E2639BC5190D1C1700B6251A /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		E2639BC6190D1C1700B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		E2639BC7190D1C1700B6251A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		E2639BC8190D1C1700B6251A /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		E2639BC9190D1C1700B6251A /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E2639BCA190D1C1700B6251A /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		E2639BCB190D1C1700B6251A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E29C2AC619FCA19100A6FCD2 /* platform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = platform.hpp; path = source/common/platform.hpp; sourceTree = "<group>"; };
+		E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = platforms/osx/libglfw3.a; sourceTree = "<group>"; };
+		E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = platform_osx.mm; path = platforms/osx/platform_osx.mm; sourceTree = "<group>"; };
+		E29C2AC919FCA1C400A6FCD2 /* glew.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glew.c; path = source/common/thirdparty/glew/src/glew.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E263994A190D148400B6251A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29C2A8E19FB7AAD00A6FCD2 /* QuartzCore.framework in Frameworks */,
+				E29C2AD219FCA21900A6FCD2 /* libglfw3.a in Frameworks */,
+				E2639AFC190D16FF00B6251A /* IOKit.framework in Frameworks */,
+				E2639AE8190D169200B6251A /* OpenGL.framework in Frameworks */,
+				E2639951190D148400B6251A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639983190D149C00B6251A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29C2A8F19FB7AAE00A6FCD2 /* QuartzCore.framework in Frameworks */,
+				E29C2AD319FCA21C00A6FCD2 /* libglfw3.a in Frameworks */,
+				E2639B29190D18E600B6251A /* IOKit.framework in Frameworks */,
+				E2639B28190D18DF00B6251A /* OpenGL.framework in Frameworks */,
+				E2639987190D149C00B6251A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26399B4190D14B200B6251A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29C2A9019FB7AAF00A6FCD2 /* QuartzCore.framework in Frameworks */,
+				E29C2AD419FCA21C00A6FCD2 /* libglfw3.a in Frameworks */,
+				E26399B8190D14B200B6251A /* Cocoa.framework in Frameworks */,
+				E2639B42190D1B0300B6251A /* OpenGL.framework in Frameworks */,
+				E2639B48190D1B1400B6251A /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26399E5190D14C000B6251A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29C2A9119FB7AB000A6FCD2 /* QuartzCore.framework in Frameworks */,
+				E29C2AD519FCA21D00A6FCD2 /* libglfw3.a in Frameworks */,
+				E26399E9190D14C000B6251A /* Cocoa.framework in Frameworks */,
+				E2639B43190D1B0400B6251A /* OpenGL.framework in Frameworks */,
+				E2639B49190D1B1500B6251A /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639A16190D14D100B6251A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29C2A9219FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */,
+				E29C2AD619FCA21E00A6FCD2 /* libglfw3.a in Frameworks */,
+				E2639A1A190D14D100B6251A /* Cocoa.framework in Frameworks */,
+				E2639B44190D1B0500B6251A /* OpenGL.framework in Frameworks */,
+				E2639B4A190D1B1500B6251A /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639A47190D14E600B6251A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29C2A9319FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */,
+				E29C2AD719FCA21F00A6FCD2 /* libglfw3.a in Frameworks */,
+				E2639A4B190D14E600B6251A /* Cocoa.framework in Frameworks */,
+				E2639B45190D1B0600B6251A /* OpenGL.framework in Frameworks */,
+				E2639B4B190D1B1600B6251A /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639A78190D14F500B6251A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29C2A9419FB7AB200A6FCD2 /* QuartzCore.framework in Frameworks */,
+				E29C2AD819FCA21F00A6FCD2 /* libglfw3.a in Frameworks */,
+				E2639A7C190D14F500B6251A /* Cocoa.framework in Frameworks */,
+				E2639B46190D1B0600B6251A /* OpenGL.framework in Frameworks */,
+				E2639B4C190D1B1700B6251A /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639AA9190D150700B6251A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29C2A8D19FB7AA500A6FCD2 /* QuartzCore.framework in Frameworks */,
+				E29C2AD919FCA22100A6FCD2 /* libglfw3.a in Frameworks */,
+				E2639AAD190D150700B6251A /* Cocoa.framework in Frameworks */,
+				E2639B47190D1B0700B6251A /* OpenGL.framework in Frameworks */,
+				E2639B4D190D1B1700B6251A /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2639942190D145C00B6251A = {
+			isa = PBXGroup;
+			children = (
+				E2639AD9190D156500B6251A /* 01_project_skeleton */,
+				E2639B10190D179B00B6251A /* 02_textures */,
+				E2639B2A190D1AE200B6251A /* 03_matrices */,
+				E2639B4E190D1B5300B6251A /* 04_camera */,
+				E2639B69190D1B8F00B6251A /* 05_asset_instance */,
+				E2639B84190D1BC000B6251A /* 06_diffuse_lighting */,
+				E2639B9F190D1BEC00B6251A /* 07_more_lighting */,
+				E2639BBA190D1C1700B6251A /* 08_even_more_lighting */,
+				E29C2AA019FC9ADC00A6FCD2 /* common */,
+				E263994E190D148400B6251A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E263994E190D148400B6251A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E263994D190D148400B6251A /* 01_project_skeleton.app */,
+				E2639986190D149C00B6251A /* 02_textures.app */,
+				E26399B7190D14B200B6251A /* 03_matrices.app */,
+				E26399E8190D14C000B6251A /* 04_camera.app */,
+				E2639A19190D14D100B6251A /* 05_asset_instance.app */,
+				E2639A4A190D14E600B6251A /* 06_diffuse_lighting.app */,
+				E2639A7B190D14F500B6251A /* 07_more_lighting.app */,
+				E2639AAC190D150700B6251A /* 08_even_more_lighting.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2639AD9190D156500B6251A /* 01_project_skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				E2639ADA190D156500B6251A /* source */,
+				E2639AFD190D174200B6251A /* resources */,
+			);
+			name = 01_project_skeleton;
+			path = source/01_project_skeleton;
+			sourceTree = "<group>";
+		};
+		E2639ADA190D156500B6251A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E2639ADC190D156500B6251A /* main.cpp */,
+				E2639ADD190D156500B6251A /* Program.cpp */,
+				E2639ADE190D156500B6251A /* Program.h */,
+				E2639ADF190D156500B6251A /* Shader.cpp */,
+				E2639AE0190D156500B6251A /* Shader.h */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		E2639AFD190D174200B6251A /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2639AFE190D174200B6251A /* fragment-shader.txt */,
+				E2639AFF190D174200B6251A /* vertex-shader.txt */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E2639B10190D179B00B6251A /* 02_textures */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B11190D179B00B6251A /* resources */,
+				E2639B15190D179B00B6251A /* source */,
+			);
+			name = 02_textures;
+			path = source/02_textures;
+			sourceTree = "<group>";
+		};
+		E2639B11190D179B00B6251A /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B12190D179B00B6251A /* fragment-shader.txt */,
+				E2639B13190D179B00B6251A /* hazard.png */,
+				E2639B14190D179B00B6251A /* vertex-shader.txt */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E2639B15190D179B00B6251A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B16190D179B00B6251A /* main.cpp */,
+				E2639B17190D179B00B6251A /* tdogl */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		E2639B17190D179B00B6251A /* tdogl */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B18190D179B00B6251A /* Bitmap.cpp */,
+				E2639B19190D179B00B6251A /* Bitmap.h */,
+				E2639B1A190D179B00B6251A /* Program.cpp */,
+				E2639B1B190D179B00B6251A /* Program.h */,
+				E2639B1C190D179B00B6251A /* Shader.cpp */,
+				E2639B1D190D179B00B6251A /* Shader.h */,
+				E2639B1E190D179B00B6251A /* Texture.cpp */,
+				E2639B1F190D179B00B6251A /* Texture.h */,
+			);
+			path = tdogl;
+			sourceTree = "<group>";
+		};
+		E2639B2A190D1AE200B6251A /* 03_matrices */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B2B190D1AE200B6251A /* resources */,
+				E2639B2F190D1AE200B6251A /* source */,
+			);
+			name = 03_matrices;
+			path = source/03_matrices;
+			sourceTree = "<group>";
+		};
+		E2639B2B190D1AE200B6251A /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B2C190D1AE200B6251A /* fragment-shader.txt */,
+				E2639B2D190D1AE200B6251A /* vertex-shader.txt */,
+				E2639B2E190D1AE200B6251A /* wooden-crate.jpg */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E2639B2F190D1AE200B6251A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B30190D1AE200B6251A /* main.cpp */,
+				E2639B31190D1AE200B6251A /* tdogl */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		E2639B31190D1AE200B6251A /* tdogl */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B32190D1AE200B6251A /* Bitmap.cpp */,
+				E2639B33190D1AE200B6251A /* Bitmap.h */,
+				E2639B34190D1AE200B6251A /* Program.cpp */,
+				E2639B35190D1AE200B6251A /* Program.h */,
+				E2639B36190D1AE200B6251A /* Shader.cpp */,
+				E2639B37190D1AE200B6251A /* Shader.h */,
+				E2639B38190D1AE200B6251A /* Texture.cpp */,
+				E2639B39190D1AE200B6251A /* Texture.h */,
+			);
+			path = tdogl;
+			sourceTree = "<group>";
+		};
+		E2639B4E190D1B5300B6251A /* 04_camera */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B4F190D1B5300B6251A /* resources */,
+				E2639B53190D1B5300B6251A /* source */,
+			);
+			name = 04_camera;
+			path = source/04_camera;
+			sourceTree = "<group>";
+		};
+		E2639B4F190D1B5300B6251A /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B50190D1B5300B6251A /* fragment-shader.txt */,
+				E2639B51190D1B5300B6251A /* vertex-shader.txt */,
+				E2639B52190D1B5300B6251A /* wooden-crate.jpg */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E2639B53190D1B5300B6251A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B54190D1B5300B6251A /* main.cpp */,
+				E2639B55190D1B5300B6251A /* tdogl */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		E2639B55190D1B5300B6251A /* tdogl */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B56190D1B5300B6251A /* Bitmap.cpp */,
+				E2639B57190D1B5300B6251A /* Bitmap.h */,
+				E2639B58190D1B5300B6251A /* Camera.cpp */,
+				E2639B59190D1B5300B6251A /* Camera.h */,
+				E2639B5A190D1B5300B6251A /* Program.cpp */,
+				E2639B5B190D1B5300B6251A /* Program.h */,
+				E2639B5C190D1B5300B6251A /* Shader.cpp */,
+				E2639B5D190D1B5300B6251A /* Shader.h */,
+				E2639B5E190D1B5300B6251A /* Texture.cpp */,
+				E2639B5F190D1B5300B6251A /* Texture.h */,
+			);
+			path = tdogl;
+			sourceTree = "<group>";
+		};
+		E2639B69190D1B8F00B6251A /* 05_asset_instance */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B6A190D1B8F00B6251A /* resources */,
+				E2639B6E190D1B8F00B6251A /* source */,
+			);
+			name = 05_asset_instance;
+			path = source/05_asset_instance;
+			sourceTree = "<group>";
+		};
+		E2639B6A190D1B8F00B6251A /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B6B190D1B8F00B6251A /* fragment-shader.txt */,
+				E2639B6C190D1B8F00B6251A /* vertex-shader.txt */,
+				E2639B6D190D1B8F00B6251A /* wooden-crate.jpg */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E2639B6E190D1B8F00B6251A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B6F190D1B8F00B6251A /* main.cpp */,
+				E2639B70190D1B8F00B6251A /* tdogl */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		E2639B70190D1B8F00B6251A /* tdogl */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B71190D1B8F00B6251A /* Bitmap.cpp */,
+				E2639B72190D1B8F00B6251A /* Bitmap.h */,
+				E2639B73190D1B8F00B6251A /* Camera.cpp */,
+				E2639B74190D1B8F00B6251A /* Camera.h */,
+				E2639B75190D1B8F00B6251A /* Program.cpp */,
+				E2639B76190D1B8F00B6251A /* Program.h */,
+				E2639B77190D1B8F00B6251A /* Shader.cpp */,
+				E2639B78190D1B8F00B6251A /* Shader.h */,
+				E2639B79190D1B8F00B6251A /* Texture.cpp */,
+				E2639B7A190D1B8F00B6251A /* Texture.h */,
+			);
+			path = tdogl;
+			sourceTree = "<group>";
+		};
+		E2639B84190D1BC000B6251A /* 06_diffuse_lighting */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B85190D1BC000B6251A /* resources */,
+				E2639B89190D1BC000B6251A /* source */,
+			);
+			name = 06_diffuse_lighting;
+			path = source/06_diffuse_lighting;
+			sourceTree = "<group>";
+		};
+		E2639B85190D1BC000B6251A /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B86190D1BC000B6251A /* fragment-shader.txt */,
+				E2639B87190D1BC000B6251A /* vertex-shader.txt */,
+				E2639B88190D1BC000B6251A /* wooden-crate.jpg */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E2639B89190D1BC000B6251A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B8A190D1BC000B6251A /* main.cpp */,
+				E2639B8B190D1BC000B6251A /* tdogl */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		E2639B8B190D1BC000B6251A /* tdogl */ = {
+			isa = PBXGroup;
+			children = (
+				E2639B8C190D1BC000B6251A /* Bitmap.cpp */,
+				E2639B8D190D1BC000B6251A /* Bitmap.h */,
+				E2639B8E190D1BC000B6251A /* Camera.cpp */,
+				E2639B8F190D1BC000B6251A /* Camera.h */,
+				E2639B90190D1BC000B6251A /* Program.cpp */,
+				E2639B91190D1BC000B6251A /* Program.h */,
+				E2639B92190D1BC000B6251A /* Shader.cpp */,
+				E2639B93190D1BC000B6251A /* Shader.h */,
+				E2639B94190D1BC000B6251A /* Texture.cpp */,
+				E2639B95190D1BC000B6251A /* Texture.h */,
+			);
+			path = tdogl;
+			sourceTree = "<group>";
+		};
+		E2639B9F190D1BEC00B6251A /* 07_more_lighting */ = {
+			isa = PBXGroup;
+			children = (
+				E2639BA0190D1BEC00B6251A /* resources */,
+				E2639BA4190D1BEC00B6251A /* source */,
+			);
+			name = 07_more_lighting;
+			path = source/07_more_lighting;
+			sourceTree = "<group>";
+		};
+		E2639BA0190D1BEC00B6251A /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2639BA1190D1BEC00B6251A /* fragment-shader.txt */,
+				E2639BA2190D1BEC00B6251A /* vertex-shader.txt */,
+				E2639BA3190D1BEC00B6251A /* wooden-crate.jpg */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E2639BA4190D1BEC00B6251A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E2639BA5190D1BEC00B6251A /* main.cpp */,
+				E2639BA6190D1BEC00B6251A /* tdogl */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		E2639BA6190D1BEC00B6251A /* tdogl */ = {
+			isa = PBXGroup;
+			children = (
+				E2639BA7190D1BEC00B6251A /* Bitmap.cpp */,
+				E2639BA8190D1BEC00B6251A /* Bitmap.h */,
+				E2639BA9190D1BEC00B6251A /* Camera.cpp */,
+				E2639BAA190D1BEC00B6251A /* Camera.h */,
+				E2639BAB190D1BEC00B6251A /* Program.cpp */,
+				E2639BAC190D1BEC00B6251A /* Program.h */,
+				E2639BAD190D1BEC00B6251A /* Shader.cpp */,
+				E2639BAE190D1BEC00B6251A /* Shader.h */,
+				E2639BAF190D1BEC00B6251A /* Texture.cpp */,
+				E2639BB0190D1BEC00B6251A /* Texture.h */,
+			);
+			path = tdogl;
+			sourceTree = "<group>";
+		};
+		E2639BBA190D1C1700B6251A /* 08_even_more_lighting */ = {
+			isa = PBXGroup;
+			children = (
+				E2639BBB190D1C1700B6251A /* resources */,
+				E2639BBF190D1C1700B6251A /* source */,
+			);
+			name = 08_even_more_lighting;
+			path = source/08_even_more_lighting;
+			sourceTree = "<group>";
+		};
+		E2639BBB190D1C1700B6251A /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2639BBC190D1C1700B6251A /* fragment-shader.txt */,
+				E2639BBD190D1C1700B6251A /* vertex-shader.txt */,
+				E2639BBE190D1C1700B6251A /* wooden-crate.jpg */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E2639BBF190D1C1700B6251A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E2639BC0190D1C1700B6251A /* main.cpp */,
+				E2639BC1190D1C1700B6251A /* tdogl */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		E2639BC1190D1C1700B6251A /* tdogl */ = {
+			isa = PBXGroup;
+			children = (
+				E2639BC2190D1C1700B6251A /* Bitmap.cpp */,
+				E2639BC3190D1C1700B6251A /* Bitmap.h */,
+				E2639BC4190D1C1700B6251A /* Camera.cpp */,
+				E2639BC5190D1C1700B6251A /* Camera.h */,
+				E2639BC6190D1C1700B6251A /* Program.cpp */,
+				E2639BC7190D1C1700B6251A /* Program.h */,
+				E2639BC8190D1C1700B6251A /* Shader.cpp */,
+				E2639BC9190D1C1700B6251A /* Shader.h */,
+				E2639BCA190D1C1700B6251A /* Texture.cpp */,
+				E2639BCB190D1C1700B6251A /* Texture.h */,
+			);
+			path = tdogl;
+			sourceTree = "<group>";
+		};
+		E29C2AA019FC9ADC00A6FCD2 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E29C2AC619FCA19100A6FCD2 /* platform.hpp */,
+				E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */,
+				E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */,
+				E29C2AC919FCA1C400A6FCD2 /* glew.c */,
+				E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */,
+				E2639AE7190D169200B6251A /* OpenGL.framework */,
+				E2639950190D148400B6251A /* Cocoa.framework */,
+				E2639AFB190D16FF00B6251A /* IOKit.framework */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E263994C190D148400B6251A /* 01_project_skeleton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E263997C190D148500B6251A /* Build configuration list for PBXNativeTarget "01_project_skeleton" */;
+			buildPhases = (
+				E2639949190D148400B6251A /* Sources */,
+				E263994A190D148400B6251A /* Frameworks */,
+				E263994B190D148400B6251A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 01_project_skeleton;
+			productName = 01_project_skeleton;
+			productReference = E263994D190D148400B6251A /* 01_project_skeleton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2639985190D149C00B6251A /* 02_textures */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E26399AD190D149C00B6251A /* Build configuration list for PBXNativeTarget "02_textures" */;
+			buildPhases = (
+				E2639982190D149C00B6251A /* Sources */,
+				E2639983190D149C00B6251A /* Frameworks */,
+				E2639984190D149C00B6251A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 02_textures;
+			productName = 02_textures;
+			productReference = E2639986190D149C00B6251A /* 02_textures.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E26399B6190D14B200B6251A /* 03_matrices */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E26399DE190D14B300B6251A /* Build configuration list for PBXNativeTarget "03_matrices" */;
+			buildPhases = (
+				E26399B3190D14B200B6251A /* Sources */,
+				E26399B4190D14B200B6251A /* Frameworks */,
+				E26399B5190D14B200B6251A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 03_matrices;
+			productName = 03_matrices;
+			productReference = E26399B7190D14B200B6251A /* 03_matrices.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E26399E7190D14C000B6251A /* 04_camera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2639A0F190D14C100B6251A /* Build configuration list for PBXNativeTarget "04_camera" */;
+			buildPhases = (
+				E26399E4190D14C000B6251A /* Sources */,
+				E26399E5190D14C000B6251A /* Frameworks */,
+				E26399E6190D14C000B6251A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 04_camera;
+			productName = 04_camera;
+			productReference = E26399E8190D14C000B6251A /* 04_camera.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2639A18190D14D100B6251A /* 05_asset_instance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2639A40190D14D100B6251A /* Build configuration list for PBXNativeTarget "05_asset_instance" */;
+			buildPhases = (
+				E2639A15190D14D100B6251A /* Sources */,
+				E2639A16190D14D100B6251A /* Frameworks */,
+				E2639A17190D14D100B6251A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 05_asset_instance;
+			productName = 05_asset_instance;
+			productReference = E2639A19190D14D100B6251A /* 05_asset_instance.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2639A49190D14E600B6251A /* 06_diffuse_lighting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2639A71190D14E600B6251A /* Build configuration list for PBXNativeTarget "06_diffuse_lighting" */;
+			buildPhases = (
+				E2639A46190D14E600B6251A /* Sources */,
+				E2639A47190D14E600B6251A /* Frameworks */,
+				E2639A48190D14E600B6251A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 06_diffuse_lighting;
+			productName = 06_diffuse_lighting;
+			productReference = E2639A4A190D14E600B6251A /* 06_diffuse_lighting.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2639A7A190D14F500B6251A /* 07_more_lighting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2639AA2190D14F600B6251A /* Build configuration list for PBXNativeTarget "07_more_lighting" */;
+			buildPhases = (
+				E2639A77190D14F500B6251A /* Sources */,
+				E2639A78190D14F500B6251A /* Frameworks */,
+				E2639A79190D14F500B6251A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 07_more_lighting;
+			productName = 07_more_lighting;
+			productReference = E2639A7B190D14F500B6251A /* 07_more_lighting.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2639AAB190D150700B6251A /* 08_even_more_lighting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2639AD3190D150700B6251A /* Build configuration list for PBXNativeTarget "08_even_more_lighting" */;
+			buildPhases = (
+				E2639AA8190D150700B6251A /* Sources */,
+				E2639AA9190D150700B6251A /* Frameworks */,
+				E2639AAA190D150700B6251A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 08_even_more_lighting;
+			productName = 08_even_more_lighting;
+			productReference = E2639AAC190D150700B6251A /* 08_even_more_lighting.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2639943190D145C00B6251A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+			};
+			buildConfigurationList = E2639946190D145C00B6251A /* Build configuration list for PBXProject "opengl-series" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2639942190D145C00B6251A;
+			productRefGroup = E263994E190D148400B6251A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E263994C190D148400B6251A /* 01_project_skeleton */,
+				E2639985190D149C00B6251A /* 02_textures */,
+				E26399B6190D14B200B6251A /* 03_matrices */,
+				E26399E7190D14C000B6251A /* 04_camera */,
+				E2639A18190D14D100B6251A /* 05_asset_instance */,
+				E2639A49190D14E600B6251A /* 06_diffuse_lighting */,
+				E2639A7A190D14F500B6251A /* 07_more_lighting */,
+				E2639AAB190D150700B6251A /* 08_even_more_lighting */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E263994B190D148400B6251A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B08190D174200B6251A /* vertex-shader.txt in Resources */,
+				E2639B00190D174200B6251A /* fragment-shader.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639984190D149C00B6251A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B22190D179B00B6251A /* vertex-shader.txt in Resources */,
+				E2639B20190D179B00B6251A /* fragment-shader.txt in Resources */,
+				E2639B21190D179B00B6251A /* hazard.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26399B5190D14B200B6251A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B3A190D1AE200B6251A /* fragment-shader.txt in Resources */,
+				E2639B3C190D1AE200B6251A /* wooden-crate.jpg in Resources */,
+				E2639B3B190D1AE200B6251A /* vertex-shader.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26399E6190D14C000B6251A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B60190D1B5300B6251A /* fragment-shader.txt in Resources */,
+				E2639B62190D1B5300B6251A /* wooden-crate.jpg in Resources */,
+				E2639B61190D1B5300B6251A /* vertex-shader.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639A17190D14D100B6251A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B7B190D1B8F00B6251A /* fragment-shader.txt in Resources */,
+				E2639B7D190D1B8F00B6251A /* wooden-crate.jpg in Resources */,
+				E2639B7C190D1B8F00B6251A /* vertex-shader.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639A48190D14E600B6251A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B96190D1BC000B6251A /* fragment-shader.txt in Resources */,
+				E2639B98190D1BC100B6251A /* wooden-crate.jpg in Resources */,
+				E2639B97190D1BC100B6251A /* vertex-shader.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639A79190D14F500B6251A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639BB1190D1BEC00B6251A /* fragment-shader.txt in Resources */,
+				E2639BB3190D1BEC00B6251A /* wooden-crate.jpg in Resources */,
+				E2639BB2190D1BEC00B6251A /* vertex-shader.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639AAA190D150700B6251A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639BCC190D1C1700B6251A /* fragment-shader.txt in Resources */,
+				E2639BCE190D1C1700B6251A /* wooden-crate.jpg in Resources */,
+				E2639BCD190D1C1700B6251A /* vertex-shader.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2639949190D148400B6251A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29C2ACA19FCA1C400A6FCD2 /* glew.c in Sources */,
+				E2639AE4190D156500B6251A /* Program.cpp in Sources */,
+				E2639AE5190D156500B6251A /* Shader.cpp in Sources */,
+				E2639AE3190D156500B6251A /* main.cpp in Sources */,
+				E29C2ADA19FCA22D00A6FCD2 /* platform_osx.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639982190D149C00B6251A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B25190D179B00B6251A /* Program.cpp in Sources */,
+				E2639B23190D179B00B6251A /* main.cpp in Sources */,
+				E29C2ACB19FCA1C400A6FCD2 /* glew.c in Sources */,
+				E29C2ADB19FCA22E00A6FCD2 /* platform_osx.mm in Sources */,
+				E2639B27190D179B00B6251A /* Texture.cpp in Sources */,
+				E2639B24190D179B00B6251A /* Bitmap.cpp in Sources */,
+				E2639B26190D179B00B6251A /* Shader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26399B3190D14B200B6251A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B3F190D1AE200B6251A /* Program.cpp in Sources */,
+				E2639B3D190D1AE200B6251A /* main.cpp in Sources */,
+				E29C2ACC19FCA1C400A6FCD2 /* glew.c in Sources */,
+				E29C2ADC19FCA22F00A6FCD2 /* platform_osx.mm in Sources */,
+				E2639B41190D1AE200B6251A /* Texture.cpp in Sources */,
+				E2639B3E190D1AE200B6251A /* Bitmap.cpp in Sources */,
+				E2639B40190D1AE200B6251A /* Shader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26399E4190D14C000B6251A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B66190D1B5300B6251A /* Program.cpp in Sources */,
+				E2639B68190D1B5300B6251A /* Texture.cpp in Sources */,
+				E2639B65190D1B5300B6251A /* Camera.cpp in Sources */,
+				E2639B63190D1B5300B6251A /* main.cpp in Sources */,
+				E2639B67190D1B5300B6251A /* Shader.cpp in Sources */,
+				E29C2ADD19FCA22F00A6FCD2 /* platform_osx.mm in Sources */,
+				E29C2ACD19FCA1C400A6FCD2 /* glew.c in Sources */,
+				E2639B64190D1B5300B6251A /* Bitmap.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639A15190D14D100B6251A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B81190D1B8F00B6251A /* Program.cpp in Sources */,
+				E2639B83190D1B8F00B6251A /* Texture.cpp in Sources */,
+				E2639B80190D1B8F00B6251A /* Camera.cpp in Sources */,
+				E2639B7E190D1B8F00B6251A /* main.cpp in Sources */,
+				E2639B82190D1B8F00B6251A /* Shader.cpp in Sources */,
+				E29C2ADE19FCA23000A6FCD2 /* platform_osx.mm in Sources */,
+				E29C2ACE19FCA1C400A6FCD2 /* glew.c in Sources */,
+				E2639B7F190D1B8F00B6251A /* Bitmap.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639A46190D14E600B6251A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639B9C190D1BC100B6251A /* Program.cpp in Sources */,
+				E2639B9E190D1BC100B6251A /* Texture.cpp in Sources */,
+				E2639B9B190D1BC100B6251A /* Camera.cpp in Sources */,
+				E2639B99190D1BC100B6251A /* main.cpp in Sources */,
+				E2639B9D190D1BC100B6251A /* Shader.cpp in Sources */,
+				E29C2ADF19FCA23100A6FCD2 /* platform_osx.mm in Sources */,
+				E29C2ACF19FCA1C400A6FCD2 /* glew.c in Sources */,
+				E2639B9A190D1BC100B6251A /* Bitmap.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639A77190D14F500B6251A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639BB7190D1BEC00B6251A /* Program.cpp in Sources */,
+				E2639BB9190D1BEC00B6251A /* Texture.cpp in Sources */,
+				E2639BB6190D1BEC00B6251A /* Camera.cpp in Sources */,
+				E2639BB4190D1BEC00B6251A /* main.cpp in Sources */,
+				E2639BB8190D1BEC00B6251A /* Shader.cpp in Sources */,
+				E29C2AE019FCA23100A6FCD2 /* platform_osx.mm in Sources */,
+				E29C2AD019FCA1C400A6FCD2 /* glew.c in Sources */,
+				E2639BB5190D1BEC00B6251A /* Bitmap.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2639AA8190D150700B6251A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2639BD2190D1C1700B6251A /* Program.cpp in Sources */,
+				E2639BD4190D1C1700B6251A /* Texture.cpp in Sources */,
+				E2639BD1190D1C1700B6251A /* Camera.cpp in Sources */,
+				E2639BCF190D1C1700B6251A /* main.cpp in Sources */,
+				E2639BD3190D1C1700B6251A /* Shader.cpp in Sources */,
+				E29C2AE119FCA23200A6FCD2 /* platform_osx.mm in Sources */,
+				E29C2AD119FCA1C400A6FCD2 /* glew.c in Sources */,
+				E2639BD0190D1C1700B6251A /* Bitmap.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E2639947190D145D00B6251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					GLM_FORCE_RADIANS,
+				);
+				GCC_WARN_PEDANTIC = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PROJECT_DIR)/source/common/thirdparty\"/**",
+				);
+				LIBRARY_SEARCH_PATHS = "\"$(PROJECT_DIR)/platforms/osx\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		E2639948190D145D00B6251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					GLM_FORCE_RADIANS,
+				);
+				GCC_WARN_PEDANTIC = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PROJECT_DIR)/source/common/thirdparty\"/**",
+				);
+				LIBRARY_SEARCH_PATHS = "\"$(PROJECT_DIR)/platforms/osx\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+			};
+			name = Release;
+		};
+		E263997D190D148500B6251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 01_project_skeleton;
+			};
+			name = Debug;
+		};
+		E263997E190D148500B6251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 01_project_skeleton;
+			};
+			name = Release;
+		};
+		E26399AE190D149C00B6251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 02_textures;
+			};
+			name = Debug;
+		};
+		E26399AF190D149C00B6251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 02_textures;
+			};
+			name = Release;
+		};
+		E26399DF190D14B300B6251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 03_matrices;
+			};
+			name = Debug;
+		};
+		E26399E0190D14B300B6251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 03_matrices;
+			};
+			name = Release;
+		};
+		E2639A10190D14C100B6251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 04_camera;
+			};
+			name = Debug;
+		};
+		E2639A11190D14C100B6251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 04_camera;
+			};
+			name = Release;
+		};
+		E2639A41190D14D100B6251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 05_asset_instance;
+			};
+			name = Debug;
+		};
+		E2639A42190D14D100B6251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 05_asset_instance;
+			};
+			name = Release;
+		};
+		E2639A72190D14E600B6251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 06_diffuse_lighting;
+			};
+			name = Debug;
+		};
+		E2639A73190D14E600B6251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 06_diffuse_lighting;
+			};
+			name = Release;
+		};
+		E2639AA3190D14F600B6251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 07_more_lighting;
+			};
+			name = Debug;
+		};
+		E2639AA4190D14F600B6251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 07_more_lighting;
+			};
+			name = Release;
+		};
+		E2639AD4190D150700B6251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 08_even_more_lighting;
+			};
+			name = Debug;
+		};
+		E2639AD5190D150700B6251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/platforms/osx",
+				);
+				PRODUCT_NAME = 08_even_more_lighting;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2639946190D145C00B6251A /* Build configuration list for PBXProject "opengl-series" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2639947190D145D00B6251A /* Debug */,
+				E2639948190D145D00B6251A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E263997C190D148500B6251A /* Build configuration list for PBXNativeTarget "01_project_skeleton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E263997D190D148500B6251A /* Debug */,
+				E263997E190D148500B6251A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E26399AD190D149C00B6251A /* Build configuration list for PBXNativeTarget "02_textures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E26399AE190D149C00B6251A /* Debug */,
+				E26399AF190D149C00B6251A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E26399DE190D14B300B6251A /* Build configuration list for PBXNativeTarget "03_matrices" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E26399DF190D14B300B6251A /* Debug */,
+				E26399E0190D14B300B6251A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2639A0F190D14C100B6251A /* Build configuration list for PBXNativeTarget "04_camera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2639A10190D14C100B6251A /* Debug */,
+				E2639A11190D14C100B6251A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2639A40190D14D100B6251A /* Build configuration list for PBXNativeTarget "05_asset_instance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2639A41190D14D100B6251A /* Debug */,
+				E2639A42190D14D100B6251A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2639A71190D14E600B6251A /* Build configuration list for PBXNativeTarget "06_diffuse_lighting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2639A72190D14E600B6251A /* Debug */,
+				E2639A73190D14E600B6251A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2639AA2190D14F600B6251A /* Build configuration list for PBXNativeTarget "07_more_lighting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2639AA3190D14F600B6251A /* Debug */,
+				E2639AA4190D14F600B6251A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2639AD3190D150700B6251A /* Build configuration list for PBXNativeTarget "08_even_more_lighting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2639AD4190D150700B6251A /* Debug */,
+				E2639AD5190D150700B6251A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2639943190D145C00B6251A /* Project object */;
+}

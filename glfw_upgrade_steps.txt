@@ -1,0 +1,35 @@
+Steps up upgrade GLFW:
+
+1. Add this above AppMain
+
+    // records how far the y axis has been scrolled
+    void OnScroll(GLFWwindow* window, double deltaX, double deltaY) {
+        gScrollY += deltaY;
+    }
+
+    void OnError(int errorCode, const char* msg) {
+        throw std::runtime_error(msg);
+    }
+
+2. Add this under AppMain
+
+    glfwSetErrorCallback(OnError);
+
+3. Add this under //open a GLFW window
+
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+
+4. Set gWindow = ...
+
+5. Under //GLFW settings
+
+   5.1 remove gScrollY = 0;
+   5.2 replce with:
+
+       glfwSetScrollCallback(gWindow, OnScroll);
+       glfwMakeContextCurrent(gWindow);
+
+6. Under while(!glfwWindowShouldClose(gWindow)), add:
+
+    // process pending events
+    glfwPollEvents();
