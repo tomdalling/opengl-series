@@ -121,6 +121,14 @@
 		E29C2A9219FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
 		E29C2A9319FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
 		E29C2A9419FB7AB200A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9819FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
+		E29C2A9919FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
+		E29C2A9A19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
+		E29C2A9B19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
+		E29C2A9C19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
+		E29C2A9D19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
+		E29C2A9E19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
+		E29C2A9F19FC8EA200A6FCD2 /* platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2A9719FC8EA200A6FCD2 /* platform.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -239,6 +247,8 @@
 		E2639BCB190D1C1700B6251A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		E29C2A8319FB71B700A6FCD2 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = thirdparty/glfw/lib/libglfw3.a; sourceTree = "<group>"; };
 		E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E29C2A9619FC8EA200A6FCD2 /* platform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = platform.hpp; sourceTree = "<group>"; };
+		E29C2A9719FC8EA200A6FCD2 /* platform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = platform.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +362,7 @@
 				E2639B84190D1BC000B6251A /* 06_diffuse_lighting */,
 				E2639B9F190D1BEC00B6251A /* 07_more_lighting */,
 				E2639BBA190D1C1700B6251A /* 08_even_more_lighting */,
+				E29C2A9519FC8E8300A6FCD2 /* common */,
 				E263994F190D148400B6251A /* thirdparty */,
 				E263994E190D148400B6251A /* Products */,
 			);
@@ -726,6 +737,15 @@
 			path = tdogl;
 			sourceTree = "<group>";
 		};
+		E29C2A9519FC8E8300A6FCD2 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E29C2A9619FC8EA200A6FCD2 /* platform.hpp */,
+				E29C2A9719FC8EA200A6FCD2 /* platform.mm */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -987,6 +1007,7 @@
 			files = (
 				E2639AE4190D156500B6251A /* Program.cpp in Sources */,
 				E2639AE5190D156500B6251A /* Shader.cpp in Sources */,
+				E29C2A9819FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639AF3190D16D900B6251A /* glew.c in Sources */,
 				E2639AE3190D156500B6251A /* main.mm in Sources */,
 			);
@@ -996,6 +1017,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9919FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B25190D179B00B6251A /* Program.cpp in Sources */,
 				E2639B23190D179B00B6251A /* main.mm in Sources */,
 				E2639AF4190D16D900B6251A /* glew.c in Sources */,
@@ -1009,6 +1031,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9A19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B3F190D1AE200B6251A /* Program.cpp in Sources */,
 				E2639B3D190D1AE200B6251A /* main.mm in Sources */,
 				E2639AF5190D16D900B6251A /* glew.c in Sources */,
@@ -1022,6 +1045,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9B19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B66190D1B5300B6251A /* Program.cpp in Sources */,
 				E2639B68190D1B5300B6251A /* Texture.cpp in Sources */,
 				E2639B65190D1B5300B6251A /* Camera.cpp in Sources */,
@@ -1036,6 +1060,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9C19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B81190D1B8F00B6251A /* Program.cpp in Sources */,
 				E2639B83190D1B8F00B6251A /* Texture.cpp in Sources */,
 				E2639B80190D1B8F00B6251A /* Camera.cpp in Sources */,
@@ -1050,6 +1075,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9D19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639B9C190D1BC100B6251A /* Program.cpp in Sources */,
 				E2639B9E190D1BC100B6251A /* Texture.cpp in Sources */,
 				E2639B9B190D1BC100B6251A /* Camera.cpp in Sources */,
@@ -1064,6 +1090,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9E19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639BB7190D1BEC00B6251A /* Program.cpp in Sources */,
 				E2639BB9190D1BEC00B6251A /* Texture.cpp in Sources */,
 				E2639BB6190D1BEC00B6251A /* Camera.cpp in Sources */,
@@ -1078,6 +1105,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9F19FC8EA200A6FCD2 /* platform.mm in Sources */,
 				E2639BD2190D1C1700B6251A /* Program.cpp in Sources */,
 				E2639BD4190D1C1700B6251A /* Texture.cpp in Sources */,
 				E2639BD1190D1C1700B6251A /* Camera.cpp in Sources */,

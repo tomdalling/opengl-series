@@ -16,8 +16,9 @@
  limitations under the License.
  */
 
+#include "platform.hpp"
+
 // third-party libraries
-#import <Foundation/Foundation.h>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
@@ -46,14 +47,6 @@ tdogl::Camera gCamera;
 GLuint gVAO = 0;
 GLuint gVBO = 0;
 GLfloat gDegreesRotated = 0.0f;
-
-
-// returns the full path to the file `fileName` in the resources directory of the app bundle
-static std::string ResourcePath(std::string fileName) {
-    NSString* fname = [NSString stringWithCString:fileName.c_str() encoding:NSUTF8StringEncoding];
-    NSString* path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fname];
-    return std::string([path cStringUsingEncoding:NSUTF8StringEncoding]);
-}
 
 
 // loads the vertex shader and fragment shader, and links them to make the global gProgram

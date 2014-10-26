@@ -16,8 +16,9 @@
  limitations under the License.
  */
 
+#include "platform.hpp"
+
 // third-party libraries
-#import <Foundation/Foundation.h>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
@@ -106,14 +107,6 @@ ModelAsset gWoodenCrate;
 std::list<ModelInstance> gInstances;
 GLfloat gDegreesRotated = 0.0f;
 Light gLight;
-
-
-// returns the full path to the file `fileName` in the resources directory of the app bundle
-static std::string ResourcePath(std::string fileName) {
-    NSString* fname = [NSString stringWithCString:fileName.c_str() encoding:NSUTF8StringEncoding];
-    NSString* path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fname];
-    return std::string([path cStringUsingEncoding:NSUTF8StringEncoding]);
-}
 
 
 // returns a new tdogl::Program created from the given vertex and fragment shader filenames
