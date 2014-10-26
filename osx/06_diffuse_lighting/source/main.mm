@@ -19,7 +19,7 @@
 // third-party libraries
 #import <Foundation/Foundation.h>
 #include <GL/glew.h>
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -93,6 +93,8 @@ struct Light {
 const glm::vec2 SCREEN_SIZE(800, 600);
 
 // globals
+GLFWwindow* gWindow = NULL;
+double gScrollY = 0.0;
 tdogl::Camera gCamera;
 ModelAsset gWoodenCrate;
 std::list<ModelInstance> gInstances;
@@ -296,7 +298,7 @@ static void Render() {
     }
 
     // swap the display buffers (displays what was just drawn)
-    glfwSwapBuffers();
+    glfwSwapBuffers(gWindow);
 }
 
 
@@ -310,69 +312,82 @@ static void Update(float secondsElapsed) {
 
     //move position of camera based on WASD keys, and XZ keys for up and down
     const float moveSpeed = 4.0; //units per second
-    if(glfwGetKey('S')){
+    if(glfwGetKey(gWindow, 'S')){
         gCamera.offsetPosition(secondsElapsed * moveSpeed * -gCamera.forward());
-    } else if(glfwGetKey('W')){
+    } else if(glfwGetKey(gWindow, 'W')){
         gCamera.offsetPosition(secondsElapsed * moveSpeed * gCamera.forward());
     }
-    if(glfwGetKey('A')){
+    if(glfwGetKey(gWindow, 'A')){
         gCamera.offsetPosition(secondsElapsed * moveSpeed * -gCamera.right());
-    } else if(glfwGetKey('D')){
+    } else if(glfwGetKey(gWindow, 'D')){
         gCamera.offsetPosition(secondsElapsed * moveSpeed * gCamera.right());
     }
-    if(glfwGetKey('Z')){
+    if(glfwGetKey(gWindow, 'Z')){
         gCamera.offsetPosition(secondsElapsed * moveSpeed * -glm::vec3(0,1,0));
-    } else if(glfwGetKey('X')){
+    } else if(glfwGetKey(gWindow, 'X')){
         gCamera.offsetPosition(secondsElapsed * moveSpeed * glm::vec3(0,1,0));
     }
 
     //move light
-    if(glfwGetKey('1'))
+    if(glfwGetKey(gWindow, '1'))
         gLight.position = gCamera.position();
 
     // change light color
-    if(glfwGetKey('2'))
+    if(glfwGetKey(gWindow, '2'))
         gLight.intensities = glm::vec3(1,0,0); //red
-    else if(glfwGetKey('3'))
+    else if(glfwGetKey(gWindow, '3'))
         gLight.intensities = glm::vec3(0,1,0); //green
-    else if(glfwGetKey('4'))
+    else if(glfwGetKey(gWindow, '4'))
         gLight.intensities = glm::vec3(1,1,1); //white
 
 
     //rotate camera based on mouse movement
     const float mouseSensitivity = 0.1f;
-    int mouseX, mouseY;
-    glfwGetMousePos(&mouseX, &mouseY);
+    double mouseX, mouseY;
+    glfwGetCursorPos(gWindow, &mouseX, &mouseY);
     gCamera.offsetOrientation(mouseSensitivity * mouseY, mouseSensitivity * mouseX);
-    glfwSetMousePos(0, 0); //reset the mouse, so it doesn't go out of the window
+    glfwSetCursorPos(gWindow, 0, 0); //reset the mouse, so it doesn't go out of the window
 
     //increase or decrease field of view based on mouse wheel
     const float zoomSensitivity = -0.2f;
-    float fieldOfView = gCamera.fieldOfView() + zoomSensitivity * (float)glfwGetMouseWheel();
+    float fieldOfView = gCamera.fieldOfView() + zoomSensitivity * (float)gScrollY;
     if(fieldOfView < 5.0f) fieldOfView = 5.0f;
     if(fieldOfView > 130.0f) fieldOfView = 130.0f;
     gCamera.setFieldOfView(fieldOfView);
-    glfwSetMouseWheel(0);
+    gScrollY = 0;
+}
+
+// records how far the y axis has been scrolled
+void OnScroll(GLFWwindow* window, double deltaX, double deltaY) {
+    gScrollY += deltaY;
+}
+
+void OnError(int errorCode, const char* msg) {
+    throw std::runtime_error(msg);
 }
 
 // the program starts here
 void AppMain() {
     // initialise GLFW
+    glfwSetErrorCallback(OnError);
     if(!glfwInit())
         throw std::runtime_error("glfwInit failed");
 
     // open a window with GLFW
-    glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
-    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
-    glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
-    if(!glfwOpenWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, 8, 8, 8, 8, 16, 0, GLFW_WINDOW))
-        throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+    gWindow = glfwCreateWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, "OpenGL Tutorial", NULL, NULL);
+    if(!gWindow)
+        throw std::runtime_error("glfwCreateWindow failed. Can your hardware handle OpenGL 3.2?");
 
     // GLFW settings
-    glfwDisable(GLFW_MOUSE_CURSOR);
-    glfwSetMousePos(0, 0);
-    glfwSetMouseWheel(0);
+    glfwSetInputMode(gWindow, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetCursorPos(gWindow, 0, 0);
+    glfwSetScrollCallback(gWindow, OnScroll);
+    glfwMakeContextCurrent(gWindow);
 
     // initialise GLEW
     glewExperimental = GL_TRUE; //stops glew crashing on OSX :-/
@@ -415,7 +430,10 @@ void AppMain() {
 
     // run while the window is open
     float lastTime = (float)glfwGetTime();
-    while(glfwGetWindowParam(GLFW_OPENED)){
+    while(!glfwWindowShouldClose(gWindow)){
+        // process pending events
+        glfwPollEvents();
+
         // update the scene based on the time elapsed since last update
         float thisTime = (float)glfwGetTime();
         Update(thisTime - lastTime);
@@ -427,11 +445,11 @@ void AppMain() {
         // check for errors
         GLenum error = glGetError();
         if(error != GL_NO_ERROR)
-            std::cerr << "OpenGL Error " << error << ": " << (const char*)gluErrorString(error) << std::endl;
+            std::cerr << "OpenGL Error " << error << std::endl;
 
         //exit program if escape key is pressed
-        if(glfwGetKey(GLFW_KEY_ESC))
-            glfwCloseWindow();
+        if(glfwGetKey(gWindow, GLFW_KEY_ESCAPE))
+            glfwSetWindowShouldClose(gWindow, GL_TRUE);
     }
 
     // clean up and exit

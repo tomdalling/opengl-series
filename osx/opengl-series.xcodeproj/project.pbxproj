@@ -19,14 +19,6 @@
 		E2639AE4190D156500B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADD190D156500B6251A /* Program.cpp */; };
 		E2639AE5190D156500B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADF190D156500B6251A /* Shader.cpp */; };
 		E2639AE8190D169200B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
-		E2639AEA190D16B700B6251A /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE9190D16B700B6251A /* libglfw.a */; };
-		E2639AEB190D16B700B6251A /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE9190D16B700B6251A /* libglfw.a */; };
-		E2639AEC190D16B700B6251A /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE9190D16B700B6251A /* libglfw.a */; };
-		E2639AED190D16B700B6251A /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE9190D16B700B6251A /* libglfw.a */; };
-		E2639AEE190D16B700B6251A /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE9190D16B700B6251A /* libglfw.a */; };
-		E2639AEF190D16B700B6251A /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE9190D16B700B6251A /* libglfw.a */; };
-		E2639AF0190D16B700B6251A /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE9190D16B700B6251A /* libglfw.a */; };
-		E2639AF1190D16B700B6251A /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE9190D16B700B6251A /* libglfw.a */; };
 		E2639AF3190D16D900B6251A /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E2639AF2190D16D900B6251A /* glew.c */; };
 		E2639AF4190D16D900B6251A /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E2639AF2190D16D900B6251A /* glew.c */; };
 		E2639AF5190D16D900B6251A /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E2639AF2190D16D900B6251A /* glew.c */; };
@@ -113,6 +105,22 @@
 		E2639BD2190D1C1700B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC6190D1C1700B6251A /* Program.cpp */; };
 		E2639BD3190D1C1700B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BC8190D1C1700B6251A /* Shader.cpp */; };
 		E2639BD4190D1C1700B6251A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639BCA190D1C1700B6251A /* Texture.cpp */; };
+		E29C2A8419FB71B700A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8319FB71B700A6FCD2 /* libglfw3.a */; };
+		E29C2A8519FB71B700A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8319FB71B700A6FCD2 /* libglfw3.a */; };
+		E29C2A8619FB71B700A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8319FB71B700A6FCD2 /* libglfw3.a */; };
+		E29C2A8719FB71B700A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8319FB71B700A6FCD2 /* libglfw3.a */; };
+		E29C2A8819FB71B700A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8319FB71B700A6FCD2 /* libglfw3.a */; };
+		E29C2A8919FB71B700A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8319FB71B700A6FCD2 /* libglfw3.a */; };
+		E29C2A8A19FB71B700A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8319FB71B700A6FCD2 /* libglfw3.a */; };
+		E29C2A8B19FB71B700A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8319FB71B700A6FCD2 /* libglfw3.a */; };
+		E29C2A8D19FB7AA500A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A8E19FB7AAD00A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A8F19FB7AAE00A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9019FB7AAF00A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9119FB7AB000A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9219FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9319FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
+		E29C2A9419FB7AB200A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,7 +139,6 @@
 		E2639ADF190D156500B6251A /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		E2639AE0190D156500B6251A /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		E2639AE7190D169200B6251A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		E2639AE9190D16B700B6251A /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = thirdparty/glfw/libglfw.a; sourceTree = SOURCE_ROOT; };
 		E2639AF2190D16D900B6251A /* glew.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glew.c; path = thirdparty/glew/src/glew.c; sourceTree = "<group>"; };
 		E2639AFB190D16FF00B6251A /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		E2639AFE190D174200B6251A /* fragment-shader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fragment-shader.txt"; sourceTree = "<group>"; };
@@ -230,6 +237,8 @@
 		E2639BC9190D1C1700B6251A /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		E2639BCA190D1C1700B6251A /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		E2639BCB190D1C1700B6251A /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		E29C2A8319FB71B700A6FCD2 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = thirdparty/glfw/lib/libglfw3.a; sourceTree = "<group>"; };
+		E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,10 +246,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A8E19FB7AAD00A6FCD2 /* QuartzCore.framework in Frameworks */,
 				E2639AFC190D16FF00B6251A /* IOKit.framework in Frameworks */,
 				E2639AE8190D169200B6251A /* OpenGL.framework in Frameworks */,
 				E2639951190D148400B6251A /* Cocoa.framework in Frameworks */,
-				E2639AEA190D16B700B6251A /* libglfw.a in Frameworks */,
+				E29C2A8419FB71B700A6FCD2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,10 +258,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A8F19FB7AAE00A6FCD2 /* QuartzCore.framework in Frameworks */,
 				E2639B29190D18E600B6251A /* IOKit.framework in Frameworks */,
 				E2639B28190D18DF00B6251A /* OpenGL.framework in Frameworks */,
 				E2639987190D149C00B6251A /* Cocoa.framework in Frameworks */,
-				E2639AEB190D16B700B6251A /* libglfw.a in Frameworks */,
+				E29C2A8519FB71B700A6FCD2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,10 +270,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9019FB7AAF00A6FCD2 /* QuartzCore.framework in Frameworks */,
 				E26399B8190D14B200B6251A /* Cocoa.framework in Frameworks */,
-				E2639AEC190D16B700B6251A /* libglfw.a in Frameworks */,
 				E2639B42190D1B0300B6251A /* OpenGL.framework in Frameworks */,
 				E2639B48190D1B1400B6251A /* IOKit.framework in Frameworks */,
+				E29C2A8619FB71B700A6FCD2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,10 +282,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9119FB7AB000A6FCD2 /* QuartzCore.framework in Frameworks */,
 				E26399E9190D14C000B6251A /* Cocoa.framework in Frameworks */,
-				E2639AED190D16B700B6251A /* libglfw.a in Frameworks */,
 				E2639B43190D1B0400B6251A /* OpenGL.framework in Frameworks */,
 				E2639B49190D1B1500B6251A /* IOKit.framework in Frameworks */,
+				E29C2A8719FB71B700A6FCD2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,10 +294,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9219FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */,
 				E2639A1A190D14D100B6251A /* Cocoa.framework in Frameworks */,
-				E2639AEE190D16B700B6251A /* libglfw.a in Frameworks */,
 				E2639B44190D1B0500B6251A /* OpenGL.framework in Frameworks */,
 				E2639B4A190D1B1500B6251A /* IOKit.framework in Frameworks */,
+				E29C2A8819FB71B700A6FCD2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,10 +306,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9319FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */,
 				E2639A4B190D14E600B6251A /* Cocoa.framework in Frameworks */,
-				E2639AEF190D16B700B6251A /* libglfw.a in Frameworks */,
 				E2639B45190D1B0600B6251A /* OpenGL.framework in Frameworks */,
 				E2639B4B190D1B1600B6251A /* IOKit.framework in Frameworks */,
+				E29C2A8919FB71B700A6FCD2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,10 +318,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A9419FB7AB200A6FCD2 /* QuartzCore.framework in Frameworks */,
 				E2639A7C190D14F500B6251A /* Cocoa.framework in Frameworks */,
-				E2639AF0190D16B700B6251A /* libglfw.a in Frameworks */,
 				E2639B46190D1B0600B6251A /* OpenGL.framework in Frameworks */,
 				E2639B4C190D1B1700B6251A /* IOKit.framework in Frameworks */,
+				E29C2A8A19FB71B700A6FCD2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,10 +330,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29C2A8D19FB7AA500A6FCD2 /* QuartzCore.framework in Frameworks */,
 				E2639AAD190D150700B6251A /* Cocoa.framework in Frameworks */,
-				E2639AF1190D16B700B6251A /* libglfw.a in Frameworks */,
 				E2639B47190D1B0700B6251A /* OpenGL.framework in Frameworks */,
 				E2639B4D190D1B1700B6251A /* IOKit.framework in Frameworks */,
+				E29C2A8B19FB71B700A6FCD2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,8 +375,9 @@
 		E263994F190D148400B6251A /* thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				E29C2A8319FB71B700A6FCD2 /* libglfw3.a */,
 				E2639AF2190D16D900B6251A /* glew.c */,
-				E2639AE9190D16B700B6251A /* libglfw.a */,
+				E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */,
 				E2639AE7190D169200B6251A /* OpenGL.framework */,
 				E2639950190D148400B6251A /* Cocoa.framework */,
 				E2639AFB190D16FF00B6251A /* IOKit.framework */,
@@ -853,7 +871,7 @@
 		E2639943190D145C00B6251A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = E2639946190D145C00B6251A /* Build configuration list for PBXProject "opengl-series" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1088,6 +1106,7 @@
 					"\"$(PROJECT_DIR)/thirdparty\"/**",
 				);
 				LIBRARY_SEARCH_PATHS = "\"$(PROJECT_DIR)/thirdparty\"/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
@@ -1106,12 +1125,17 @@
 					"\"$(PROJECT_DIR)/thirdparty\"/**",
 				);
 				LIBRARY_SEARCH_PATHS = "\"$(PROJECT_DIR)/thirdparty\"/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 			};
 			name = Release;
 		};
 		E263997D190D148500B6251A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 01_project_skeleton;
 			};
 			name = Debug;
@@ -1119,6 +1143,10 @@
 		E263997E190D148500B6251A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 01_project_skeleton;
 			};
 			name = Release;
@@ -1126,6 +1154,10 @@
 		E26399AE190D149C00B6251A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 02_textures;
 			};
 			name = Debug;
@@ -1133,6 +1165,10 @@
 		E26399AF190D149C00B6251A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 02_textures;
 			};
 			name = Release;
@@ -1140,6 +1176,10 @@
 		E26399DF190D14B300B6251A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 03_matrices;
 			};
 			name = Debug;
@@ -1147,6 +1187,10 @@
 		E26399E0190D14B300B6251A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 03_matrices;
 			};
 			name = Release;
@@ -1154,6 +1198,10 @@
 		E2639A10190D14C100B6251A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 04_camera;
 			};
 			name = Debug;
@@ -1161,6 +1209,10 @@
 		E2639A11190D14C100B6251A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 04_camera;
 			};
 			name = Release;
@@ -1168,6 +1220,10 @@
 		E2639A41190D14D100B6251A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 05_asset_instance;
 			};
 			name = Debug;
@@ -1175,6 +1231,10 @@
 		E2639A42190D14D100B6251A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 05_asset_instance;
 			};
 			name = Release;
@@ -1182,6 +1242,10 @@
 		E2639A72190D14E600B6251A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 06_diffuse_lighting;
 			};
 			name = Debug;
@@ -1189,6 +1253,10 @@
 		E2639A73190D14E600B6251A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 06_diffuse_lighting;
 			};
 			name = Release;
@@ -1196,6 +1264,10 @@
 		E2639AA3190D14F600B6251A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 07_more_lighting;
 			};
 			name = Debug;
@@ -1203,6 +1275,10 @@
 		E2639AA4190D14F600B6251A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 07_more_lighting;
 			};
 			name = Release;
@@ -1210,6 +1286,10 @@
 		E2639AD4190D150700B6251A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 08_even_more_lighting;
 			};
 			name = Debug;
@@ -1217,6 +1297,10 @@
 		E2639AD5190D150700B6251A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/thirdparty/glfw/lib",
+				);
 				PRODUCT_NAME = 08_even_more_lighting;
 			};
 			name = Release;

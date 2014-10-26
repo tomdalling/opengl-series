@@ -19,7 +19,7 @@
 // third-party libraries
 #import <Foundation/Foundation.h>
 #include <GL/glew.h>
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
 // standard C++ libraries
@@ -36,6 +36,7 @@
 const glm::vec2 SCREEN_SIZE(800, 600);
 
 // globals
+GLFWwindow* gWindow = NULL;
 tdogl::Texture* gTexture = NULL;
 tdogl::Program* gProgram = NULL;
 GLuint gVAO = 0;
@@ -125,22 +126,32 @@ static void Render() {
     gProgram->stopUsing();
     
     // swap the display buffers (displays what was just drawn)
-    glfwSwapBuffers();
+    glfwSwapBuffers(gWindow);
+}
+
+void OnError(int errorCode, const char* msg) {
+    throw std::runtime_error(msg);
 }
 
 // the program starts here
 void AppMain() {
     // initialise GLFW
+    glfwSetErrorCallback(OnError);
     if(!glfwInit())
         throw std::runtime_error("glfwInit failed");
     
     // open a window with GLFW
-    glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
-    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
-    glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
-    if(!glfwOpenWindow(SCREEN_SIZE.x, SCREEN_SIZE.y, 8, 8, 8, 8, 0, 0, GLFW_WINDOW))
-        throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+    gWindow = glfwCreateWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, "OpenGL Tutorial", NULL, NULL);
+    if(!gWindow)
+        throw std::runtime_error("glfwCreateWindow failed. Can your hardware handle OpenGL 3.2?");
+
+    // GLFW settings
+    glfwMakeContextCurrent(gWindow);
     
     // initialise GLEW
     glewExperimental = GL_TRUE; //stops glew crashing on OSX :-/
@@ -171,7 +182,10 @@ void AppMain() {
     LoadTriangle();
 
     // run while the window is open
-    while(glfwGetWindowParam(GLFW_OPENED)){
+    while(!glfwWindowShouldClose(gWindow)){
+        // process pending events
+        glfwPollEvents();
+        
         // draw one frame
         Render();
     }

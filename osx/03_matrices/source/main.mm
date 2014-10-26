@@ -19,7 +19,7 @@
 // third-party libraries
 #import <Foundation/Foundation.h>
 #include <GL/glew.h>
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -37,6 +37,7 @@
 const glm::vec2 SCREEN_SIZE(800, 600);
 
 // globals
+GLFWwindow* gWindow = NULL;
 tdogl::Texture* gTexture = NULL;
 tdogl::Program* gProgram = NULL;
 GLuint gVAO = 0;
@@ -63,7 +64,6 @@ static void LoadShaders() {
 
     //set the "projection" uniform in the vertex shader, because it's not going to change
     glm::mat4 projection = glm::perspective<float>(50.0, SCREEN_SIZE.x/SCREEN_SIZE.y, 0.1, 10.0);
-    //glm::mat4 projection = glm::ortho<float>(-2, 2, -2, 2, 0.1, 10);
     gProgram->setUniform("projection", projection);
 
     //set the "camera" uniform in the vertex shader, because it's also not going to change
@@ -187,7 +187,7 @@ static void Render() {
     gProgram->stopUsing();
     
     // swap the display buffers (displays what was just drawn)
-    glfwSwapBuffers();
+    glfwSwapBuffers(gWindow);
 }
 
 
@@ -198,20 +198,30 @@ void Update(float secondsElapsed) {
     while(gDegreesRotated > 360.0f) gDegreesRotated -= 360.0f;
 }
 
+void OnError(int errorCode, const char* msg) {
+    throw std::runtime_error(msg);
+}
+
 // the program starts here
 void AppMain() {
     // initialise GLFW
+    glfwSetErrorCallback(OnError);
     if(!glfwInit())
         throw std::runtime_error("glfwInit failed");
     
     // open a window with GLFW
-    glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
-    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
-    glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
-    if(!glfwOpenWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, 8, 8, 8, 8, 16, 0, GLFW_WINDOW))
-        throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
-    
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+    gWindow = glfwCreateWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, "OpenGL Tutorial", NULL, NULL);
+    if(!gWindow)
+        throw std::runtime_error("glfwCreateWindow failed. Can your hardware handle OpenGL 3.2?");
+
+    // GLFW settings
+    glfwMakeContextCurrent(gWindow);
+
     // initialise GLEW
     glewExperimental = GL_TRUE; //stops glew crashing on OSX :-/
     if(glewInit() != GLEW_OK)
@@ -247,7 +257,10 @@ void AppMain() {
 
     // run while the window is open
     double lastTime = glfwGetTime();
-    while(glfwGetWindowParam(GLFW_OPENED)){
+    while(!glfwWindowShouldClose(gWindow)){
+        // process pending events
+        glfwPollEvents();
+        
         // update the scene based on the time elapsed since last update
         double thisTime = glfwGetTime();
         Update(thisTime - lastTime);
@@ -259,7 +272,7 @@ void AppMain() {
         // check for errors
         GLenum error = glGetError();
         if(error != GL_NO_ERROR)
-            std::cerr << "OpenGL Error " << error << ": " << (const char*)gluErrorString(error) << std::endl;
+            std::cerr << "OpenGL Error " << error << std::endl;
     }
 
     // clean up and exit
