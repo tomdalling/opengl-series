@@ -2,7 +2,8 @@
 *.suo
 *.vcxproj.user
 *.sdf
-*.opensdfs
+*.opensdf
+**/Debug/
 
 # Xcode crap
 *.xcodeproj/*

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IncludePath>$(SolutionDir)source\common\thirdparty\glfw\include;$(SolutionDir)source\common\thirdparty\glew\include;$(SolutionDir)source\common\thirdparty\glm;$(SolutionDir)source\common\thirdparty\stb_image;$(SolutionDir)source\common;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)platforms\windows;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)Build\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command> copy "$(SolutionDir)source\$(ProjectName)\resources\*" "$(OutDir)\"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copies resources into same directory as built executable</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
