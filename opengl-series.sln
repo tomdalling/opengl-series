@@ -7,6 +7,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_project_skeleton", "plat
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_textures", "platforms\windows\02_textures.vcxproj", "{872F49FD-A39D-4180-B5EC-52D4325FD9A3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03_matrices", "platforms\windows\03_matrices.vcxproj", "{2DD67AF3-0BB1-4E5D-AB2A-D777423F28BB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04_camera", "platforms\windows\04_camera.vcxproj", "{2AFCB852-7CC9-4B7A-A1C4-AF6565396B9C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05_asset_instance", "platforms\windows\05_asset_instance.vcxproj", "{E46A1BC9-C98D-432A-8BD5-04F6F41436DF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06_diffuse_lighting", "platforms\windows\06_diffuse_lighting.vcxproj", "{FC6C6DAB-BE5E-4DFA-ADE7-92FE4F71C043}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07_more_lighting", "platforms\windows\07_more_lighting.vcxproj", "{273F6D3E-1883-4F00-80A7-F86760A859D6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "08_even_more_lighting", "platforms\windows\08_even_more_lighting.vcxproj", "{70A49527-59F2-4B07-8D5A-87C3D94FB802}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +33,30 @@ Global
 		{872F49FD-A39D-4180-B5EC-52D4325FD9A3}.Debug|Win32.Build.0 = Debug|Win32
 		{872F49FD-A39D-4180-B5EC-52D4325FD9A3}.Release|Win32.ActiveCfg = Release|Win32
 		{872F49FD-A39D-4180-B5EC-52D4325FD9A3}.Release|Win32.Build.0 = Release|Win32
+		{2DD67AF3-0BB1-4E5D-AB2A-D777423F28BB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2DD67AF3-0BB1-4E5D-AB2A-D777423F28BB}.Debug|Win32.Build.0 = Debug|Win32
+		{2DD67AF3-0BB1-4E5D-AB2A-D777423F28BB}.Release|Win32.ActiveCfg = Release|Win32
+		{2DD67AF3-0BB1-4E5D-AB2A-D777423F28BB}.Release|Win32.Build.0 = Release|Win32
+		{2AFCB852-7CC9-4B7A-A1C4-AF6565396B9C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2AFCB852-7CC9-4B7A-A1C4-AF6565396B9C}.Debug|Win32.Build.0 = Debug|Win32
+		{2AFCB852-7CC9-4B7A-A1C4-AF6565396B9C}.Release|Win32.ActiveCfg = Release|Win32
+		{2AFCB852-7CC9-4B7A-A1C4-AF6565396B9C}.Release|Win32.Build.0 = Release|Win32
+		{E46A1BC9-C98D-432A-8BD5-04F6F41436DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E46A1BC9-C98D-432A-8BD5-04F6F41436DF}.Debug|Win32.Build.0 = Debug|Win32
+		{E46A1BC9-C98D-432A-8BD5-04F6F41436DF}.Release|Win32.ActiveCfg = Release|Win32
+		{E46A1BC9-C98D-432A-8BD5-04F6F41436DF}.Release|Win32.Build.0 = Release|Win32
+		{FC6C6DAB-BE5E-4DFA-ADE7-92FE4F71C043}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FC6C6DAB-BE5E-4DFA-ADE7-92FE4F71C043}.Debug|Win32.Build.0 = Debug|Win32
+		{FC6C6DAB-BE5E-4DFA-ADE7-92FE4F71C043}.Release|Win32.ActiveCfg = Release|Win32
+		{FC6C6DAB-BE5E-4DFA-ADE7-92FE4F71C043}.Release|Win32.Build.0 = Release|Win32
+		{273F6D3E-1883-4F00-80A7-F86760A859D6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{273F6D3E-1883-4F00-80A7-F86760A859D6}.Debug|Win32.Build.0 = Debug|Win32
+		{273F6D3E-1883-4F00-80A7-F86760A859D6}.Release|Win32.ActiveCfg = Release|Win32
+		{273F6D3E-1883-4F00-80A7-F86760A859D6}.Release|Win32.Build.0 = Release|Win32
+		{70A49527-59F2-4B07-8D5A-87C3D94FB802}.Debug|Win32.ActiveCfg = Debug|Win32
+		{70A49527-59F2-4B07-8D5A-87C3D94FB802}.Debug|Win32.Build.0 = Debug|Win32
+		{70A49527-59F2-4B07-8D5A-87C3D94FB802}.Release|Win32.ActiveCfg = Release|Win32
+		{70A49527-59F2-4B07-8D5A-87C3D94FB802}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

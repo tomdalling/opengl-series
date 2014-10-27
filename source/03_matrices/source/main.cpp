@@ -56,7 +56,7 @@ static void LoadShaders() {
     gProgram->use();
 
     //set the "projection" uniform in the vertex shader, because it's not going to change
-    glm::mat4 projection = glm::perspective<float>(glm::radians(50.0), SCREEN_SIZE.x/SCREEN_SIZE.y, 0.1, 10.0);
+    glm::mat4 projection = glm::perspective<float>(glm::radians(50.0f), SCREEN_SIZE.x/SCREEN_SIZE.y, 0.1f, 10.0f);
     gProgram->setUniform("projection", projection);
 
     //set the "camera" uniform in the vertex shader, because it's also not going to change
@@ -256,7 +256,7 @@ void AppMain() {
         
         // update the scene based on the time elapsed since last update
         double thisTime = glfwGetTime();
-        Update(thisTime - lastTime);
+        Update((float)(thisTime - lastTime));
         lastTime = thisTime;
         
         // draw one frame

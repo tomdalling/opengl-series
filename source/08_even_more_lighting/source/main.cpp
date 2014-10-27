@@ -370,7 +370,7 @@ static void Update(float secondsElapsed) {
     const float mouseSensitivity = 0.1f;
     double mouseX, mouseY;
     glfwGetCursorPos(gWindow, &mouseX, &mouseY);
-    gCamera.offsetOrientation(mouseSensitivity * mouseY, mouseSensitivity * mouseX);
+    gCamera.offsetOrientation(mouseSensitivity * (float)mouseY, mouseSensitivity * (float)mouseX);
     glfwSetCursorPos(gWindow, 0, 0); //reset the mouse, so it doesn't go out of the window
 
     //increase or decrease field of view based on mouse wheel
@@ -461,7 +461,7 @@ void AppMain() {
     Light directionalLight;
     directionalLight.position = glm::vec4(1, 0.8, 0.6, 0); //w == 0 indications a directional light
     directionalLight.intensities = glm::vec3(0.4,0.3,0.1); //weak yellowish light
-    directionalLight.ambientCoefficient = 0.06;
+    directionalLight.ambientCoefficient = 0.06f;
 
     gLights.push_back(spotlight);
     gLights.push_back(directionalLight);

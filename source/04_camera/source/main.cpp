@@ -204,14 +204,14 @@ void Update(float secondsElapsed) {
     }
 
     //rotate camera based on mouse movement
-    const float mouseSensitivity = 0.1;
+    const float mouseSensitivity = 0.1f;
     double mouseX, mouseY;
     glfwGetCursorPos(gWindow, &mouseX, &mouseY);
-    gCamera.offsetOrientation(mouseSensitivity * mouseY, mouseSensitivity * mouseX);
+    gCamera.offsetOrientation(mouseSensitivity * (float)mouseY, mouseSensitivity * (float)mouseX);
     glfwSetCursorPos(gWindow, 0, 0); //reset the mouse, so it doesn't go out of the window
 
     //increase or decrease field of view based on mouse wheel
-    const float zoomSensitivity = -0.2;
+    const float zoomSensitivity = -0.2f;
     float fieldOfView = gCamera.fieldOfView() + zoomSensitivity * (float)gScrollY;
     if(fieldOfView < 5.0f) fieldOfView = 5.0f;
     if(fieldOfView > 130.0f) fieldOfView = 130.0f;
@@ -296,7 +296,7 @@ void AppMain() {
         
         // update the scene based on the time elapsed since last update
         double thisTime = glfwGetTime();
-        Update(thisTime - lastTime);
+        Update((float)(thisTime - lastTime));
         lastTime = thisTime;
         
         // draw one frame
