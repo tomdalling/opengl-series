@@ -12,7 +12,7 @@ List of articles:
  5. [Model Assets & Instances](http://tomdalling.com/blog/modern-opengl/05-model-assets-and-instances/)
  6. [Diffuse Point Lighting](http://tomdalling.com/blog/modern-opengl/06-diffuse-point-lighting/)
  7. [More Lighting: Ambient, Specular, Attenuation, Gamma](http://tomdalling.com/blog/modern-opengl/07-more-lighting-ambient-specular-attenuation-gamma/)
- 8. [Modern OpenGL 08 – Even More Lighting: Directional Lights, Spotlights, & Multiple Lights](http://www.tomdalling.com/blog/modern-opengl/08-even-more-lighting-directional-lights-spotlights-multiple-lights/)
+ 8. [Even More Lighting: Directional Lights, Spotlights, & Multiple Lights](http://www.tomdalling.com/blog/modern-opengl/08-even-more-lighting-directional-lights-spotlights-multiple-lights/)
 
 # Ports & Related Resources
 
