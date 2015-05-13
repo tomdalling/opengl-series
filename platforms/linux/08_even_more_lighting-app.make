@@ -31,7 +31,7 @@ ifeq ($(config),debug)
   OBJDIR     = obj/linux/debug/08_even_more_lighting-app
   TARGETDIR  = ../../source/08_even_more_lighting
   TARGET     = $(TARGETDIR)/08_even_more_lighting-debug
-  DEFINES   += -DDEBUG
+  DEFINES   += -DGLM_FORCE_RADIANS -DDEBUG
   INCLUDES  += -I../../source/common -I../../source/common/thirdparty/glm -I../../source/common/thirdparty/stb_image
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -Wall
@@ -53,7 +53,7 @@ ifeq ($(config),release)
   OBJDIR     = obj/linux/release/08_even_more_lighting-app
   TARGETDIR  = ../../source/08_even_more_lighting
   TARGET     = $(TARGETDIR)/08_even_more_lighting-release
-  DEFINES   += -DNDEBUG
+  DEFINES   += -DGLM_FORCE_RADIANS -DNDEBUG
   INCLUDES  += -I../../source/common -I../../source/common/thirdparty/glm -I../../source/common/thirdparty/stb_image
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -O2 -Wall

@@ -31,7 +31,7 @@ ifeq ($(config),debug)
   OBJDIR     = obj/linux/debug/02_textures-app
   TARGETDIR  = ../../source/02_textures
   TARGET     = $(TARGETDIR)/02_textures-debug
-  DEFINES   += -DDEBUG
+  DEFINES   += -DGLM_FORCE_RADIANS -DDEBUG
   INCLUDES  += -I../../source/common -I../../source/common/thirdparty/glm -I../../source/common/thirdparty/stb_image
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -Wall
@@ -53,7 +53,7 @@ ifeq ($(config),release)
   OBJDIR     = obj/linux/release/02_textures-app
   TARGETDIR  = ../../source/02_textures
   TARGET     = $(TARGETDIR)/02_textures-release
-  DEFINES   += -DNDEBUG
+  DEFINES   += -DGLM_FORCE_RADIANS -DNDEBUG
   INCLUDES  += -I../../source/common -I../../source/common/thirdparty/glm -I../../source/common/thirdparty/stb_image
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -O2 -Wall

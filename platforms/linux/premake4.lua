@@ -7,6 +7,7 @@ function create_project( name )
 		includedirs( "../../source/common/" )
 		includedirs( "../../source/common/thirdparty/glm" )
 		includedirs( "../../source/common/thirdparty/stb_image" )
+		defines { "GLM_FORCE_RADIANS" }
 		
 		configuration "windows"
 			links {"glu32", "opengl32", "gdi32", "winmm", "user32","GLEW"}

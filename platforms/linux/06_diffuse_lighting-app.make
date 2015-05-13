@@ -31,7 +31,7 @@ ifeq ($(config),debug)
   OBJDIR     = obj/linux/debug/06_diffuse_lighting-app
   TARGETDIR  = ../../source/06_diffuse_lighting
   TARGET     = $(TARGETDIR)/06_diffuse_lighting-debug
-  DEFINES   += -DDEBUG
+  DEFINES   += -DGLM_FORCE_RADIANS -DDEBUG
   INCLUDES  += -I../../source/common -I../../source/common/thirdparty/glm -I../../source/common/thirdparty/stb_image
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -Wall
@@ -53,7 +53,7 @@ ifeq ($(config),release)
   OBJDIR     = obj/linux/release/06_diffuse_lighting-app
   TARGETDIR  = ../../source/06_diffuse_lighting
   TARGET     = $(TARGETDIR)/06_diffuse_lighting-release
-  DEFINES   += -DNDEBUG
+  DEFINES   += -DGLM_FORCE_RADIANS -DNDEBUG
   INCLUDES  += -I../../source/common -I../../source/common/thirdparty/glm -I../../source/common/thirdparty/stb_image
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -O2 -Wall
