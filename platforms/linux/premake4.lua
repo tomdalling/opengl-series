@@ -46,10 +46,3 @@ solution "opengl-series"
 	objdir("obj/" .. os.get() .. "/")
 	
 	create_project( "01_project_skeleton" );
-	create_project( "02_textures" );
-	create_project( "03_matrices" );
-	create_project( "04_camera" );
-	create_project( "05_asset_instance" );
-	create_project( "06_diffuse_lighting" );
-	create_project( "07_more_lighting" );
-	create_project( "08_even_more_lighting" );
