@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E2639951190D148400B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
-		E2639987190D149C00B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
-		E26399B8190D14B200B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
-		E26399E9190D14C000B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
-		E2639A1A190D14D100B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
-		E2639A4B190D14E600B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
-		E2639A7C190D14F500B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
-		E2639AAD190D150700B6251A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639950190D148400B6251A /* Cocoa.framework */; };
 		E2639AE3190D156500B6251A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADC190D156500B6251A /* main.cpp */; };
 		E2639AE4190D156500B6251A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADD190D156500B6251A /* Program.cpp */; };
 		E2639AE5190D156500B6251A /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2639ADF190D156500B6251A /* Shader.cpp */; };
@@ -22,64 +15,15 @@
 		E2639AFC190D16FF00B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
 		E2639B00190D174200B6251A /* fragment-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639AFE190D174200B6251A /* fragment-shader.txt */; };
 		E2639B08190D174200B6251A /* vertex-shader.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2639AFF190D174200B6251A /* vertex-shader.txt */; };
-		E2639B28190D18DF00B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
-		E2639B29190D18E600B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
-		E2639B42190D1B0300B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
-		E2639B43190D1B0400B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
-		E2639B44190D1B0500B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
-		E2639B45190D1B0600B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
-		E2639B46190D1B0600B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
-		E2639B47190D1B0700B6251A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AE7190D169200B6251A /* OpenGL.framework */; };
-		E2639B48190D1B1400B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
-		E2639B49190D1B1500B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
-		E2639B4A190D1B1500B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
-		E2639B4B190D1B1600B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
-		E2639B4C190D1B1700B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
-		E2639B4D190D1B1700B6251A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2639AFB190D16FF00B6251A /* IOKit.framework */; };
-		E29C2A8D19FB7AA500A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
 		E29C2A8E19FB7AAD00A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
-		E29C2A8F19FB7AAE00A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
-		E29C2A9019FB7AAF00A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
-		E29C2A9119FB7AB000A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
-		E29C2A9219FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
-		E29C2A9319FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
-		E29C2A9419FB7AB200A6FCD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2A8C19FB7AA500A6FCD2 /* QuartzCore.framework */; };
 		E29C2ACA19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
-		E29C2ACB19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
-		E29C2ACC19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
-		E29C2ACD19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
-		E29C2ACE19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
-		E29C2ACF19FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
-		E29C2AD019FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
-		E29C2AD119FCA1C400A6FCD2 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC919FCA1C400A6FCD2 /* glew.c */; };
 		E29C2AD219FCA21900A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
-		E29C2AD319FCA21C00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
-		E29C2AD419FCA21C00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
-		E29C2AD519FCA21D00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
-		E29C2AD619FCA21E00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
-		E29C2AD719FCA21F00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
-		E29C2AD819FCA21F00A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
-		E29C2AD919FCA22100A6FCD2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E29C2AC719FCA1A100A6FCD2 /* libglfw3.a */; };
 		E29C2ADA19FCA22D00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
-		E29C2ADB19FCA22E00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
-		E29C2ADC19FCA22F00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
-		E29C2ADD19FCA22F00A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
-		E29C2ADE19FCA23000A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
-		E29C2ADF19FCA23100A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
-		E29C2AE019FCA23100A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
-		E29C2AE119FCA23200A6FCD2 /* platform_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = E29C2AC819FCA1A100A6FCD2 /* platform_osx.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E263994D190D148400B6251A /* 01_project_skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 01_project_skeleton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2639950190D148400B6251A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		E2639986190D149C00B6251A /* 02_textures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 02_textures.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E26399B7190D14B200B6251A /* 03_matrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 03_matrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E26399E8190D14C000B6251A /* 04_camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 04_camera.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2639A19190D14D100B6251A /* 05_asset_instance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 05_asset_instance.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2639A4A190D14E600B6251A /* 06_diffuse_lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 06_diffuse_lighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2639A7B190D14F500B6251A /* 07_more_lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 07_more_lighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2639AAC190D150700B6251A /* 08_even_more_lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 08_even_more_lighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2639ADC190D156500B6251A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E2639ADD190D156500B6251A /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
 		E2639ADE190D156500B6251A /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
@@ -109,90 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2639983190D149C00B6251A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2A8F19FB7AAE00A6FCD2 /* QuartzCore.framework in Frameworks */,
-				E29C2AD319FCA21C00A6FCD2 /* libglfw3.a in Frameworks */,
-				E2639B29190D18E600B6251A /* IOKit.framework in Frameworks */,
-				E2639B28190D18DF00B6251A /* OpenGL.framework in Frameworks */,
-				E2639987190D149C00B6251A /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E26399B4190D14B200B6251A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2A9019FB7AAF00A6FCD2 /* QuartzCore.framework in Frameworks */,
-				E29C2AD419FCA21C00A6FCD2 /* libglfw3.a in Frameworks */,
-				E26399B8190D14B200B6251A /* Cocoa.framework in Frameworks */,
-				E2639B42190D1B0300B6251A /* OpenGL.framework in Frameworks */,
-				E2639B48190D1B1400B6251A /* IOKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E26399E5190D14C000B6251A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2A9119FB7AB000A6FCD2 /* QuartzCore.framework in Frameworks */,
-				E29C2AD519FCA21D00A6FCD2 /* libglfw3.a in Frameworks */,
-				E26399E9190D14C000B6251A /* Cocoa.framework in Frameworks */,
-				E2639B43190D1B0400B6251A /* OpenGL.framework in Frameworks */,
-				E2639B49190D1B1500B6251A /* IOKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639A16190D14D100B6251A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2A9219FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */,
-				E29C2AD619FCA21E00A6FCD2 /* libglfw3.a in Frameworks */,
-				E2639A1A190D14D100B6251A /* Cocoa.framework in Frameworks */,
-				E2639B44190D1B0500B6251A /* OpenGL.framework in Frameworks */,
-				E2639B4A190D1B1500B6251A /* IOKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639A47190D14E600B6251A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2A9319FB7AB100A6FCD2 /* QuartzCore.framework in Frameworks */,
-				E29C2AD719FCA21F00A6FCD2 /* libglfw3.a in Frameworks */,
-				E2639A4B190D14E600B6251A /* Cocoa.framework in Frameworks */,
-				E2639B45190D1B0600B6251A /* OpenGL.framework in Frameworks */,
-				E2639B4B190D1B1600B6251A /* IOKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639A78190D14F500B6251A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2A9419FB7AB200A6FCD2 /* QuartzCore.framework in Frameworks */,
-				E29C2AD819FCA21F00A6FCD2 /* libglfw3.a in Frameworks */,
-				E2639A7C190D14F500B6251A /* Cocoa.framework in Frameworks */,
-				E2639B46190D1B0600B6251A /* OpenGL.framework in Frameworks */,
-				E2639B4C190D1B1700B6251A /* IOKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639AA9190D150700B6251A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2A8D19FB7AA500A6FCD2 /* QuartzCore.framework in Frameworks */,
-				E29C2AD919FCA22100A6FCD2 /* libglfw3.a in Frameworks */,
-				E2639AAD190D150700B6251A /* Cocoa.framework in Frameworks */,
-				E2639B47190D1B0700B6251A /* OpenGL.framework in Frameworks */,
-				E2639B4D190D1B1700B6251A /* IOKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -209,13 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				E263994D190D148400B6251A /* 01_project_skeleton.app */,
-				E2639986190D149C00B6251A /* 02_textures.app */,
-				E26399B7190D14B200B6251A /* 03_matrices.app */,
-				E26399E8190D14C000B6251A /* 04_camera.app */,
-				E2639A19190D14D100B6251A /* 05_asset_instance.app */,
-				E2639A4A190D14E600B6251A /* 06_diffuse_lighting.app */,
-				E2639A7B190D14F500B6251A /* 07_more_lighting.app */,
-				E2639AAC190D150700B6251A /* 08_even_more_lighting.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,125 +139,6 @@
 			productReference = E263994D190D148400B6251A /* 01_project_skeleton.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E2639985190D149C00B6251A /* 02_textures */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E26399AD190D149C00B6251A /* Build configuration list for PBXNativeTarget "02_textures" */;
-			buildPhases = (
-				E2639982190D149C00B6251A /* Sources */,
-				E2639983190D149C00B6251A /* Frameworks */,
-				E2639984190D149C00B6251A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = 02_textures;
-			productName = 02_textures;
-			productReference = E2639986190D149C00B6251A /* 02_textures.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E26399B6190D14B200B6251A /* 03_matrices */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E26399DE190D14B300B6251A /* Build configuration list for PBXNativeTarget "03_matrices" */;
-			buildPhases = (
-				E26399B3190D14B200B6251A /* Sources */,
-				E26399B4190D14B200B6251A /* Frameworks */,
-				E26399B5190D14B200B6251A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = 03_matrices;
-			productName = 03_matrices;
-			productReference = E26399B7190D14B200B6251A /* 03_matrices.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E26399E7190D14C000B6251A /* 04_camera */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E2639A0F190D14C100B6251A /* Build configuration list for PBXNativeTarget "04_camera" */;
-			buildPhases = (
-				E26399E4190D14C000B6251A /* Sources */,
-				E26399E5190D14C000B6251A /* Frameworks */,
-				E26399E6190D14C000B6251A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = 04_camera;
-			productName = 04_camera;
-			productReference = E26399E8190D14C000B6251A /* 04_camera.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E2639A18190D14D100B6251A /* 05_asset_instance */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E2639A40190D14D100B6251A /* Build configuration list for PBXNativeTarget "05_asset_instance" */;
-			buildPhases = (
-				E2639A15190D14D100B6251A /* Sources */,
-				E2639A16190D14D100B6251A /* Frameworks */,
-				E2639A17190D14D100B6251A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = 05_asset_instance;
-			productName = 05_asset_instance;
-			productReference = E2639A19190D14D100B6251A /* 05_asset_instance.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E2639A49190D14E600B6251A /* 06_diffuse_lighting */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E2639A71190D14E600B6251A /* Build configuration list for PBXNativeTarget "06_diffuse_lighting" */;
-			buildPhases = (
-				E2639A46190D14E600B6251A /* Sources */,
-				E2639A47190D14E600B6251A /* Frameworks */,
-				E2639A48190D14E600B6251A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = 06_diffuse_lighting;
-			productName = 06_diffuse_lighting;
-			productReference = E2639A4A190D14E600B6251A /* 06_diffuse_lighting.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E2639A7A190D14F500B6251A /* 07_more_lighting */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E2639AA2190D14F600B6251A /* Build configuration list for PBXNativeTarget "07_more_lighting" */;
-			buildPhases = (
-				E2639A77190D14F500B6251A /* Sources */,
-				E2639A78190D14F500B6251A /* Frameworks */,
-				E2639A79190D14F500B6251A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = 07_more_lighting;
-			productName = 07_more_lighting;
-			productReference = E2639A7B190D14F500B6251A /* 07_more_lighting.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E2639AAB190D150700B6251A /* 08_even_more_lighting */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E2639AD3190D150700B6251A /* Build configuration list for PBXNativeTarget "08_even_more_lighting" */;
-			buildPhases = (
-				E2639AA8190D150700B6251A /* Sources */,
-				E2639AA9190D150700B6251A /* Frameworks */,
-				E2639AAA190D150700B6251A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = 08_even_more_lighting;
-			productName = 08_even_more_lighting;
-			productReference = E2639AAC190D150700B6251A /* 08_even_more_lighting.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -428,13 +162,6 @@
 			projectRoot = "";
 			targets = (
 				E263994C190D148400B6251A /* 01_project_skeleton */,
-				E2639985190D149C00B6251A /* 02_textures */,
-				E26399B6190D14B200B6251A /* 03_matrices */,
-				E26399E7190D14C000B6251A /* 04_camera */,
-				E2639A18190D14D100B6251A /* 05_asset_instance */,
-				E2639A49190D14E600B6251A /* 06_diffuse_lighting */,
-				E2639A7A190D14F500B6251A /* 07_more_lighting */,
-				E2639AAB190D150700B6251A /* 08_even_more_lighting */,
 			);
 		};
 /* End PBXProject section */
@@ -446,55 +173,6 @@
 			files = (
 				E2639B08190D174200B6251A /* vertex-shader.txt in Resources */,
 				E2639B00190D174200B6251A /* fragment-shader.txt in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639984190D149C00B6251A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E26399B5190D14B200B6251A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E26399E6190D14C000B6251A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639A17190D14D100B6251A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639A48190D14E600B6251A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639A79190D14F500B6251A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639AAA190D150700B6251A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,69 +188,6 @@
 				E2639AE5190D156500B6251A /* Shader.cpp in Sources */,
 				E2639AE3190D156500B6251A /* main.cpp in Sources */,
 				E29C2ADA19FCA22D00A6FCD2 /* platform_osx.mm in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639982190D149C00B6251A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2ACB19FCA1C400A6FCD2 /* glew.c in Sources */,
-				E29C2ADB19FCA22E00A6FCD2 /* platform_osx.mm in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E26399B3190D14B200B6251A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2ACC19FCA1C400A6FCD2 /* glew.c in Sources */,
-				E29C2ADC19FCA22F00A6FCD2 /* platform_osx.mm in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E26399E4190D14C000B6251A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2ADD19FCA22F00A6FCD2 /* platform_osx.mm in Sources */,
-				E29C2ACD19FCA1C400A6FCD2 /* glew.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639A15190D14D100B6251A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2ADE19FCA23000A6FCD2 /* platform_osx.mm in Sources */,
-				E29C2ACE19FCA1C400A6FCD2 /* glew.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639A46190D14E600B6251A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2ADF19FCA23100A6FCD2 /* platform_osx.mm in Sources */,
-				E29C2ACF19FCA1C400A6FCD2 /* glew.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639A77190D14F500B6251A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2AE019FCA23100A6FCD2 /* platform_osx.mm in Sources */,
-				E29C2AD019FCA1C400A6FCD2 /* glew.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2639AA8190D150700B6251A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E29C2AE119FCA23200A6FCD2 /* platform_osx.mm in Sources */,
-				E29C2AD119FCA1C400A6FCD2 /* glew.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,160 +254,6 @@
 			};
 			name = Release;
 		};
-		E26399AE190D149C00B6251A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 02_textures;
-			};
-			name = Debug;
-		};
-		E26399AF190D149C00B6251A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 02_textures;
-			};
-			name = Release;
-		};
-		E26399DF190D14B300B6251A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 03_matrices;
-			};
-			name = Debug;
-		};
-		E26399E0190D14B300B6251A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 03_matrices;
-			};
-			name = Release;
-		};
-		E2639A10190D14C100B6251A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 04_camera;
-			};
-			name = Debug;
-		};
-		E2639A11190D14C100B6251A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 04_camera;
-			};
-			name = Release;
-		};
-		E2639A41190D14D100B6251A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 05_asset_instance;
-			};
-			name = Debug;
-		};
-		E2639A42190D14D100B6251A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 05_asset_instance;
-			};
-			name = Release;
-		};
-		E2639A72190D14E600B6251A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 06_diffuse_lighting;
-			};
-			name = Debug;
-		};
-		E2639A73190D14E600B6251A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 06_diffuse_lighting;
-			};
-			name = Release;
-		};
-		E2639AA3190D14F600B6251A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 07_more_lighting;
-			};
-			name = Debug;
-		};
-		E2639AA4190D14F600B6251A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 07_more_lighting;
-			};
-			name = Release;
-		};
-		E2639AD4190D150700B6251A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 08_even_more_lighting;
-			};
-			name = Debug;
-		};
-		E2639AD5190D150700B6251A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/platforms/osx",
-				);
-				PRODUCT_NAME = 08_even_more_lighting;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -810,69 +271,6 @@
 			buildConfigurations = (
 				E263997D190D148500B6251A /* Debug */,
 				E263997E190D148500B6251A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E26399AD190D149C00B6251A /* Build configuration list for PBXNativeTarget "02_textures" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E26399AE190D149C00B6251A /* Debug */,
-				E26399AF190D149C00B6251A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E26399DE190D14B300B6251A /* Build configuration list for PBXNativeTarget "03_matrices" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E26399DF190D14B300B6251A /* Debug */,
-				E26399E0190D14B300B6251A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E2639A0F190D14C100B6251A /* Build configuration list for PBXNativeTarget "04_camera" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E2639A10190D14C100B6251A /* Debug */,
-				E2639A11190D14C100B6251A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E2639A40190D14D100B6251A /* Build configuration list for PBXNativeTarget "05_asset_instance" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E2639A41190D14D100B6251A /* Debug */,
-				E2639A42190D14D100B6251A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E2639A71190D14E600B6251A /* Build configuration list for PBXNativeTarget "06_diffuse_lighting" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E2639A72190D14E600B6251A /* Debug */,
-				E2639A73190D14E600B6251A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E2639AA2190D14F600B6251A /* Build configuration list for PBXNativeTarget "07_more_lighting" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E2639AA3190D14F600B6251A /* Debug */,
-				E2639AA4190D14F600B6251A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E2639AD3190D150700B6251A /* Build configuration list for PBXNativeTarget "08_even_more_lighting" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E2639AD4190D150700B6251A /* Debug */,
-				E2639AD5190D150700B6251A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
